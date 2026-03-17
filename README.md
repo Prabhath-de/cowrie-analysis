@@ -17,6 +17,19 @@ It provides automated data processing, visualization, and GitHub-based reporting
 
 ---
 
+## 📊 Data Analysis
+
+The system analyzes:
+
+- 🚨 Top attacker IP addresses
+- 👤 Username patterns
+- 🔐 Password frequency
+- 💻 Command execution
+- 🌍 Geographic distribution
+
+
+
+
 ## 🏗️ System Architecture
 
 ```mermaid
