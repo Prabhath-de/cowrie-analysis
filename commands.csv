@@ -3,4 +3,4 @@ Command,Count
 uname -s -v -n -m 2 > /dev/null,147
 uname -m 2 > /dev/null,147
 cat /proc/uptime 2 > /dev/null | cut -d. -f1,147
-/bin/./uname -s -v -n -r -m,6
+/bin/./uname -s -v -n -r -m,14
