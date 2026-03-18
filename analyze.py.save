@@ -28,7 +28,7 @@ plt.savefig("images/timeline.png")
 
 
 # ---------- TOP COMMANDS ----------
-
+# ---------- TOP COMMANDS ----------
 top_commands = df['command'].value_counts().head(15)
 
 setup_plot("Top Commands Used by Attackers")
