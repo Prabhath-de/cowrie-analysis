@@ -34,4 +34,14 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.savefig("images/usernames.png")
 
+# Top 10 Countries
+top_countries = df['country'].value_counts().head(10)
+
+plt.figure()
+top_countries.plot(kind='bar')
+plt.title("Top Attacking Countries")
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+plt.savefig("images/countries.png")
 print("✅ Charts updated successfully!")
