@@ -3,9 +3,10 @@
 # Go to repo
 cd /home/cowrie/cowrie-analysis
 
-# Create daily backup ONLY if not exists
-FILE="cowrie_$(date +%F).json"
+# File path inside backups folder
+FILE="backups/cowrie_$(date +%F).json"
 
+# Create daily backup ONLY if not exists
 if [ ! -f "$FILE" ]; then
   cp /home/cowrie/cowrie/var/log/cowrie/cowrie.json "$FILE"
 
