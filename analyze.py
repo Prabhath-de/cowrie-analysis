@@ -1,24 +1,40 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# ---------- STYLE ----------
-plt.style.use('ggplot')
+# ---------- GLOBAL STYLE (same as timeline) ----------
+plt.style.use('default')
 
-def setup_plot(title):
+def setup_plot(title, xlabel="", ylabel=""):
     plt.figure(figsize=(12,7))
     plt.title(title)
-    plt.grid(axis='y', linestyle='--', alpha=0.7)
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+    plt.grid(True, linestyle='--', alpha=0.6)
 
 # ---------- LOAD DATA ----------
 df = pd.read_csv("csv/all_logs.csv")
+
+# ---------- TIMELINE (REFERENCE STYLE) ----------
+df['timestamp'] = pd.to_datetime(df['timestamp'])
+df['hour'] = df['timestamp'].dt.hour
+
+timeline = df['hour'].value_counts().sort_index()
+
+setup_plot("Attack Timeline (Hourly)", "Hour of Day", "Number of Attacks")
+plt.bar(timeline.index, timeline.values, color='#2E6F9E')
+
+plt.tight_layout()
+plt.savefig("images/timeline.png")
+
 
 # ---------- TOP COMMANDS ----------
 top_commands = df['command'].value_counts().head(15)
 
 setup_plot("Top Commands Used by Attackers")
-plt.bar(top_commands.index, top_commands.values, color='steelblue')
 
-plt.xticks(rotation=45)
+plt.bar(range(len(top_commands)), top_commands.values, color='#2E6F9E')
+plt.xticks(range(len(top_commands)), top_commands.index, rotation=45, ha='right')
+
 plt.tight_layout()
 plt.savefig("images/commands.png")
 
@@ -27,9 +43,10 @@ plt.savefig("images/commands.png")
 top_ips = df['src_ip'].value_counts().head(15)
 
 setup_plot("Top Attacker IPs")
-plt.bar(top_ips.index, top_ips.values, color='steelblue')
 
-plt.xticks(rotation=45)
+plt.bar(range(len(top_ips)), top_ips.values, color='#2E6F9E')
+plt.xticks(range(len(top_ips)), top_ips.index, rotation=60, ha='right')
+
 plt.tight_layout()
 plt.savefig("images/top_ips.png")
 
@@ -38,9 +55,10 @@ plt.savefig("images/top_ips.png")
 top_usernames = df['username'].value_counts().head(15)
 
 setup_plot("Top Usernames")
-plt.bar(top_usernames.index, top_usernames.values, color='steelblue')
 
-plt.xticks(rotation=45)
+plt.bar(range(len(top_usernames)), top_usernames.values, color='#2E6F9E')
+plt.xticks(range(len(top_usernames)), top_usernames.index, rotation=45, ha='right')
+
 plt.tight_layout()
 plt.savefig("images/usernames.png")
 
@@ -50,27 +68,12 @@ countries_df = pd.read_csv("csv/countries.csv")
 top_countries = countries_df.head(10)
 
 setup_plot("Top Attacking Countries")
-plt.bar(top_countries['Country'], top_countries['Count'], color='steelblue')
 
-plt.xticks(rotation=45)
-plt.subplots_adjust(bottom=0.25)
+plt.bar(range(len(top_countries)), top_countries['Count'], color='#2E6F9E')
+plt.xticks(range(len(top_countries)), top_countries['Country'], rotation=45, ha='right')
+
+plt.tight_layout()
 plt.savefig("images/countries.png")
 
 
-# ---------- TIMELINE ----------
-df['timestamp'] = pd.to_datetime(df['timestamp'])
-df['hour'] = df['timestamp'].dt.hour
-
-timeline = df['hour'].value_counts().sort_index()
-
-setup_plot("Attack Timeline (Hourly)")
-plt.bar(timeline.index, timeline.values, color='steelblue')
-
-plt.xlabel("Hour of Day")
-plt.ylabel("Number of Attacks")
-
-plt.tight_layout()
-plt.savefig("images/timeline.png")
-
-
-print("✅ Charts updated successfully!")
+print("✅ All charts styled like timeline!")
