@@ -34,14 +34,16 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.savefig("images/usernames.png")
 
-# Top 10 Countries
-top_countries = df['country'].value_counts().head(10)
+# Top Countries (correct columns)
+countries_df = pd.read_csv("csv/countries.csv")
+
+top_countries = countries_df.head(10)
 
 plt.figure()
-top_countries.plot(kind='bar')
+plt.bar(top_countries['Country'], top_countries['Count'])
 plt.title("Top Attacking Countries")
 plt.xticks(rotation=45)
 plt.tight_layout()
-
 plt.savefig("images/countries.png")
+
 print("✅ Charts updated successfully!")
