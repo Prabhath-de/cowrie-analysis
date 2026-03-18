@@ -4,7 +4,7 @@ uname -s -v -n -m 2 > /dev/null,422
 uname -m 2 > /dev/null,422
 cat /proc/uptime 2 > /dev/null | cut -d. -f1,422
 uname -s -v -n -r -m,79
-/bin/./uname -s -v -n -r -m,45
+/bin/./uname -s -v -n -r -m,47
 cd /var/www/html,1
 eexit,1
 exit,1
