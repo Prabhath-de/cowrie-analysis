@@ -39,8 +39,21 @@ countries_df = pd.read_csv("csv/countries.csv")
 
 top_countries = countries_df.head(10)
 
-plt.figure()
-plt.bar(top_countries['Country'], top_countries['Count'])
+plt.figure(figsize=(10,6))
+
+bars = plt.bar(top_countries['Country'], top_countries['Count'])
+
+for bar in bars:
+    height = bar.get_height()
+    plt.text(
+        bar.get_x() + bar.get_width()/2,
+        height,
+        int(height),
+        ha='center',
+        va='bottom',
+        fontsize=8
+    )
+
 plt.title("Top Attacking Countries")
 plt.xticks(rotation=45)
 plt.tight_layout()
