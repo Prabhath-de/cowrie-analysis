@@ -36,27 +36,30 @@ plt.savefig("images/usernames.png")
 
 # Top Countries (correct columns)
 countries_df = pd.read_csv("csv/countries.csv")
-
 top_countries = countries_df.head(10)
 
-plt.figure(figsize=(10,6))
+plt.figure(figsize=(12,7))
 
 bars = plt.bar(top_countries['Country'], top_countries['Count'])
 
+# 🔥 ADD VALUES ON TOP
 for bar in bars:
     height = bar.get_height()
-    plt.text(
-        bar.get_x() + bar.get_width()/2,
-        height,
-        int(height),
+    plt.annotate(
+        str(int(height)),
+        xy=(bar.get_x() + bar.get_width()/2, height),
+        xytext=(0, 3),
+        textcoords="offset points",
         ha='center',
         va='bottom',
-        fontsize=8
+        fontsize=9
     )
 
 plt.title("Top Attacking Countries")
 plt.xticks(rotation=45)
-plt.tight_layout()
+
+plt.subplots_adjust(bottom=0.25)
+
 plt.savefig("images/countries.png")
 
 print("✅ Charts updated successfully!")
