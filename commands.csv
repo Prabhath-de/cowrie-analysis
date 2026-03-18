@@ -3,7 +3,7 @@ Command,Count
 uname -s -v -n -m 2 > /dev/null,422
 uname -m 2 > /dev/null,422
 cat /proc/uptime 2 > /dev/null | cut -d. -f1,422
-uname -s -v -n -r -m,79
+uname -s -v -n -r -m,89
 /bin/./uname -s -v -n -r -m,50
 cd /var/www/html,1
 eexit,1
