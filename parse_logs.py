@@ -30,7 +30,7 @@ def clean_command(cmd):
     # get base command
     cmd = cmd.split(" ")[0]
 
-    # ignore useless
+    # ignore useless commands
     ignore = ["cd", "pwd", "clear", "export", "echo", "hostname"]
 
     if cmd in ignore or cmd == "":
@@ -44,23 +44,33 @@ with open(log_file) as f:
     for line in f:
         try:
             log = json.loads(line)
+            event = log.get("eventid")
 
-            if log.get("eventid") != "cowrie.command.input":
-                continue
+            # ---------------- LOGIN DATA ----------------
+            if event in ["cowrie.login.failed", "cowrie.login.success"]:
+                data.append({
+                    "timestamp": log.get("timestamp"),
+                    "src_ip": log.get("src_ip"),
+                    "username": log.get("username"),
+                    "password": log.get("password"),
+                    "command": None
+                })
 
-            raw_cmd = log.get("input")
-            clean_cmd = clean_command(raw_cmd)
+            # ---------------- COMMAND DATA ----------------
+            if event == "cowrie.command.input":
+                raw_cmd = log.get("input")
+                clean_cmd = clean_command(raw_cmd)
 
-            if not clean_cmd:
-                continue
+                if not clean_cmd:
+                    continue
 
-            data.append({
-                "timestamp": log.get("timestamp"),
-                "src_ip": log.get("src_ip"),
-                "username": log.get("username"),
-                "password": log.get("password"),
-                "command": clean_cmd
-            })
+                data.append({
+                    "timestamp": log.get("timestamp"),
+                    "src_ip": log.get("src_ip"),
+                    "username": None,
+                    "password": None,
+                    "command": clean_cmd
+                })
 
         except:
             continue
@@ -74,9 +84,10 @@ os.makedirs("csv", exist_ok=True)
 # save full logs
 df.to_csv("csv/all_logs.csv", index=False)
 
+
 # ---------- SAVE CLEAN STATS ----------
 def save_counts(column, filename):
-    counts = df[column].value_counts().reset_index()
+    counts = df[column].dropna().value_counts().reset_index()
     counts.columns = [column, "count"]
     counts.to_csv(f"csv/{filename}", index=False)
 

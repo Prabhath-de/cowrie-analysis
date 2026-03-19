@@ -1,109 +1,82 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import textwrap
+import os
 
-# ---------- SETTINGS ----------
-plt.rcParams['text.usetex'] = False
-plt.style.use('default')
+CSV_DIR = "csv/"
+IMG_DIR = "images/"
+TOP_N = 10
 
-def setup_plot(title, xlabel="", ylabel=""):
-    plt.figure(figsize=(12,7))
+os.makedirs(IMG_DIR, exist_ok=True)
+
+
+# ---------- GENERIC BAR CHART FUNCTION ----------
+def plot_barh(file, label, title, output):
+    df = pd.read_csv(file)
+
+    # remove empty rows
+    df = df.dropna()
+
+    # take top N
+    df = df.head(TOP_N)
+
+    # reverse for horizontal chart
+    df = df[::-1]
+
+    plt.figure(figsize=(10, 6))
+    bars = plt.barh(df[label], df["count"])
+
+    # show values on bars
+    for i, v in enumerate(df["count"]):
+        plt.text(v + 2, i, str(v), va='center')
+
+    plt.xlabel("Count")
+    plt.ylabel(label.capitalize())
     plt.title(title)
-    plt.xlabel(xlabel)
-    plt.ylabel(ylabel)
-    plt.grid(True, linestyle='--', alpha=0.6)
 
-# ---------- LOAD DATA ----------
-df = pd.read_csv("csv/all_logs.csv")
+    # grid
+    plt.grid(axis="x", linestyle="--", alpha=0.5)
 
-# ---------- TIMELINE ----------
-df['timestamp'] = pd.to_datetime(df['timestamp'], errors='coerce')
-df['hour'] = df['timestamp'].dt.hour
+    # clean borders
+    plt.gca().spines['top'].set_visible(False)
+    plt.gca().spines['right'].set_visible(False)
 
-timeline = df['hour'].value_counts().sort_index()
+    plt.tight_layout()
+    plt.savefig(output, dpi=300)
+    plt.close()
 
-setup_plot("Attack Timeline (Hourly)", "Hour of Day", "Number of Attacks")
-plt.bar(timeline.index, timeline.values)
 
-plt.tight_layout(rect=[0,0,1,0.95])
-plt.savefig("images/timeline.png")
-plt.close()
+# ---------- GENERATE ALL CHARTS ----------
 
-# ---------- CLEAN COMMAND FUNCTION (KEEP FULL COMMANDS) ----------
-def clean_command(cmd):
-    if pd.isna(cmd):
-        return None
+# Commands
+plot_barh(
+    f"{CSV_DIR}/commands.csv",
+    "command",
+    "Top Commands Used by Attackers",
+    f"{IMG_DIR}/commands.png"
+)
 
-    cmd = cmd.strip()
+# Usernames
+plot_barh(
+    f"{CSV_DIR}/usernames.csv",
+    "username",
+    "Top Usernames",
+    f"{IMG_DIR}/usernames.png"
+)
 
-    # ❌ remove useless spam
-    if ">/dev/null" in cmd:
-        return None
+# Passwords
+plot_barh(
+    f"{CSV_DIR}/passwords.csv",
+    "password",
+    "Top Passwords",
+    f"{IMG_DIR}/passwords.png"
+)
 
-    # keep only first command (before ;)
-    cmd = cmd.split(";")[0]
-
-    # limit length (important for readability)
-    return cmd[:60]
-
-# APPLY CLEANING
-df['clean_command'] = df['command'].apply(clean_command)
-
-# REMOVE EMPTY
-df = df[df['clean_command'].notna()]
-
-# ---------- TOP COMMANDS ----------
-top_commands = df['clean_command'].value_counts().head(15)
-
-setup_plot("Top Commands Used by Attackers", "", "Count")
-
-# wrap long labels
-labels = [cmd.replace('$', r'\$') for cmd in top_commands.index]
-labels = [textwrap.fill(cmd, 40) for cmd in labels]
-
-plt.barh(range(len(top_commands)), top_commands.values)
-plt.yticks(range(len(labels)), labels)
-
-plt.subplots_adjust(left=0.4)
-plt.tight_layout(rect=[0,0,1,0.95])
-plt.savefig("images/commands.png")
-plt.close()
-
-# ---------- TOP IPs ----------
-top_ips = df['src_ip'].value_counts().head(15)
-
-setup_plot("Top Attacker IPs", "", "Count")
-
-plt.bar(range(len(top_ips)), top_ips.values)
-plt.xticks(range(len(top_ips)), top_ips.index, rotation=60, ha='right')
-
-plt.tight_layout(rect=[0,0,1,0.95])
-plt.savefig("images/top_ips.png")
-plt.close()
-
-# ---------- TOP USERNAMES ----------
-top_usernames = df['username'].value_counts().head(15)
-
-setup_plot("Top Usernames", "", "Count")
-
-plt.bar(range(len(top_usernames)), top_usernames.values)
-plt.xticks(range(len(top_usernames)), top_usernames.index, rotation=45, ha='right')
-
-plt.tight_layout(rect=[0,0,1,0.95])
-plt.savefig("images/usernames.png")
-plt.close()
-
-# ---------- COUNTRIES ----------
-countries_df = pd.read_csv("csv/countries.csv")
-top_countries = countries_df.head(10)
-
-setup_plot("Top Attacking Countries", "", "Count")
-
-plt.bar(range(len(top_countries)), top_countries['Count'])
-plt.xticks(range(len(top_countries)), top_countries['Country'], rotation=45, ha='right')
-
-plt.tight_layout(rect=[0,0,1,0.95])
-plt.savefig("images/countries.png")
-plt.close()
+# Top IPs
+plot_barh(
+    f"{CSV_DIR}/top_ips.csv",
+    "src_ip",
+    "Top Attacking IPs",
+    f"{IMG_DIR}/top_ips.png"
+)
 
 print("✅ All charts generated successfully!")
