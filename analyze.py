@@ -23,7 +23,7 @@ df['hour'] = df['timestamp'].dt.hour
 timeline = df['hour'].value_counts().sort_index()
 
 setup_plot("Attack Timeline (Hourly)", "Hour of Day", "Number of Attacks")
-plt.bar(timeline.index, timeline.values, color='#2E6F9E')
+plt.bar(timeline.index, timeline.values)
 
 plt.tight_layout(rect=[0,0,1,0.95])
 plt.savefig("images/timeline.png")
@@ -36,25 +36,26 @@ def clean_command(cmd):
 
     cmd = cmd.strip()
 
-    # ❌ ignore useless redirections
+    # ❌ ignore useless spam
     if ">/dev/null" in cmd:
         return None
 
-    # take first command before ;
+    # take first command block
     cmd = cmd.split(";")[0]
 
-    # remove path (e.g. /bin/uname → uname)
-    cmd = cmd.split("/")[-1]
+    # remove path but keep arguments
+    if "/" in cmd:
+        parts = cmd.split(" ")
+        parts[0] = parts[0].split("/")[-1]
+        cmd = " ".join(parts)
 
-    # take main command only
-    cmd = cmd.split(" ")[0]
-
-    return cmd
+    # limit long commands
+    return cmd[:50]
 
 # APPLY CLEANING
 df['clean_command'] = df['command'].apply(clean_command)
 
-# REMOVE EMPTY VALUES
+# REMOVE EMPTY
 df = df[df['clean_command'].notna()]
 
 # ---------- TOP COMMANDS ----------
@@ -62,12 +63,13 @@ top_commands = df['clean_command'].value_counts().head(15)
 
 setup_plot("Top Commands Used by Attackers", "", "Count")
 
-labels = [textwrap.fill(cmd, 20) for cmd in top_commands.index]
+labels = [cmd.replace('$', r'\$') for cmd in top_commands.index]
+labels = [textwrap.fill(cmd, 25) for cmd in labels]
 
-plt.barh(range(len(top_commands)), top_commands.values, color='#2E6F9E')
+plt.barh(range(len(top_commands)), top_commands.values)
 plt.yticks(range(len(labels)), labels)
 
-plt.subplots_adjust(left=0.3)
+plt.subplots_adjust(left=0.4)
 plt.tight_layout(rect=[0,0,1,0.95])
 plt.savefig("images/commands.png")
 plt.close()
@@ -77,7 +79,7 @@ top_ips = df['src_ip'].value_counts().head(15)
 
 setup_plot("Top Attacker IPs", "", "Count")
 
-plt.bar(range(len(top_ips)), top_ips.values, color='#2E6F9E')
+plt.bar(range(len(top_ips)), top_ips.values)
 plt.xticks(range(len(top_ips)), top_ips.index, rotation=60, ha='right')
 
 plt.tight_layout(rect=[0,0,1,0.95])
@@ -89,7 +91,7 @@ top_usernames = df['username'].value_counts().head(15)
 
 setup_plot("Top Usernames", "", "Count")
 
-plt.bar(range(len(top_usernames)), top_usernames.values, color='#2E6F9E')
+plt.bar(range(len(top_usernames)), top_usernames.values)
 plt.xticks(range(len(top_usernames)), top_usernames.index, rotation=45, ha='right')
 
 plt.tight_layout(rect=[0,0,1,0.95])
@@ -102,7 +104,7 @@ top_countries = countries_df.head(10)
 
 setup_plot("Top Attacking Countries", "", "Count")
 
-plt.bar(range(len(top_countries)), top_countries['Count'], color='#2E6F9E')
+plt.bar(range(len(top_countries)), top_countries['Count'])
 plt.xticks(range(len(top_countries)), top_countries['Country'], rotation=45, ha='right')
 
 plt.tight_layout(rect=[0,0,1,0.95])
@@ -110,4 +112,3 @@ plt.savefig("images/countries.png")
 plt.close()
 
 print("✅ All charts generated successfully!")
-
