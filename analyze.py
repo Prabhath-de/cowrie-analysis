@@ -33,7 +33,19 @@ plt.close()
 def clean_command(cmd):
     if pd.isna(cmd):
         return None
-    return cmd.split(" ")[0]   # best clean
+
+    cmd = cmd.strip()
+
+    # remove path (e.g. /bin/uname → uname)
+    cmd = cmd.split("/")[-1]
+
+    # remove symbols
+    cmd = cmd.replace(";", "")
+
+    # take only main command
+    cmd = cmd.split(" ")[0]
+
+    return cmd
 
 # APPLY FUNCTION 🔥
 df['clean_command'] = df['command'].apply(clean_command)
