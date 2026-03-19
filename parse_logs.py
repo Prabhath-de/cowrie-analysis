@@ -11,6 +11,10 @@ with open(log_file) as f:
         try:
             log = json.loads(line)
 
+            # 🔥 ONLY TAKE REAL COMMANDS
+            if log.get("eventid") != "cowrie.command.input":
+                continue
+
             entry = {
                 "timestamp": log.get("timestamp"),
                 "src_ip": log.get("src_ip"),
@@ -26,14 +30,14 @@ with open(log_file) as f:
 
 df = pd.DataFrame(data)
 
-# save main log
+# save clean logs
 os.makedirs("csv", exist_ok=True)
 df.to_csv("csv/all_logs.csv", index=False)
 
-# other CSVs
+# generate CSVs
 df['command'].value_counts().to_csv("csv/commands.csv")
 df['username'].value_counts().to_csv("csv/usernames.csv")
 df['password'].value_counts().to_csv("csv/passwords.csv")
 df['src_ip'].value_counts().to_csv("csv/top_ips.csv")
 
-print("✅ Logs parsed and CSV updated!")
+print("✅ Logs parsed (commands only)!")
