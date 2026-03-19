@@ -5338,3 +5338,372 @@ timestamp,eventid,src_ip,username,password,command
 2026-03-19T08:58:11.691478Z,cowrie.client.kex,80.94.92.182,,,
 2026-03-19T08:58:12.773588Z,cowrie.login.failed,80.94.92.182,root,!@#$%^,
 2026-03-19T08:58:14.078846Z,cowrie.session.closed,80.94.92.182,,,
+2026-03-19T09:01:45.945386Z,cowrie.session.connect,80.94.92.182,,,
+2026-03-19T09:01:45.979009Z,cowrie.client.version,80.94.92.182,,,
+2026-03-19T09:01:46.224813Z,cowrie.client.kex,80.94.92.182,,,
+2026-03-19T09:01:47.401643Z,cowrie.login.failed,80.94.92.182,solana,!@#$%^,
+2026-03-19T09:01:48.990999Z,cowrie.session.closed,80.94.92.182,,,
+2026-03-19T09:02:15.760401Z,cowrie.session.connect,165.22.246.165,,,
+2026-03-19T09:02:15.761855Z,cowrie.client.version,165.22.246.165,,,
+2026-03-19T09:02:15.763993Z,cowrie.client.kex,165.22.246.165,,,
+2026-03-19T09:02:15.773039Z,cowrie.login.failed,165.22.246.165,root,undefinedVPS8VCPU16GBAMD,
+2026-03-19T09:02:16.778496Z,cowrie.session.closed,165.22.246.165,,,
+2026-03-19T09:04:47.078362Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:04:47.229687Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:05:18.738748Z,cowrie.session.connect,80.94.92.182,,,
+2026-03-19T09:05:18.753958Z,cowrie.client.version,80.94.92.182,,,
+2026-03-19T09:05:19.057583Z,cowrie.client.kex,80.94.92.182,,,
+2026-03-19T09:05:20.385726Z,cowrie.login.failed,80.94.92.182,solana,pa2ssw0rd,
+2026-03-19T09:05:21.672688Z,cowrie.session.closed,80.94.92.182,,,
+2026-03-19T09:05:54.678433Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:05:54.713599Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:05:54.866320Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:05:55.447332Z,cowrie.login.success,206.189.123.252,root,123456,
+2026-03-19T09:05:56.028659Z,cowrie.session.params,206.189.123.252,,,
+2026-03-19T09:05:56.029600Z,cowrie.command.input,206.189.123.252,,,"export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH; uname=$(uname -s -v -n -m 2>/dev/null); arch=$(uname -m 2>/dev/null); uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1); cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c ""^processor"" /proc/cpuinfo 2>/dev/null) | head -1); cpu_model=$( (grep -m1 -E ""model name|Hardware"" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"""",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' ); gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50); cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1); ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1); last_output=$(last 2>/dev/null | head -n 10); echo ""UNAME:$uname""; echo ""ARCH:$arch""; echo ""UPTIME:$uptime""; echo ""CPUS:$cpus""; echo ""CPU_MODEL:$cpu_model""; echo ""GPU:$gpu_info""; echo ""CAT_HELP:$cat_help""; echo ""LS_HELP:$ls_help""; echo ""LAST:$last_output"""
+2026-03-19T09:05:56.030406Z,cowrie.command.input,206.189.123.252,,,uname -s -v -n -m 2 > /dev/null
+2026-03-19T09:05:56.031522Z,cowrie.command.input,206.189.123.252,,,uname -m 2 > /dev/null
+2026-03-19T09:05:56.032725Z,cowrie.command.input,206.189.123.252,,,cat /proc/uptime 2 > /dev/null | cut -d. -f1
+2026-03-19T09:05:56.211424Z,cowrie.log.closed,206.189.123.252,,,
+2026-03-19T09:05:56.483625Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:06:31.470933Z,cowrie.session.connect,80.94.92.168,,,
+2026-03-19T09:06:31.743172Z,cowrie.session.closed,80.94.92.168,,,
+2026-03-19T09:06:47.527292Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:06:47.635865Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:06:47.812095Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:06:48.817410Z,cowrie.login.success,206.189.123.252,root,password,
+2026-03-19T09:06:49.458439Z,cowrie.session.params,206.189.123.252,,,
+2026-03-19T09:06:49.459304Z,cowrie.command.input,206.189.123.252,,,"export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH; uname=$(uname -s -v -n -m 2>/dev/null); arch=$(uname -m 2>/dev/null); uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1); cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c ""^processor"" /proc/cpuinfo 2>/dev/null) | head -1); cpu_model=$( (grep -m1 -E ""model name|Hardware"" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"""",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' ); gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50); cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1); ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1); last_output=$(last 2>/dev/null | head -n 10); echo ""UNAME:$uname""; echo ""ARCH:$arch""; echo ""UPTIME:$uptime""; echo ""CPUS:$cpus""; echo ""CPU_MODEL:$cpu_model""; echo ""GPU:$gpu_info""; echo ""CAT_HELP:$cat_help""; echo ""LS_HELP:$ls_help""; echo ""LAST:$last_output"""
+2026-03-19T09:06:49.460423Z,cowrie.command.input,206.189.123.252,,,uname -s -v -n -m 2 > /dev/null
+2026-03-19T09:06:49.461640Z,cowrie.command.input,206.189.123.252,,,uname -m 2 > /dev/null
+2026-03-19T09:06:49.462775Z,cowrie.command.input,206.189.123.252,,,cat /proc/uptime 2 > /dev/null | cut -d. -f1
+2026-03-19T09:06:49.678925Z,cowrie.log.closed,206.189.123.252,,,
+2026-03-19T09:06:50.035885Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:07:40.574449Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:07:40.723251Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:07:41.055335Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:07:42.038093Z,cowrie.login.failed,206.189.123.252,root,123456789,
+2026-03-19T09:07:43.193628Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:08:30.601807Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:08:30.602884Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:08:30.806900Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:08:31.309950Z,cowrie.login.failed,206.189.123.252,root,12345,
+2026-03-19T09:08:32.635772Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:08:42.068841Z,cowrie.session.connect,80.94.92.182,,,
+2026-03-19T09:08:42.085070Z,cowrie.client.version,80.94.92.182,,,
+2026-03-19T09:08:42.336843Z,cowrie.client.kex,80.94.92.182,,,
+2026-03-19T09:08:43.538277Z,cowrie.login.failed,80.94.92.182,solana,p@ssw0rd,
+2026-03-19T09:08:44.907839Z,cowrie.session.closed,80.94.92.182,,,
+2026-03-19T09:09:18.308092Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:09:18.521436Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:09:18.522533Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:09:19.630461Z,cowrie.login.success,206.189.123.252,root,12345678,
+2026-03-19T09:09:20.162273Z,cowrie.session.params,206.189.123.252,,,
+2026-03-19T09:09:20.163280Z,cowrie.command.input,206.189.123.252,,,"export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH; uname=$(uname -s -v -n -m 2>/dev/null); arch=$(uname -m 2>/dev/null); uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1); cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c ""^processor"" /proc/cpuinfo 2>/dev/null) | head -1); cpu_model=$( (grep -m1 -E ""model name|Hardware"" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"""",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' ); gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50); cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1); ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1); last_output=$(last 2>/dev/null | head -n 10); echo ""UNAME:$uname""; echo ""ARCH:$arch""; echo ""UPTIME:$uptime""; echo ""CPUS:$cpus""; echo ""CPU_MODEL:$cpu_model""; echo ""GPU:$gpu_info""; echo ""CAT_HELP:$cat_help""; echo ""LS_HELP:$ls_help""; echo ""LAST:$last_output"""
+2026-03-19T09:09:20.164390Z,cowrie.command.input,206.189.123.252,,,uname -s -v -n -m 2 > /dev/null
+2026-03-19T09:09:20.165988Z,cowrie.command.input,206.189.123.252,,,uname -m 2 > /dev/null
+2026-03-19T09:09:20.167496Z,cowrie.command.input,206.189.123.252,,,cat /proc/uptime 2 > /dev/null | cut -d. -f1
+2026-03-19T09:09:20.415348Z,cowrie.log.closed,206.189.123.252,,,
+2026-03-19T09:09:20.651722Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:10:03.132301Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:10:03.230899Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:10:03.416675Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:10:04.437872Z,cowrie.login.success,206.189.123.252,root,qwerty,
+2026-03-19T09:10:05.011031Z,cowrie.session.params,206.189.123.252,,,
+2026-03-19T09:10:05.011958Z,cowrie.command.input,206.189.123.252,,,"export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH; uname=$(uname -s -v -n -m 2>/dev/null); arch=$(uname -m 2>/dev/null); uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1); cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c ""^processor"" /proc/cpuinfo 2>/dev/null) | head -1); cpu_model=$( (grep -m1 -E ""model name|Hardware"" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"""",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' ); gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50); cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1); ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1); last_output=$(last 2>/dev/null | head -n 10); echo ""UNAME:$uname""; echo ""ARCH:$arch""; echo ""UPTIME:$uptime""; echo ""CPUS:$cpus""; echo ""CPU_MODEL:$cpu_model""; echo ""GPU:$gpu_info""; echo ""CAT_HELP:$cat_help""; echo ""LS_HELP:$ls_help""; echo ""LAST:$last_output"""
+2026-03-19T09:10:05.013317Z,cowrie.command.input,206.189.123.252,,,uname -s -v -n -m 2 > /dev/null
+2026-03-19T09:10:05.015147Z,cowrie.command.input,206.189.123.252,,,uname -m 2 > /dev/null
+2026-03-19T09:10:05.016603Z,cowrie.command.input,206.189.123.252,,,cat /proc/uptime 2 > /dev/null | cut -d. -f1
+2026-03-19T09:10:05.222120Z,cowrie.log.closed,206.189.123.252,,,
+2026-03-19T09:10:05.538663Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:10:48.655991Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:10:48.680344Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:10:48.830536Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:10:50.043575Z,cowrie.login.success,206.189.123.252,root,123123,
+2026-03-19T09:10:50.715500Z,cowrie.session.params,206.189.123.252,,,
+2026-03-19T09:10:50.716525Z,cowrie.command.input,206.189.123.252,,,"export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH; uname=$(uname -s -v -n -m 2>/dev/null); arch=$(uname -m 2>/dev/null); uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1); cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c ""^processor"" /proc/cpuinfo 2>/dev/null) | head -1); cpu_model=$( (grep -m1 -E ""model name|Hardware"" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"""",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' ); gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50); cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1); ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1); last_output=$(last 2>/dev/null | head -n 10); echo ""UNAME:$uname""; echo ""ARCH:$arch""; echo ""UPTIME:$uptime""; echo ""CPUS:$cpus""; echo ""CPU_MODEL:$cpu_model""; echo ""GPU:$gpu_info""; echo ""CAT_HELP:$cat_help""; echo ""LS_HELP:$ls_help""; echo ""LAST:$last_output"""
+2026-03-19T09:10:50.717705Z,cowrie.command.input,206.189.123.252,,,uname -s -v -n -m 2 > /dev/null
+2026-03-19T09:10:50.719190Z,cowrie.command.input,206.189.123.252,,,uname -m 2 > /dev/null
+2026-03-19T09:10:50.720580Z,cowrie.command.input,206.189.123.252,,,cat /proc/uptime 2 > /dev/null | cut -d. -f1
+2026-03-19T09:10:51.011964Z,cowrie.log.closed,206.189.123.252,,,
+2026-03-19T09:10:51.278346Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:11:33.666904Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:11:33.693159Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:11:33.824131Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:11:34.483175Z,cowrie.login.success,206.189.123.252,root,111111,
+2026-03-19T09:11:34.916006Z,cowrie.session.params,206.189.123.252,,,
+2026-03-19T09:11:34.916740Z,cowrie.command.input,206.189.123.252,,,"export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH; uname=$(uname -s -v -n -m 2>/dev/null); arch=$(uname -m 2>/dev/null); uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1); cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c ""^processor"" /proc/cpuinfo 2>/dev/null) | head -1); cpu_model=$( (grep -m1 -E ""model name|Hardware"" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"""",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' ); gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50); cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1); ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1); last_output=$(last 2>/dev/null | head -n 10); echo ""UNAME:$uname""; echo ""ARCH:$arch""; echo ""UPTIME:$uptime""; echo ""CPUS:$cpus""; echo ""CPU_MODEL:$cpu_model""; echo ""GPU:$gpu_info""; echo ""CAT_HELP:$cat_help""; echo ""LS_HELP:$ls_help""; echo ""LAST:$last_output"""
+2026-03-19T09:11:34.917632Z,cowrie.command.input,206.189.123.252,,,uname -s -v -n -m 2 > /dev/null
+2026-03-19T09:11:34.918582Z,cowrie.command.input,206.189.123.252,,,uname -m 2 > /dev/null
+2026-03-19T09:11:34.919525Z,cowrie.command.input,206.189.123.252,,,cat /proc/uptime 2 > /dev/null | cut -d. -f1
+2026-03-19T09:11:35.073878Z,cowrie.log.closed,206.189.123.252,,,
+2026-03-19T09:11:35.225692Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:12:12.490339Z,cowrie.session.connect,80.94.92.168,,,
+2026-03-19T09:12:12.493432Z,cowrie.client.version,80.94.92.168,,,
+2026-03-19T09:12:12.778754Z,cowrie.client.kex,80.94.92.168,,,
+2026-03-19T09:12:13.851133Z,cowrie.login.failed,80.94.92.168,solana,solana,
+2026-03-19T09:12:15.166614Z,cowrie.session.closed,80.94.92.168,,,
+2026-03-19T09:12:17.283469Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:12:17.293256Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:12:17.468977Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:12:18.248298Z,cowrie.login.success,206.189.123.252,admin,password,
+2026-03-19T09:12:18.588079Z,cowrie.session.params,206.189.123.252,,,
+2026-03-19T09:12:18.588841Z,cowrie.command.input,206.189.123.252,,,"export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH; uname=$(uname -s -v -n -m 2>/dev/null); arch=$(uname -m 2>/dev/null); uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1); cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c ""^processor"" /proc/cpuinfo 2>/dev/null) | head -1); cpu_model=$( (grep -m1 -E ""model name|Hardware"" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"""",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' ); gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50); cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1); ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1); last_output=$(last 2>/dev/null | head -n 10); echo ""UNAME:$uname""; echo ""ARCH:$arch""; echo ""UPTIME:$uptime""; echo ""CPUS:$cpus""; echo ""CPU_MODEL:$cpu_model""; echo ""GPU:$gpu_info""; echo ""CAT_HELP:$cat_help""; echo ""LS_HELP:$ls_help""; echo ""LAST:$last_output"""
+2026-03-19T09:12:18.589597Z,cowrie.command.input,206.189.123.252,,,uname -s -v -n -m 2 > /dev/null
+2026-03-19T09:12:18.590398Z,cowrie.command.input,206.189.123.252,,,uname -m 2 > /dev/null
+2026-03-19T09:12:18.591512Z,cowrie.command.input,206.189.123.252,,,cat /proc/uptime 2 > /dev/null | cut -d. -f1
+2026-03-19T09:12:18.904097Z,cowrie.log.closed,206.189.123.252,,,
+2026-03-19T09:12:19.061622Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:12:58.508560Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:12:58.581589Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:12:58.881003Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:12:59.406102Z,cowrie.login.failed,206.189.123.252,admin,123456789,
+2026-03-19T09:13:00.559334Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:13:28.081634Z,cowrie.session.connect,103.82.27.19,,,
+2026-03-19T09:13:28.082831Z,cowrie.client.version,103.82.27.19,,,
+2026-03-19T09:13:28.119320Z,cowrie.client.kex,103.82.27.19,,,
+2026-03-19T09:13:28.235860Z,cowrie.login.failed,103.82.27.19,root,toor,
+2026-03-19T09:13:29.274322Z,cowrie.session.closed,103.82.27.19,,,
+2026-03-19T09:13:40.028948Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:13:40.153766Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:13:40.297025Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:13:41.423432Z,cowrie.login.failed,206.189.123.252,admin,12345,
+2026-03-19T09:13:42.790821Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:14:21.450358Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:14:21.569602Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:14:21.720007Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:14:22.945074Z,cowrie.login.success,206.189.123.252,admin,12345678,
+2026-03-19T09:14:23.536627Z,cowrie.session.params,206.189.123.252,,,
+2026-03-19T09:14:23.537388Z,cowrie.command.input,206.189.123.252,,,"export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH; uname=$(uname -s -v -n -m 2>/dev/null); arch=$(uname -m 2>/dev/null); uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1); cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c ""^processor"" /proc/cpuinfo 2>/dev/null) | head -1); cpu_model=$( (grep -m1 -E ""model name|Hardware"" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"""",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' ); gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50); cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1); ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1); last_output=$(last 2>/dev/null | head -n 10); echo ""UNAME:$uname""; echo ""ARCH:$arch""; echo ""UPTIME:$uptime""; echo ""CPUS:$cpus""; echo ""CPU_MODEL:$cpu_model""; echo ""GPU:$gpu_info""; echo ""CAT_HELP:$cat_help""; echo ""LS_HELP:$ls_help""; echo ""LAST:$last_output"""
+2026-03-19T09:14:23.538405Z,cowrie.command.input,206.189.123.252,,,uname -s -v -n -m 2 > /dev/null
+2026-03-19T09:14:23.539832Z,cowrie.command.input,206.189.123.252,,,uname -m 2 > /dev/null
+2026-03-19T09:14:23.541370Z,cowrie.command.input,206.189.123.252,,,cat /proc/uptime 2 > /dev/null | cut -d. -f1
+2026-03-19T09:14:23.751884Z,cowrie.log.closed,206.189.123.252,,,
+2026-03-19T09:14:24.157413Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:15:01.723376Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:15:01.829840Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:15:02.020657Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:15:03.123330Z,cowrie.login.success,206.189.123.252,admin,qwerty,
+2026-03-19T09:15:04.005669Z,cowrie.session.params,206.189.123.252,,,
+2026-03-19T09:15:04.006595Z,cowrie.command.input,206.189.123.252,,,"export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH; uname=$(uname -s -v -n -m 2>/dev/null); arch=$(uname -m 2>/dev/null); uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1); cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c ""^processor"" /proc/cpuinfo 2>/dev/null) | head -1); cpu_model=$( (grep -m1 -E ""model name|Hardware"" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"""",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' ); gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50); cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1); ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1); last_output=$(last 2>/dev/null | head -n 10); echo ""UNAME:$uname""; echo ""ARCH:$arch""; echo ""UPTIME:$uptime""; echo ""CPUS:$cpus""; echo ""CPU_MODEL:$cpu_model""; echo ""GPU:$gpu_info""; echo ""CAT_HELP:$cat_help""; echo ""LS_HELP:$ls_help""; echo ""LAST:$last_output"""
+2026-03-19T09:15:04.007829Z,cowrie.command.input,206.189.123.252,,,uname -s -v -n -m 2 > /dev/null
+2026-03-19T09:15:04.009283Z,cowrie.command.input,206.189.123.252,,,uname -m 2 > /dev/null
+2026-03-19T09:15:04.010822Z,cowrie.command.input,206.189.123.252,,,cat /proc/uptime 2 > /dev/null | cut -d. -f1
+2026-03-19T09:15:04.322088Z,cowrie.log.closed,206.189.123.252,,,
+2026-03-19T09:15:04.792181Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:15:41.190154Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:15:41.410660Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:15:41.411830Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:15:42.319311Z,cowrie.login.success,206.189.123.252,admin,123123,
+2026-03-19T09:15:42.857834Z,cowrie.session.params,206.189.123.252,,,
+2026-03-19T09:15:42.858925Z,cowrie.command.input,206.189.123.252,,,"export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH; uname=$(uname -s -v -n -m 2>/dev/null); arch=$(uname -m 2>/dev/null); uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1); cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c ""^processor"" /proc/cpuinfo 2>/dev/null) | head -1); cpu_model=$( (grep -m1 -E ""model name|Hardware"" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"""",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' ); gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50); cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1); ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1); last_output=$(last 2>/dev/null | head -n 10); echo ""UNAME:$uname""; echo ""ARCH:$arch""; echo ""UPTIME:$uptime""; echo ""CPUS:$cpus""; echo ""CPU_MODEL:$cpu_model""; echo ""GPU:$gpu_info""; echo ""CAT_HELP:$cat_help""; echo ""LS_HELP:$ls_help""; echo ""LAST:$last_output"""
+2026-03-19T09:15:42.860203Z,cowrie.command.input,206.189.123.252,,,uname -s -v -n -m 2 > /dev/null
+2026-03-19T09:15:42.861680Z,cowrie.command.input,206.189.123.252,,,uname -m 2 > /dev/null
+2026-03-19T09:15:42.863142Z,cowrie.command.input,206.189.123.252,,,cat /proc/uptime 2 > /dev/null | cut -d. -f1
+2026-03-19T09:15:43.016486Z,cowrie.log.closed,206.189.123.252,,,
+2026-03-19T09:15:43.394739Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:16:19.189600Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:16:19.215339Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:16:19.387766Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:16:20.398535Z,cowrie.login.success,206.189.123.252,admin,111111,
+2026-03-19T09:16:21.191457Z,cowrie.session.params,206.189.123.252,,,
+2026-03-19T09:16:21.192383Z,cowrie.command.input,206.189.123.252,,,"export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH; uname=$(uname -s -v -n -m 2>/dev/null); arch=$(uname -m 2>/dev/null); uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1); cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c ""^processor"" /proc/cpuinfo 2>/dev/null) | head -1); cpu_model=$( (grep -m1 -E ""model name|Hardware"" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"""",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' ); gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50); cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1); ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1); last_output=$(last 2>/dev/null | head -n 10); echo ""UNAME:$uname""; echo ""ARCH:$arch""; echo ""UPTIME:$uptime""; echo ""CPUS:$cpus""; echo ""CPU_MODEL:$cpu_model""; echo ""GPU:$gpu_info""; echo ""CAT_HELP:$cat_help""; echo ""LS_HELP:$ls_help""; echo ""LAST:$last_output"""
+2026-03-19T09:16:21.193646Z,cowrie.command.input,206.189.123.252,,,uname -s -v -n -m 2 > /dev/null
+2026-03-19T09:16:21.195302Z,cowrie.command.input,206.189.123.252,,,uname -m 2 > /dev/null
+2026-03-19T09:16:21.196689Z,cowrie.command.input,206.189.123.252,,,cat /proc/uptime 2 > /dev/null | cut -d. -f1
+2026-03-19T09:16:21.433911Z,cowrie.log.closed,206.189.123.252,,,
+2026-03-19T09:16:21.776392Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:16:55.581773Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:16:55.613328Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:16:55.893853Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:16:56.841259Z,cowrie.login.failed,206.189.123.252,admin,1234567,
+2026-03-19T09:16:58.037938Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:17:26.743831Z,cowrie.session.connect,165.22.246.165,,,
+2026-03-19T09:17:26.744811Z,cowrie.client.version,165.22.246.165,,,
+2026-03-19T09:17:26.745999Z,cowrie.client.kex,165.22.246.165,,,
+2026-03-19T09:17:26.752520Z,cowrie.login.failed,165.22.246.165,root,undefinedVPS4VCPU16GBAMD,
+2026-03-19T09:17:27.756347Z,cowrie.session.closed,165.22.246.165,,,
+2026-03-19T09:17:32.248542Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:17:32.249872Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:17:32.400483Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:17:32.969755Z,cowrie.login.success,206.189.123.252,test,123456,
+2026-03-19T09:17:33.371003Z,cowrie.session.params,206.189.123.252,,,
+2026-03-19T09:17:33.372230Z,cowrie.command.input,206.189.123.252,,,"export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH; uname=$(uname -s -v -n -m 2>/dev/null); arch=$(uname -m 2>/dev/null); uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1); cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c ""^processor"" /proc/cpuinfo 2>/dev/null) | head -1); cpu_model=$( (grep -m1 -E ""model name|Hardware"" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"""",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' ); gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50); cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1); ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1); last_output=$(last 2>/dev/null | head -n 10); echo ""UNAME:$uname""; echo ""ARCH:$arch""; echo ""UPTIME:$uptime""; echo ""CPUS:$cpus""; echo ""CPU_MODEL:$cpu_model""; echo ""GPU:$gpu_info""; echo ""CAT_HELP:$cat_help""; echo ""LS_HELP:$ls_help""; echo ""LAST:$last_output"""
+2026-03-19T09:17:33.373567Z,cowrie.command.input,206.189.123.252,,,uname -s -v -n -m 2 > /dev/null
+2026-03-19T09:17:33.375435Z,cowrie.command.input,206.189.123.252,,,uname -m 2 > /dev/null
+2026-03-19T09:17:33.376994Z,cowrie.command.input,206.189.123.252,,,cat /proc/uptime 2 > /dev/null | cut -d. -f1
+2026-03-19T09:17:33.581545Z,cowrie.log.closed,206.189.123.252,,,
+2026-03-19T09:17:33.753851Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:18:09.556624Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:18:09.710582Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:18:09.711846Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:18:10.802366Z,cowrie.login.success,206.189.123.252,test,password,
+2026-03-19T09:18:11.345524Z,cowrie.session.params,206.189.123.252,,,
+2026-03-19T09:18:11.346330Z,cowrie.command.input,206.189.123.252,,,"export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH; uname=$(uname -s -v -n -m 2>/dev/null); arch=$(uname -m 2>/dev/null); uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1); cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c ""^processor"" /proc/cpuinfo 2>/dev/null) | head -1); cpu_model=$( (grep -m1 -E ""model name|Hardware"" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"""",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' ); gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50); cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1); ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1); last_output=$(last 2>/dev/null | head -n 10); echo ""UNAME:$uname""; echo ""ARCH:$arch""; echo ""UPTIME:$uptime""; echo ""CPUS:$cpus""; echo ""CPU_MODEL:$cpu_model""; echo ""GPU:$gpu_info""; echo ""CAT_HELP:$cat_help""; echo ""LS_HELP:$ls_help""; echo ""LAST:$last_output"""
+2026-03-19T09:18:11.347412Z,cowrie.command.input,206.189.123.252,,,uname -s -v -n -m 2 > /dev/null
+2026-03-19T09:18:11.348820Z,cowrie.command.input,206.189.123.252,,,uname -m 2 > /dev/null
+2026-03-19T09:18:11.350095Z,cowrie.command.input,206.189.123.252,,,cat /proc/uptime 2 > /dev/null | cut -d. -f1
+2026-03-19T09:18:11.660006Z,cowrie.log.closed,206.189.123.252,,,
+2026-03-19T09:18:11.925238Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:18:46.737291Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:18:46.775463Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:18:46.921775Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:18:47.690050Z,cowrie.login.failed,206.189.123.252,test,123456789,
+2026-03-19T09:18:48.849776Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:19:25.483296Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:19:25.484559Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:19:25.635330Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:19:26.091410Z,cowrie.login.failed,206.189.123.252,test,12345,
+2026-03-19T09:19:27.276146Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:20:06.068127Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:20:06.080005Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:20:06.238613Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:20:07.543991Z,cowrie.login.success,206.189.123.252,test,12345678,
+2026-03-19T09:20:08.158978Z,cowrie.session.params,206.189.123.252,,,
+2026-03-19T09:20:08.159945Z,cowrie.command.input,206.189.123.252,,,"export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH; uname=$(uname -s -v -n -m 2>/dev/null); arch=$(uname -m 2>/dev/null); uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1); cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c ""^processor"" /proc/cpuinfo 2>/dev/null) | head -1); cpu_model=$( (grep -m1 -E ""model name|Hardware"" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"""",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' ); gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50); cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1); ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1); last_output=$(last 2>/dev/null | head -n 10); echo ""UNAME:$uname""; echo ""ARCH:$arch""; echo ""UPTIME:$uptime""; echo ""CPUS:$cpus""; echo ""CPU_MODEL:$cpu_model""; echo ""GPU:$gpu_info""; echo ""CAT_HELP:$cat_help""; echo ""LS_HELP:$ls_help""; echo ""LAST:$last_output"""
+2026-03-19T09:20:08.161139Z,cowrie.command.input,206.189.123.252,,,uname -s -v -n -m 2 > /dev/null
+2026-03-19T09:20:08.162584Z,cowrie.command.input,206.189.123.252,,,uname -m 2 > /dev/null
+2026-03-19T09:20:08.164090Z,cowrie.command.input,206.189.123.252,,,cat /proc/uptime 2 > /dev/null | cut -d. -f1
+2026-03-19T09:20:08.405390Z,cowrie.log.closed,206.189.123.252,,,
+2026-03-19T09:20:08.806373Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:20:49.388232Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:20:49.430166Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:20:49.564854Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:20:50.553831Z,cowrie.login.success,206.189.123.252,test,qwerty,
+2026-03-19T09:20:51.036425Z,cowrie.session.params,206.189.123.252,,,
+2026-03-19T09:20:51.037201Z,cowrie.command.input,206.189.123.252,,,"export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH; uname=$(uname -s -v -n -m 2>/dev/null); arch=$(uname -m 2>/dev/null); uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1); cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c ""^processor"" /proc/cpuinfo 2>/dev/null) | head -1); cpu_model=$( (grep -m1 -E ""model name|Hardware"" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"""",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' ); gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50); cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1); ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1); last_output=$(last 2>/dev/null | head -n 10); echo ""UNAME:$uname""; echo ""ARCH:$arch""; echo ""UPTIME:$uptime""; echo ""CPUS:$cpus""; echo ""CPU_MODEL:$cpu_model""; echo ""GPU:$gpu_info""; echo ""CAT_HELP:$cat_help""; echo ""LS_HELP:$ls_help""; echo ""LAST:$last_output"""
+2026-03-19T09:20:51.038056Z,cowrie.command.input,206.189.123.252,,,uname -s -v -n -m 2 > /dev/null
+2026-03-19T09:20:51.039188Z,cowrie.command.input,206.189.123.252,,,uname -m 2 > /dev/null
+2026-03-19T09:20:51.040172Z,cowrie.command.input,206.189.123.252,,,cat /proc/uptime 2 > /dev/null | cut -d. -f1
+2026-03-19T09:20:51.279992Z,cowrie.log.closed,206.189.123.252,,,
+2026-03-19T09:20:51.735660Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:21:27.403867Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:21:27.515250Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:21:27.635900Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:21:28.701217Z,cowrie.login.success,206.189.123.252,test,123123,
+2026-03-19T09:21:29.367960Z,cowrie.session.params,206.189.123.252,,,
+2026-03-19T09:21:29.368833Z,cowrie.command.input,206.189.123.252,,,"export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH; uname=$(uname -s -v -n -m 2>/dev/null); arch=$(uname -m 2>/dev/null); uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1); cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c ""^processor"" /proc/cpuinfo 2>/dev/null) | head -1); cpu_model=$( (grep -m1 -E ""model name|Hardware"" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"""",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' ); gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50); cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1); ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1); last_output=$(last 2>/dev/null | head -n 10); echo ""UNAME:$uname""; echo ""ARCH:$arch""; echo ""UPTIME:$uptime""; echo ""CPUS:$cpus""; echo ""CPU_MODEL:$cpu_model""; echo ""GPU:$gpu_info""; echo ""CAT_HELP:$cat_help""; echo ""LS_HELP:$ls_help""; echo ""LAST:$last_output"""
+2026-03-19T09:21:29.369617Z,cowrie.command.input,206.189.123.252,,,uname -s -v -n -m 2 > /dev/null
+2026-03-19T09:21:29.370830Z,cowrie.command.input,206.189.123.252,,,uname -m 2 > /dev/null
+2026-03-19T09:21:29.372063Z,cowrie.command.input,206.189.123.252,,,cat /proc/uptime 2 > /dev/null | cut -d. -f1
+2026-03-19T09:21:29.553662Z,cowrie.log.closed,206.189.123.252,,,
+2026-03-19T09:21:29.725552Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:22:04.360159Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:22:04.433706Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:22:04.759428Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:22:05.553375Z,cowrie.login.success,206.189.123.252,test,111111,
+2026-03-19T09:22:06.165795Z,cowrie.session.params,206.189.123.252,,,
+2026-03-19T09:22:06.166827Z,cowrie.command.input,206.189.123.252,,,"export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH; uname=$(uname -s -v -n -m 2>/dev/null); arch=$(uname -m 2>/dev/null); uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1); cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c ""^processor"" /proc/cpuinfo 2>/dev/null) | head -1); cpu_model=$( (grep -m1 -E ""model name|Hardware"" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"""",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' ); gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50); cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1); ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1); last_output=$(last 2>/dev/null | head -n 10); echo ""UNAME:$uname""; echo ""ARCH:$arch""; echo ""UPTIME:$uptime""; echo ""CPUS:$cpus""; echo ""CPU_MODEL:$cpu_model""; echo ""GPU:$gpu_info""; echo ""CAT_HELP:$cat_help""; echo ""LS_HELP:$ls_help""; echo ""LAST:$last_output"""
+2026-03-19T09:22:06.168016Z,cowrie.command.input,206.189.123.252,,,uname -s -v -n -m 2 > /dev/null
+2026-03-19T09:22:06.169497Z,cowrie.command.input,206.189.123.252,,,uname -m 2 > /dev/null
+2026-03-19T09:22:06.171071Z,cowrie.command.input,206.189.123.252,,,cat /proc/uptime 2 > /dev/null | cut -d. -f1
+2026-03-19T09:22:06.333614Z,cowrie.log.closed,206.189.123.252,,,
+2026-03-19T09:22:06.496332Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:22:41.071467Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:22:41.315434Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:22:41.316323Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:22:42.095476Z,cowrie.login.success,206.189.123.252,user,123456,
+2026-03-19T09:22:42.655230Z,cowrie.session.params,206.189.123.252,,,
+2026-03-19T09:22:42.656018Z,cowrie.command.input,206.189.123.252,,,"export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH; uname=$(uname -s -v -n -m 2>/dev/null); arch=$(uname -m 2>/dev/null); uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1); cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c ""^processor"" /proc/cpuinfo 2>/dev/null) | head -1); cpu_model=$( (grep -m1 -E ""model name|Hardware"" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"""",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' ); gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50); cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1); ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1); last_output=$(last 2>/dev/null | head -n 10); echo ""UNAME:$uname""; echo ""ARCH:$arch""; echo ""UPTIME:$uptime""; echo ""CPUS:$cpus""; echo ""CPU_MODEL:$cpu_model""; echo ""GPU:$gpu_info""; echo ""CAT_HELP:$cat_help""; echo ""LS_HELP:$ls_help""; echo ""LAST:$last_output"""
+2026-03-19T09:22:42.656854Z,cowrie.command.input,206.189.123.252,,,uname -s -v -n -m 2 > /dev/null
+2026-03-19T09:22:42.657991Z,cowrie.command.input,206.189.123.252,,,uname -m 2 > /dev/null
+2026-03-19T09:22:42.659105Z,cowrie.command.input,206.189.123.252,,,cat /proc/uptime 2 > /dev/null | cut -d. -f1
+2026-03-19T09:22:42.812726Z,cowrie.log.closed,206.189.123.252,,,
+2026-03-19T09:22:42.965086Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:23:17.917789Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:23:17.925038Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:23:18.070543Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:23:18.779426Z,cowrie.login.success,206.189.123.252,user,password,
+2026-03-19T09:23:19.194689Z,cowrie.session.params,206.189.123.252,,,
+2026-03-19T09:23:19.195640Z,cowrie.command.input,206.189.123.252,,,"export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH; uname=$(uname -s -v -n -m 2>/dev/null); arch=$(uname -m 2>/dev/null); uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1); cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c ""^processor"" /proc/cpuinfo 2>/dev/null) | head -1); cpu_model=$( (grep -m1 -E ""model name|Hardware"" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"""",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' ); gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50); cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1); ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1); last_output=$(last 2>/dev/null | head -n 10); echo ""UNAME:$uname""; echo ""ARCH:$arch""; echo ""UPTIME:$uptime""; echo ""CPUS:$cpus""; echo ""CPU_MODEL:$cpu_model""; echo ""GPU:$gpu_info""; echo ""CAT_HELP:$cat_help""; echo ""LS_HELP:$ls_help""; echo ""LAST:$last_output"""
+2026-03-19T09:23:19.196699Z,cowrie.command.input,206.189.123.252,,,uname -s -v -n -m 2 > /dev/null
+2026-03-19T09:23:19.197989Z,cowrie.command.input,206.189.123.252,,,uname -m 2 > /dev/null
+2026-03-19T09:23:19.199397Z,cowrie.command.input,206.189.123.252,,,cat /proc/uptime 2 > /dev/null | cut -d. -f1
+2026-03-19T09:23:19.355566Z,cowrie.log.closed,206.189.123.252,,,
+2026-03-19T09:23:19.509596Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:23:54.312897Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:23:54.364941Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:23:54.493199Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:23:55.088512Z,cowrie.login.failed,206.189.123.252,user,123456789,
+2026-03-19T09:23:56.242325Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:24:30.423289Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:24:30.424388Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:24:30.575132Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:24:31.129656Z,cowrie.login.failed,206.189.123.252,user,12345,
+2026-03-19T09:24:32.282530Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:25:08.133056Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:25:08.152291Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:25:08.449226Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:25:08.992151Z,cowrie.login.success,206.189.123.252,user,12345678,
+2026-03-19T09:25:09.340414Z,cowrie.session.params,206.189.123.252,,,
+2026-03-19T09:25:09.341468Z,cowrie.command.input,206.189.123.252,,,"export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH; uname=$(uname -s -v -n -m 2>/dev/null); arch=$(uname -m 2>/dev/null); uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1); cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c ""^processor"" /proc/cpuinfo 2>/dev/null) | head -1); cpu_model=$( (grep -m1 -E ""model name|Hardware"" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"""",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' ); gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50); cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1); ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1); last_output=$(last 2>/dev/null | head -n 10); echo ""UNAME:$uname""; echo ""ARCH:$arch""; echo ""UPTIME:$uptime""; echo ""CPUS:$cpus""; echo ""CPU_MODEL:$cpu_model""; echo ""GPU:$gpu_info""; echo ""CAT_HELP:$cat_help""; echo ""LS_HELP:$ls_help""; echo ""LAST:$last_output"""
+2026-03-19T09:25:09.342727Z,cowrie.command.input,206.189.123.252,,,uname -s -v -n -m 2 > /dev/null
+2026-03-19T09:25:09.344252Z,cowrie.command.input,206.189.123.252,,,uname -m 2 > /dev/null
+2026-03-19T09:25:09.345707Z,cowrie.command.input,206.189.123.252,,,cat /proc/uptime 2 > /dev/null | cut -d. -f1
+2026-03-19T09:25:09.587198Z,cowrie.log.closed,206.189.123.252,,,
+2026-03-19T09:25:09.804857Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:25:45.237266Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:25:45.294016Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:25:45.455145Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:25:46.400072Z,cowrie.login.success,206.189.123.252,user,qwerty,
+2026-03-19T09:25:46.941670Z,cowrie.session.params,206.189.123.252,,,
+2026-03-19T09:25:46.942362Z,cowrie.command.input,206.189.123.252,,,"export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH; uname=$(uname -s -v -n -m 2>/dev/null); arch=$(uname -m 2>/dev/null); uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1); cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c ""^processor"" /proc/cpuinfo 2>/dev/null) | head -1); cpu_model=$( (grep -m1 -E ""model name|Hardware"" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"""",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' ); gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50); cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1); ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1); last_output=$(last 2>/dev/null | head -n 10); echo ""UNAME:$uname""; echo ""ARCH:$arch""; echo ""UPTIME:$uptime""; echo ""CPUS:$cpus""; echo ""CPU_MODEL:$cpu_model""; echo ""GPU:$gpu_info""; echo ""CAT_HELP:$cat_help""; echo ""LS_HELP:$ls_help""; echo ""LAST:$last_output"""
+2026-03-19T09:25:46.943178Z,cowrie.command.input,206.189.123.252,,,uname -s -v -n -m 2 > /dev/null
+2026-03-19T09:25:46.944257Z,cowrie.command.input,206.189.123.252,,,uname -m 2 > /dev/null
+2026-03-19T09:25:46.945273Z,cowrie.command.input,206.189.123.252,,,cat /proc/uptime 2 > /dev/null | cut -d. -f1
+2026-03-19T09:25:47.211226Z,cowrie.log.closed,206.189.123.252,,,
+2026-03-19T09:25:47.422159Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:26:24.144047Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:26:24.232172Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:26:24.357506Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:26:25.404713Z,cowrie.login.success,206.189.123.252,user,123123,
+2026-03-19T09:26:25.938085Z,cowrie.session.params,206.189.123.252,,,
+2026-03-19T09:26:25.938865Z,cowrie.command.input,206.189.123.252,,,"export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH; uname=$(uname -s -v -n -m 2>/dev/null); arch=$(uname -m 2>/dev/null); uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1); cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c ""^processor"" /proc/cpuinfo 2>/dev/null) | head -1); cpu_model=$( (grep -m1 -E ""model name|Hardware"" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"""",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' ); gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50); cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1); ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1); last_output=$(last 2>/dev/null | head -n 10); echo ""UNAME:$uname""; echo ""ARCH:$arch""; echo ""UPTIME:$uptime""; echo ""CPUS:$cpus""; echo ""CPU_MODEL:$cpu_model""; echo ""GPU:$gpu_info""; echo ""CAT_HELP:$cat_help""; echo ""LS_HELP:$ls_help""; echo ""LAST:$last_output"""
+2026-03-19T09:26:25.939717Z,cowrie.command.input,206.189.123.252,,,uname -s -v -n -m 2 > /dev/null
+2026-03-19T09:26:25.940758Z,cowrie.command.input,206.189.123.252,,,uname -m 2 > /dev/null
+2026-03-19T09:26:25.941738Z,cowrie.command.input,206.189.123.252,,,cat /proc/uptime 2 > /dev/null | cut -d. -f1
+2026-03-19T09:26:26.094057Z,cowrie.log.closed,206.189.123.252,,,
+2026-03-19T09:26:26.404489Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:27:04.832267Z,cowrie.session.connect,206.189.123.252,,,
+2026-03-19T09:27:04.978127Z,cowrie.client.version,206.189.123.252,,,
+2026-03-19T09:27:05.121371Z,cowrie.client.kex,206.189.123.252,,,
+2026-03-19T09:27:06.244099Z,cowrie.login.success,206.189.123.252,user,111111,
+2026-03-19T09:27:06.753391Z,cowrie.session.params,206.189.123.252,,,
+2026-03-19T09:27:06.754342Z,cowrie.command.input,206.189.123.252,,,"export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH; uname=$(uname -s -v -n -m 2>/dev/null); arch=$(uname -m 2>/dev/null); uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1); cpus=$( (nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || grep -c ""^processor"" /proc/cpuinfo 2>/dev/null) | head -1); cpu_model=$( (grep -m1 -E ""model name|Hardware"" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"""",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' ); gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50); cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1); ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1); last_output=$(last 2>/dev/null | head -n 10); echo ""UNAME:$uname""; echo ""ARCH:$arch""; echo ""UPTIME:$uptime""; echo ""CPUS:$cpus""; echo ""CPU_MODEL:$cpu_model""; echo ""GPU:$gpu_info""; echo ""CAT_HELP:$cat_help""; echo ""LS_HELP:$ls_help""; echo ""LAST:$last_output"""
+2026-03-19T09:27:06.755791Z,cowrie.command.input,206.189.123.252,,,uname -s -v -n -m 2 > /dev/null
+2026-03-19T09:27:06.757369Z,cowrie.command.input,206.189.123.252,,,uname -m 2 > /dev/null
+2026-03-19T09:27:06.758961Z,cowrie.command.input,206.189.123.252,,,cat /proc/uptime 2 > /dev/null | cut -d. -f1
+2026-03-19T09:27:07.165466Z,cowrie.log.closed,206.189.123.252,,,
+2026-03-19T09:27:07.419420Z,cowrie.session.closed,206.189.123.252,,,
+2026-03-19T09:32:46.998287Z,cowrie.session.connect,165.22.246.165,,,
+2026-03-19T09:32:47.000841Z,cowrie.client.version,165.22.246.165,,,
+2026-03-19T09:32:47.002559Z,cowrie.client.kex,165.22.246.165,,,
+2026-03-19T09:32:47.014482Z,cowrie.login.failed,165.22.246.165,root,undefinedVPS4VCPU8GBAMD,
+2026-03-19T09:32:48.019878Z,cowrie.session.closed,165.22.246.165,,,
+2026-03-19T09:36:11.010533Z,cowrie.session.connect,2.57.122.191,,,
+2026-03-19T09:36:11.012003Z,cowrie.client.version,2.57.122.191,,,
+2026-03-19T09:36:11.276184Z,cowrie.client.kex,2.57.122.191,,,
+2026-03-19T09:36:12.368193Z,cowrie.session.closed,2.57.122.191,,,
+2026-03-19T09:46:21.888010Z,cowrie.session.connect,18.218.118.203,,,
+2026-03-19T09:46:21.888973Z,cowrie.client.version,18.218.118.203,,,
+2026-03-19T09:46:21.889995Z,cowrie.session.closed,18.218.118.203,,,
+2026-03-19T09:46:39.877482Z,cowrie.session.connect,18.218.118.203,,,
+2026-03-19T09:46:39.878491Z,cowrie.client.version,18.218.118.203,,,
+2026-03-19T09:46:39.879476Z,cowrie.session.closed,18.218.118.203,,,
+2026-03-19T09:46:40.747232Z,cowrie.session.connect,18.218.118.203,,,
+2026-03-19T09:46:40.748513Z,cowrie.client.version,18.218.118.203,,,
+2026-03-19T09:46:40.749703Z,cowrie.session.closed,18.218.118.203,,,
+2026-03-19T09:47:59.443927Z,cowrie.session.connect,165.22.246.165,,,
+2026-03-19T09:47:59.445130Z,cowrie.client.version,165.22.246.165,,,
+2026-03-19T09:47:59.446611Z,cowrie.client.kex,165.22.246.165,,,
+2026-03-19T09:47:59.453798Z,cowrie.login.failed,165.22.246.165,root,ZENNIXKY#8VCPU32GBAMD,
+2026-03-19T09:48:00.457830Z,cowrie.session.closed,165.22.246.165,,,
+2026-03-19T09:51:16.391178Z,cowrie.session.connect,103.82.27.19,,,
+2026-03-19T09:51:16.392232Z,cowrie.client.version,103.82.27.19,,,
+2026-03-19T09:51:16.448578Z,cowrie.client.kex,103.82.27.19,,,
+2026-03-19T09:51:16.623604Z,cowrie.login.failed,103.82.27.19,root,michael,
+2026-03-19T09:51:17.682779Z,cowrie.session.closed,103.82.27.19,,,
+2026-03-19T09:54:30.266121Z,cowrie.session.connect,198.235.24.177,,,
+2026-03-19T09:54:31.520288Z,cowrie.client.version,198.235.24.177,,,
+2026-03-19T09:54:32.642050Z,cowrie.client.kex,198.235.24.177,,,
+2026-03-19T09:54:39.103037Z,cowrie.session.closed,198.235.24.177,,,
