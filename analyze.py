@@ -36,15 +36,19 @@ plt.close()
 
 def clean_command(cmd):
     if pd.isna(cmd):
-        return "unknown"
+        return None   # ❗ not "unknown"
 
-    # take only first part
+    # take first command
     cmd = cmd.split(";")[0]
 
-    # limit length
-    return cmd[:40]
+    return cmd.strip()
 
-df['clean_command'] = df['command'].apply(clean_command)
+def clean_command(cmd):
+    if pd.isna(cmd):
+        return None
+
+    # only first word (best)
+    return cmd.split(" ")[0]
 
 top_commands = df['clean_command'].value_counts().head(15)
 
