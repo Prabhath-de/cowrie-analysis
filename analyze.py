@@ -4,7 +4,7 @@ import os
 
 CSV_DIR = "csv/"
 IMG_DIR = "images/"
-TOP_N = 5   # change to 10 if needed
+TOP_N = 10   # ✅ now Top 10
 
 os.makedirs(IMG_DIR, exist_ok=True)
 
@@ -55,7 +55,7 @@ def plot_timeline():
     # count per hour
     hourly = df["hour"].value_counts().sort_index()
 
-    # ensure full 24 hours (0–23)
+    # ensure full 24 hours
     full_hours = pd.Series(0, index=range(24))
     hourly = full_hours.add(hourly, fill_value=0)
 
