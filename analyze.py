@@ -115,5 +115,39 @@ try:
 except Exception as e:
     print("❌ countries chart error:", e)
 
+# ---------- TIMELINE (24 HOURS) ----------
+def plot_timeline():
+    df = pd.read_csv("csv/all_logs.csv")
+
+    # convert timestamp
+    df["timestamp"] = pd.to_datetime(df["timestamp"], errors='coerce')
+
+    # extract hour
+    df["hour"] = df["timestamp"].dt.hour
+
+    # count attacks per hour
+    hourly = df["hour"].value_counts().sort_index()
+
+    # ensure 24 hours (0–23)
+    full_hours = pd.Series(0, index=range(24))
+    hourly = full_hours.add(hourly, fill_value=0)
+
+    # plot
+    plt.figure(figsize=(12, 6))
+    plt.bar(hourly.index, hourly.values)
+
+    plt.xlabel("Hour of Day (0–23)")
+    plt.ylabel("Number of Attacks")
+    plt.title("Attack Timeline (24 Hours)")
+
+    plt.xticks(range(24))
+    plt.grid(axis="y", linestyle="--", alpha=0.5)
+
+    plt.tight_layout()
+    plt.savefig("images/timeline.png", dpi=300)
+    plt.close()
+
+plot_timeline()
+
 
 print("✅ All charts generated successfully!")
