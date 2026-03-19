@@ -1,5 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import textwrap
+
+# ---------- FIX: disable math parsing ----------
+plt.rcParams['text.usetex'] = False
 
 # ---------- GLOBAL STYLE ----------
 plt.style.use('default')
@@ -15,7 +19,7 @@ def setup_plot(title, xlabel="", ylabel=""):
 df = pd.read_csv("csv/all_logs.csv")
 
 # ---------- TIMELINE ----------
-df['timestamp'] = pd.to_datetime(df['timestamp'])
+df['timestamp'] = pd.to_datetime(df['timestamp'], errors='coerce')
 df['hour'] = df['timestamp'].dt.hour
 
 timeline = df['hour'].value_counts().sort_index()
@@ -28,13 +32,20 @@ plt.savefig("images/timeline.png")
 plt.close()
 
 
-# ---------- TOP COMMANDS (FIXED) ----------
+# ---------- TOP COMMANDS (FINAL FIXED) ----------
 top_commands = df['command'].value_counts().head(15)[::-1]
 
 setup_plot("Top Commands Used by Attackers", "", "Count")
 
+# 🔥 escape $ and wrap text
+labels = [cmd.replace('$', r'\$') for cmd in top_commands.index]
+labels = [textwrap.fill(cmd, 40) for cmd in labels]
+
 plt.barh(range(len(top_commands)), top_commands.values, color='#2E6F9E')
-plt.yticks(range(len(top_commands)), top_commands.index)
+plt.yticks(range(len(labels)), labels)
+
+# 🔥 fix left spacing
+plt.subplots_adjust(left=0.4)
 
 plt.tight_layout()
 plt.savefig("images/commands.png")
@@ -81,4 +92,4 @@ plt.savefig("images/countries.png")
 plt.close()
 
 
-print("✅ All charts styled perfectly!")
+print("✅ All charts generated successfully!")
