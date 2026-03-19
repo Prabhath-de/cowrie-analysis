@@ -12,7 +12,7 @@ def extract_command(cmd):
     if not cmd:
         return None
 
-    cmd = cmd.strip()
+    cmd = cmd.strip().lower()
 
     # remove redirection noise
     cmd = cmd.replace(">/dev/null", "")
@@ -20,17 +20,31 @@ def extract_command(cmd):
     # take first command before ;
     cmd = cmd.split(";")[0]
 
-    # remove path (e.g. /bin/uname → uname)
-    cmd = cmd.split("/")[-1]
+    # remove quotes
+    cmd = cmd.replace('"', '').replace("'", "")
 
-    # take main command only
-    cmd = cmd.split(" ")[0]
-
-    # ignore very short noise
-    if len(cmd) < 2:
+    # split into parts
+    parts = cmd.split()
+    if len(parts) == 0:
         return None
 
-    return cmd.lower()
+    # get main command
+    main_cmd = parts[0]
+
+    # remove path (e.g. /bin/uname → uname)
+    main_cmd = main_cmd.split("/")[-1]
+
+    # ❌ filter invalid / noise commands
+    invalid = ["", "null", "bin:$path", "$path", "sh", "bash"]
+
+    if main_cmd in invalid:
+        return None
+
+    # ❌ skip weird patterns
+    if ":" in main_cmd or "$" in main_cmd:
+        return None
+
+    return main_cmd
 
 
 # ---------- READ LOG FILE ----------
@@ -73,7 +87,7 @@ os.makedirs("csv", exist_ok=True)
 df.to_csv("csv/all_logs.csv", index=False)
 
 
-# ---------- GENERATE CLEAN STATS (FIXED) ----------
+# ---------- GENERATE CLEAN STATS ----------
 
 # Commands
 commands = df['command'].value_counts()
