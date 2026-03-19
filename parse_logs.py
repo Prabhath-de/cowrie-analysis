@@ -17,8 +17,10 @@ def extract_command(cmd):
     # remove redirection
     cmd = cmd.replace(">/dev/null", "")
 
-    # split multiple commands
-    cmd = cmd.split(";")[0]
+    # split multiple commands (;, &&, ||)
+    for sep in [";", "&&", "||"]:
+        if sep in cmd:
+            cmd = cmd.split(sep)[0]
 
     # remove quotes
     cmd = cmd.replace('"', '').replace("'", "")
@@ -30,20 +32,25 @@ def extract_command(cmd):
 
     main_cmd = parts[0]
 
-    # remove path (e.g. /bin/uname → uname)
+    # remove path (/bin/uname → uname)
     main_cmd = main_cmd.split("/")[-1]
 
-    # ❌ remove ONLY true garbage
-    invalid = ["", "null", "bin:$path", "$path"]
+    # ❌ remove only true garbage
+    invalid = ["", "null", "bin:$path", "$path", "export"]
 
     if main_cmd in invalid:
         return None
 
-    # ❌ remove only weird patterns (NOT all $)
+    # ❌ skip environment variables (e.g. $PATH)
     if main_cmd.startswith("$"):
         return None
 
+    # ❌ skip non-commands (numbers / weird)
+    if not main_cmd.isalpha():
+        return None
+
     return main_cmd
+
 
 # ---------- READ LOG FILE ----------
 with open(log_file) as f:
