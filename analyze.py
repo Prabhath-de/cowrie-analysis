@@ -4,31 +4,26 @@ import os
 
 CSV_DIR = "csv/"
 IMG_DIR = "images/"
-TOP_N = 10
+TOP_N = 5   # change to 10 if needed
 
 os.makedirs(IMG_DIR, exist_ok=True)
 
 
-# ---------- GENERIC BAR CHART FUNCTION ----------
+# ---------- GENERIC BAR CHART ----------
 def plot_barh(file, label, title, output):
     df = pd.read_csv(file)
 
-    # normalize column names (IMPORTANT FIX)
+    # normalize columns
     df.columns = df.columns.str.strip().str.lower()
 
-    # remove empty rows
     df = df.dropna()
-
-    # take top N
     df = df.head(TOP_N)
-
-    # reverse for horizontal chart
     df = df[::-1]
 
     plt.figure(figsize=(10, 6))
     plt.barh(df[label.lower()], df["count"])
 
-    # show values on bars
+    # values on bars
     for i, v in enumerate(df["count"]):
         plt.text(v + 2, i, str(v), va='center')
 
@@ -36,7 +31,6 @@ def plot_barh(file, label, title, output):
     plt.ylabel(label.capitalize())
     plt.title(title)
 
-    # grid
     plt.grid(axis="x", linestyle="--", alpha=0.5)
 
     # clean borders
@@ -45,6 +39,38 @@ def plot_barh(file, label, title, output):
 
     plt.tight_layout()
     plt.savefig(output, dpi=300)
+    plt.close()
+
+
+# ---------- TIMELINE (24 HOURS) ----------
+def plot_timeline():
+    df = pd.read_csv(f"{CSV_DIR}/all_logs.csv")
+
+    # convert timestamp
+    df["timestamp"] = pd.to_datetime(df["timestamp"], errors='coerce')
+
+    # extract hour
+    df["hour"] = df["timestamp"].dt.hour
+
+    # count per hour
+    hourly = df["hour"].value_counts().sort_index()
+
+    # ensure full 24 hours (0–23)
+    full_hours = pd.Series(0, index=range(24))
+    hourly = full_hours.add(hourly, fill_value=0)
+
+    plt.figure(figsize=(12, 6))
+    plt.bar(hourly.index, hourly.values)
+
+    plt.xlabel("Hour of Day (0–23)")
+    plt.ylabel("Number of Attacks")
+    plt.title("Attack Timeline (24 Hours)")
+
+    plt.xticks(range(24))
+    plt.grid(axis="y", linestyle="--", alpha=0.5)
+
+    plt.tight_layout()
+    plt.savefig(f"{IMG_DIR}/timeline.png", dpi=300)
     plt.close()
 
 
@@ -82,22 +108,20 @@ plot_barh(
     f"{IMG_DIR}/top_ips.png"
 )
 
-# ---------- COUNTRIES CHART ----------
+# ---------- COUNTRIES ----------
 try:
-    df_countries = pd.read_csv(f"{CSV_DIR}/countries.csv")
+    df_c = pd.read_csv(f"{CSV_DIR}/countries.csv")
 
-    # normalize columns
-    df_countries.columns = df_countries.columns.str.strip()
+    df_c.columns = df_c.columns.str.strip()
 
-    df_countries = df_countries.dropna()
-    df_countries = df_countries.head(TOP_N)
-    df_countries = df_countries[::-1]
+    df_c = df_c.dropna()
+    df_c = df_c.head(TOP_N)
+    df_c = df_c[::-1]
 
     plt.figure(figsize=(10, 6))
-    plt.barh(df_countries["Country"], df_countries["Count"])
+    plt.barh(df_c["Country"], df_c["Count"])
 
-    # show values
-    for i, v in enumerate(df_countries["Count"]):
+    for i, v in enumerate(df_c["Count"]):
         plt.text(v + 2, i, str(v), va='center')
 
     plt.xlabel("Count")
@@ -113,41 +137,10 @@ try:
     print("✅ countries.png generated")
 
 except Exception as e:
-    print("❌ countries chart error:", e)
+    print("❌ countries error:", e)
 
-# ---------- TIMELINE (24 HOURS) ----------
-def plot_timeline():
-    df = pd.read_csv("csv/all_logs.csv")
 
-    # convert timestamp
-    df["timestamp"] = pd.to_datetime(df["timestamp"], errors='coerce')
-
-    # extract hour
-    df["hour"] = df["timestamp"].dt.hour
-
-    # count attacks per hour
-    hourly = df["hour"].value_counts().sort_index()
-
-    # ensure 24 hours (0–23)
-    full_hours = pd.Series(0, index=range(24))
-    hourly = full_hours.add(hourly, fill_value=0)
-
-    # plot
-    plt.figure(figsize=(12, 6))
-    plt.bar(hourly.index, hourly.values)
-
-    plt.xlabel("Hour of Day (0–23)")
-    plt.ylabel("Number of Attacks")
-    plt.title("Attack Timeline (24 Hours)")
-
-    plt.xticks(range(24))
-    plt.grid(axis="y", linestyle="--", alpha=0.5)
-
-    plt.tight_layout()
-    plt.savefig("images/timeline.png", dpi=300)
-    plt.close()
-
+# ---------- TIMELINE ----------
 plot_timeline()
-
 
 print("✅ All charts generated successfully!")
