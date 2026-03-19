@@ -13,6 +13,9 @@ os.makedirs(IMG_DIR, exist_ok=True)
 def plot_barh(file, label, title, output):
     df = pd.read_csv(file)
 
+    # normalize column names (IMPORTANT FIX)
+    df.columns = df.columns.str.strip().str.lower()
+
     # remove empty rows
     df = df.dropna()
 
@@ -23,7 +26,7 @@ def plot_barh(file, label, title, output):
     df = df[::-1]
 
     plt.figure(figsize=(10, 6))
-    plt.barh(df[label], df["count"])
+    plt.barh(df[label.lower()], df["count"])
 
     # show values on bars
     for i, v in enumerate(df["count"]):
@@ -79,9 +82,12 @@ plot_barh(
     f"{IMG_DIR}/top_ips.png"
 )
 
-# ---------- COUNTRIES CHART (NEW FIX) ----------
+# ---------- COUNTRIES CHART ----------
 try:
     df_countries = pd.read_csv(f"{CSV_DIR}/countries.csv")
+
+    # normalize columns
+    df_countries.columns = df_countries.columns.str.strip()
 
     df_countries = df_countries.dropna()
     df_countries = df_countries.head(TOP_N)

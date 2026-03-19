@@ -1,3 +1,5 @@
 command,count
-uname,374
-cat,170
+null,510
+bin:$path,170
+uname,34
+hostname,1

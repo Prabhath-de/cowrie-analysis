@@ -1,42 +1,36 @@
 import json
 import pandas as pd
 import os
-import re
 
+# ---------- FILE PATH ----------
 log_file = "/home/cowrie/cowrie/var/log/cowrie/cowrie.json"
 
 data = []
 
 # ---------- CLEAN COMMAND FUNCTION ----------
-def clean_command(cmd):
+def extract_command(cmd):
     if not cmd:
         return None
 
-    cmd = cmd.strip().lower()
+    cmd = cmd.strip()
 
-    # remove everything after ;
+    # remove redirection noise
+    cmd = cmd.replace(">/dev/null", "")
+
+    # take first command before ;
     cmd = cmd.split(";")[0]
 
-    # remove variables ($...)
-    cmd = re.sub(r"\$[a-zA-Z_]+", "", cmd)
+    # remove path (e.g. /bin/uname → uname)
+    cmd = cmd.split("/")[-1]
 
-    # remove paths
-    cmd = cmd.replace("/bin/", "").replace("/usr/bin/", "")
-    cmd = cmd.replace("./", "")
-
-    # remove symbols
-    cmd = re.sub(r"[^a-z0-9_\- ]", "", cmd)
-
-    # get base command
+    # take main command only
     cmd = cmd.split(" ")[0]
 
-    # ignore useless commands
-    ignore = ["cd", "pwd", "clear", "export", "echo", "hostname"]
-
-    if cmd in ignore or cmd == "":
+    # ignore very short noise
+    if len(cmd) < 2:
         return None
 
-    return cmd
+    return cmd.lower()
 
 
 # ---------- READ LOG FILE ----------
@@ -44,33 +38,26 @@ with open(log_file) as f:
     for line in f:
         try:
             log = json.loads(line)
-            event = log.get("eventid")
 
-            # ---------------- LOGIN DATA ----------------
-            if event in ["cowrie.login.failed", "cowrie.login.success"]:
-                data.append({
-                    "timestamp": log.get("timestamp"),
-                    "src_ip": log.get("src_ip"),
-                    "username": log.get("username"),
-                    "password": log.get("password"),
-                    "command": None
-                })
+            # only command input events
+            if log.get("eventid") != "cowrie.command.input":
+                continue
 
-            # ---------------- COMMAND DATA ----------------
-            if event == "cowrie.command.input":
-                raw_cmd = log.get("input")
-                clean_cmd = clean_command(raw_cmd)
+            raw_cmd = log.get("input")
+            clean_cmd = extract_command(raw_cmd)
 
-                if not clean_cmd:
-                    continue
+            if not clean_cmd:
+                continue
 
-                data.append({
-                    "timestamp": log.get("timestamp"),
-                    "src_ip": log.get("src_ip"),
-                    "username": None,
-                    "password": None,
-                    "command": clean_cmd
-                })
+            entry = {
+                "timestamp": log.get("timestamp"),
+                "src_ip": log.get("src_ip"),
+                "username": log.get("username"),
+                "password": log.get("password"),
+                "command": clean_cmd
+            }
+
+            data.append(entry)
 
         except:
             continue
@@ -79,48 +66,63 @@ with open(log_file) as f:
 # ---------- CREATE DATAFRAME ----------
 df = pd.DataFrame(data)
 
+# ---------- CREATE FOLDER ----------
 os.makedirs("csv", exist_ok=True)
 
-# save full logs
+# ---------- SAVE MAIN LOG ----------
 df.to_csv("csv/all_logs.csv", index=False)
 
 
-# ---------- SAVE CLEAN STATS ----------
-def save_counts(column, filename):
-    counts = df[column].dropna().value_counts().reset_index()
-    counts.columns = [column, "count"]
-    counts.to_csv(f"csv/{filename}", index=False)
+# ---------- GENERATE CLEAN STATS (FIXED) ----------
 
-# ---------- COUNTRY ANALYSIS ----------
+# Commands
+commands = df['command'].value_counts()
+commands_df = commands.reset_index()
+commands_df.columns = ['command', 'count']
+commands_df.to_csv("csv/commands.csv", index=False)
+
+# Usernames
+usernames = df['username'].value_counts()
+usernames_df = usernames.reset_index()
+usernames_df.columns = ['username', 'count']
+usernames_df.to_csv("csv/usernames.csv", index=False)
+
+# Passwords
+passwords = df['password'].value_counts()
+passwords_df = passwords.reset_index()
+passwords_df.columns = ['password', 'count']
+passwords_df.to_csv("csv/passwords.csv", index=False)
+
+# Top IPs
+ips = df['src_ip'].value_counts()
+ips_df = ips.reset_index()
+ips_df.columns = ['src_ip', 'count']
+ips_df.to_csv("csv/top_ips.csv", index=False)
+
+
+# ---------- GEOIP COUNTRIES ----------
 try:
-    from geoip2.database import Reader
-    reader = Reader("/usr/share/GeoIP/GeoLite2-City.mmdb")
+    import geoip2.database
 
-    countries = {}
+    reader = geoip2.database.Reader("/usr/share/GeoIP/GeoLite2-City.mmdb")
 
-    for ip in df["src_ip"].dropna():
+    def get_country(ip):
         try:
-            response = reader.city(ip)
-            country = response.country.name
-
-            if country:
-                countries[country] = countries.get(country, 0) + 1
+            return reader.city(ip).country.name
         except:
-            continue
+            return "Unknown"
 
-    country_df = pd.DataFrame(countries.items(), columns=["Country", "Count"])
-    country_df = country_df.sort_values(by="Count", ascending=False)
+    df["country"] = df["src_ip"].apply(get_country)
 
-    country_df.to_csv("csv/countries.csv", index=False)
+    countries = df['country'].value_counts()
+    countries_df = countries.reset_index()
+    countries_df.columns = ['Country', 'Count']
+    countries_df.to_csv("csv/countries.csv", index=False)
 
-    print("✅ Countries data updated!")
+    print("✅ GeoIP countries generated")
 
 except Exception as e:
     print("⚠️ GeoIP not working:", e)
 
-save_counts("command", "commands.csv")
-save_counts("username", "usernames.csv")
-save_counts("password", "passwords.csv")
-save_counts("src_ip", "top_ips.csv")
 
 print("✅ Logs parsed (clean + structured)!")
