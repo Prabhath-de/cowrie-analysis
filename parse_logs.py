@@ -14,33 +14,31 @@ def extract_command(cmd):
 
     cmd = cmd.strip().lower()
 
-    # remove redirection noise
+    # remove redirection
     cmd = cmd.replace(">/dev/null", "")
 
-    # take first command before ;
+    # split multiple commands
     cmd = cmd.split(";")[0]
 
     # remove quotes
     cmd = cmd.replace('"', '').replace("'", "")
 
-    # split into parts
+    # split parts
     parts = cmd.split()
     if len(parts) == 0:
         return None
 
-    # get main command
     main_cmd = parts[0]
 
-    # remove path (e.g. /bin/uname → uname)
+    # remove path
     main_cmd = main_cmd.split("/")[-1]
 
-    # ❌ filter invalid / noise commands
+    # ❌ remove garbage commands
     invalid = ["", "null", "bin:$path", "$path", "sh", "bash"]
 
     if main_cmd in invalid:
         return None
 
-    # ❌ skip weird patterns
     if ":" in main_cmd or "$" in main_cmd:
         return None
 
@@ -52,26 +50,39 @@ with open(log_file) as f:
     for line in f:
         try:
             log = json.loads(line)
+            event = log.get("eventid")
 
-            # only command input events
-            if log.get("eventid") != "cowrie.command.input":
-                continue
+            # ---------- COMMAND EVENTS ----------
+            if event == "cowrie.command.input":
 
-            raw_cmd = log.get("input")
-            clean_cmd = extract_command(raw_cmd)
+                raw_cmd = log.get("input")
+                clean_cmd = extract_command(raw_cmd)
 
-            if not clean_cmd:
-                continue
+                if not clean_cmd:
+                    continue
 
-            entry = {
-                "timestamp": log.get("timestamp"),
-                "src_ip": log.get("src_ip"),
-                "username": log.get("username"),
-                "password": log.get("password"),
-                "command": clean_cmd
-            }
+                entry = {
+                    "timestamp": log.get("timestamp"),
+                    "src_ip": log.get("src_ip"),
+                    "username": log.get("username"),
+                    "password": log.get("password"),
+                    "command": clean_cmd
+                }
 
-            data.append(entry)
+                data.append(entry)
+
+            # ---------- LOGIN EVENTS ----------
+            elif event == "cowrie.login.failed" or event == "cowrie.login.success":
+
+                entry = {
+                    "timestamp": log.get("timestamp"),
+                    "src_ip": log.get("src_ip"),
+                    "username": log.get("username"),
+                    "password": log.get("password"),
+                    "command": None
+                }
+
+                data.append(entry)
 
         except:
             continue
@@ -90,25 +101,25 @@ df.to_csv("csv/all_logs.csv", index=False)
 # ---------- GENERATE CLEAN STATS ----------
 
 # Commands
-commands = df['command'].value_counts()
+commands = df['command'].dropna().value_counts()
 commands_df = commands.reset_index()
 commands_df.columns = ['command', 'count']
 commands_df.to_csv("csv/commands.csv", index=False)
 
 # Usernames
-usernames = df['username'].value_counts()
+usernames = df['username'].dropna().value_counts()
 usernames_df = usernames.reset_index()
 usernames_df.columns = ['username', 'count']
 usernames_df.to_csv("csv/usernames.csv", index=False)
 
 # Passwords
-passwords = df['password'].value_counts()
+passwords = df['password'].dropna().value_counts()
 passwords_df = passwords.reset_index()
 passwords_df.columns = ['password', 'count']
 passwords_df.to_csv("csv/passwords.csv", index=False)
 
 # Top IPs
-ips = df['src_ip'].value_counts()
+ips = df['src_ip'].dropna().value_counts()
 ips_df = ips.reset_index()
 ips_df.columns = ['src_ip', 'count']
 ips_df.to_csv("csv/top_ips.csv", index=False)
