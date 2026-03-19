@@ -29,28 +29,22 @@ plt.tight_layout(rect=[0,0,1,0.95])
 plt.savefig("images/timeline.png")
 plt.close()
 
-# ---------- CLEAN COMMAND FUNCTION (FINAL FIX) ----------
+# ---------- CLEAN COMMAND FUNCTION (KEEP FULL COMMANDS) ----------
 def clean_command(cmd):
     if pd.isna(cmd):
         return None
 
     cmd = cmd.strip()
 
-    # ❌ ignore useless spam
+    # ❌ remove useless spam
     if ">/dev/null" in cmd:
         return None
 
-    # take first command block
+    # keep only first command (before ;)
     cmd = cmd.split(";")[0]
 
-    # remove path but keep arguments
-    if "/" in cmd:
-        parts = cmd.split(" ")
-        parts[0] = parts[0].split("/")[-1]
-        cmd = " ".join(parts)
-
-    # limit long commands
-    return cmd[:50]
+    # limit length (important for readability)
+    return cmd[:60]
 
 # APPLY CLEANING
 df['clean_command'] = df['command'].apply(clean_command)
@@ -63,8 +57,9 @@ top_commands = df['clean_command'].value_counts().head(15)
 
 setup_plot("Top Commands Used by Attackers", "", "Count")
 
+# wrap long labels
 labels = [cmd.replace('$', r'\$') for cmd in top_commands.index]
-labels = [textwrap.fill(cmd, 25) for cmd in labels]
+labels = [textwrap.fill(cmd, 40) for cmd in labels]
 
 plt.barh(range(len(top_commands)), top_commands.values)
 plt.yticks(range(len(labels)), labels)
