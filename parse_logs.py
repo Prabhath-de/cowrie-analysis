@@ -91,6 +91,32 @@ def save_counts(column, filename):
     counts.columns = [column, "count"]
     counts.to_csv(f"csv/{filename}", index=False)
 
+# ---------- COUNTRY ANALYSIS ----------
+try:
+    from geoip2.database import Reader
+    reader = Reader("/usr/share/GeoIP/GeoLite2-City.mmdb")
+
+    countries = {}
+
+    for ip in df["src_ip"].dropna():
+        try:
+            response = reader.city(ip)
+            country = response.country.name
+
+            if country:
+                countries[country] = countries.get(country, 0) + 1
+        except:
+            continue
+
+    country_df = pd.DataFrame(countries.items(), columns=["Country", "Count"])
+    country_df = country_df.sort_values(by="Count", ascending=False)
+
+    country_df.to_csv("csv/countries.csv", index=False)
+
+    print("✅ Countries data updated!")
+
+except Exception as e:
+    print("⚠️ GeoIP not working:", e)
 
 save_counts("command", "commands.csv")
 save_counts("username", "usernames.csv")
