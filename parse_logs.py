@@ -30,20 +30,20 @@ def extract_command(cmd):
 
     main_cmd = parts[0]
 
-    # remove path
+    # remove path (e.g. /bin/uname → uname)
     main_cmd = main_cmd.split("/")[-1]
 
-    # ❌ remove garbage commands
-    invalid = ["", "null", "bin:$path", "$path", "sh", "bash"]
+    # ❌ remove ONLY true garbage
+    invalid = ["", "null", "bin:$path", "$path"]
 
     if main_cmd in invalid:
         return None
 
-    if ":" in main_cmd or "$" in main_cmd:
+    # ❌ remove only weird patterns (NOT all $)
+    if main_cmd.startswith("$"):
         return None
 
     return main_cmd
-
 
 # ---------- READ LOG FILE ----------
 with open(log_file) as f:
