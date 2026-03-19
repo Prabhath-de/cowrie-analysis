@@ -36,16 +36,17 @@ def clean_command(cmd):
 
     cmd = cmd.strip()
 
-    # remove path (e.g. /bin/uname → uname)
+    # remove paths
     cmd = cmd.split("/")[-1]
 
     # remove symbols
     cmd = cmd.replace(";", "")
 
-    # take only main command
-    cmd = cmd.split(" ")[0]
+    # remove redirections like 2>/dev/null
+    if ">" in cmd:
+        cmd = cmd.split(">")[0]
 
-    return cmd
+    return cmd.split(" ")[0]
 
 # APPLY FUNCTION 🔥
 df['clean_command'] = df['command'].apply(clean_command)
