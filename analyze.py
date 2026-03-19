@@ -23,7 +23,7 @@ def plot_barh(file, label, title, output):
     df = df[::-1]
 
     plt.figure(figsize=(10, 6))
-    bars = plt.barh(df[label], df["count"])
+    plt.barh(df[label], df["count"])
 
     # show values on bars
     for i, v in enumerate(df["count"]):
@@ -78,5 +78,36 @@ plot_barh(
     "Top Attacking IPs",
     f"{IMG_DIR}/top_ips.png"
 )
+
+# ---------- COUNTRIES CHART (NEW FIX) ----------
+try:
+    df_countries = pd.read_csv(f"{CSV_DIR}/countries.csv")
+
+    df_countries = df_countries.dropna()
+    df_countries = df_countries.head(TOP_N)
+    df_countries = df_countries[::-1]
+
+    plt.figure(figsize=(10, 6))
+    plt.barh(df_countries["Country"], df_countries["Count"])
+
+    # show values
+    for i, v in enumerate(df_countries["Count"]):
+        plt.text(v + 2, i, str(v), va='center')
+
+    plt.xlabel("Count")
+    plt.ylabel("Country")
+    plt.title("Top Attacking Countries")
+
+    plt.grid(axis="x", linestyle="--", alpha=0.5)
+
+    plt.tight_layout()
+    plt.savefig(f"{IMG_DIR}/countries.png", dpi=300)
+    plt.close()
+
+    print("✅ countries.png generated")
+
+except Exception as e:
+    print("❌ countries chart error:", e)
+
 
 print("✅ All charts generated successfully!")
