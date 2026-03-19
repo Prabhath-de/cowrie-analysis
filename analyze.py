@@ -2,10 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import textwrap
 
-# ---------- FIX: disable math parsing ----------
 plt.rcParams['text.usetex'] = False
-
-# ---------- GLOBAL STYLE ----------
 plt.style.use('default')
 
 def setup_plot(title, xlabel="", ylabel=""):
@@ -31,62 +28,34 @@ plt.tight_layout()
 plt.savefig("images/timeline.png")
 plt.close()
 
-
-# ---------- TOP COMMANDS (CLEANED) ----------
-
-def clean_command(cmd):
-    if pd.isna(cmd):
-        return None   # ❗ not "unknown"
-
-    # take first command
-    cmd = cmd.split(";")[0]
-
-    return cmd.strip()
+# ---------- TOP COMMANDS (FIXED) ----------
 
 def clean_command(cmd):
     if pd.isna(cmd):
         return None
+    return cmd.split(" ")[0]   # best clean
 
-    # only first word (best)
-    return cmd.split(" ")[0]
+# APPLY FUNCTION 🔥
+df['clean_command'] = df['command'].apply(clean_command)
+
+# REMOVE EMPTY
+df = df[df['clean_command'].notna()]
 
 top_commands = df['clean_command'].value_counts().head(15)
 
 setup_plot("Top Commands Used by Attackers", "", "Count")
 
-# 🔥 escape $ and wrap text
 labels = [cmd.replace('$', r'\$') for cmd in top_commands.index]
-labels = [textwrap.fill(cmd, 40) for cmd in labels]
-
-# 🔥 SINGLE plot only
-plt.barh(range(len(top_commands)), top_commands.values, color='#2E6F9E')
-plt.yticks(range(len(labels)), labels)
-
-# better spacing
-plt.subplots_adjust(left=0.4)
-
-plt.tight_layout()
-plt.savefig("images/commands.png")
-plt.close()
-
-
-
-
-
-# 🔥 escape $ and wrap text
-labels = [cmd.replace('$', r'\$') for cmd in top_commands.index]
-labels = [textwrap.fill(cmd, 40) for cmd in labels]
+labels = [textwrap.fill(cmd, 20) for cmd in labels]
 
 plt.barh(range(len(top_commands)), top_commands.values, color='#2E6F9E')
 plt.yticks(range(len(labels)), labels)
 
-# 🔥 fix left spacing
-plt.subplots_adjust(left=0.4)
+plt.subplots_adjust(left=0.3)
 
 plt.tight_layout()
 plt.savefig("images/commands.png")
 plt.close()
-
 
 # ---------- TOP IPs ----------
 top_ips = df['src_ip'].value_counts().head(15)
@@ -100,7 +69,6 @@ plt.tight_layout()
 plt.savefig("images/top_ips.png")
 plt.close()
 
-
 # ---------- TOP USERNAMES ----------
 top_usernames = df['username'].value_counts().head(15)
 
@@ -112,7 +80,6 @@ plt.xticks(range(len(top_usernames)), top_usernames.index, rotation=45, ha='righ
 plt.tight_layout()
 plt.savefig("images/usernames.png")
 plt.close()
-
 
 # ---------- COUNTRIES ----------
 countries_df = pd.read_csv("csv/countries.csv")
@@ -126,6 +93,5 @@ plt.xticks(range(len(top_countries)), top_countries['Country'], rotation=45, ha=
 plt.tight_layout()
 plt.savefig("images/countries.png")
 plt.close()
-
 
 print("✅ All charts generated successfully!")
