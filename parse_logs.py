@@ -1,30 +1,40 @@
 import json
 import pandas as pd
 import os
+import re
 
 log_file = "/home/cowrie/cowrie/var/log/cowrie/cowrie.json"
 
 data = []
 
 # ---------- CLEAN COMMAND FUNCTION ----------
-def extract_command(cmd):
+def clean_command(cmd):
     if not cmd:
         return None
 
-    cmd = cmd.strip()
+    cmd = cmd.strip().lower()
 
-    # ❌ skip useless redirections
-    if ">/dev/null" in cmd:
-        return None
-
-    # take first command before ;
+    # remove everything after ;
     cmd = cmd.split(";")[0]
 
-    # remove path (e.g. /bin/uname → uname)
-    cmd = cmd.split("/")[-1]
+    # remove variables ($...)
+    cmd = re.sub(r"\$[a-zA-Z_]+", "", cmd)
 
-    # take main command only
+    # remove paths
+    cmd = cmd.replace("/bin/", "").replace("/usr/bin/", "")
+    cmd = cmd.replace("./", "")
+
+    # remove symbols
+    cmd = re.sub(r"[^a-z0-9_\- ]", "", cmd)
+
+    # get base command
     cmd = cmd.split(" ")[0]
+
+    # ignore useless
+    ignore = ["cd", "pwd", "clear", "export", "echo", "hostname"]
+
+    if cmd in ignore or cmd == "":
+        return None
 
     return cmd
 
@@ -35,41 +45,45 @@ with open(log_file) as f:
         try:
             log = json.loads(line)
 
-            # only command input events
             if log.get("eventid") != "cowrie.command.input":
                 continue
 
             raw_cmd = log.get("input")
-            clean_cmd = extract_command(raw_cmd)
+            clean_cmd = clean_command(raw_cmd)
 
-            # ❌ skip invalid commands
             if not clean_cmd:
                 continue
 
-            entry = {
+            data.append({
                 "timestamp": log.get("timestamp"),
                 "src_ip": log.get("src_ip"),
                 "username": log.get("username"),
                 "password": log.get("password"),
-                "command": clean_cmd   # ✅ save CLEAN command
-            }
-
-            data.append(entry)
+                "command": clean_cmd
+            })
 
         except:
             continue
 
+
 # ---------- CREATE DATAFRAME ----------
 df = pd.DataFrame(data)
 
-# ---------- SAVE CSV ----------
 os.makedirs("csv", exist_ok=True)
+
+# save full logs
 df.to_csv("csv/all_logs.csv", index=False)
 
-# ---------- GENERATE STATS ----------
-df['command'].value_counts().to_csv("csv/commands.csv")
-df['username'].value_counts().to_csv("csv/usernames.csv")
-df['password'].value_counts().to_csv("csv/passwords.csv")
-df['src_ip'].value_counts().to_csv("csv/top_ips.csv")
+# ---------- SAVE CLEAN STATS ----------
+def save_counts(column, filename):
+    counts = df[column].value_counts().reset_index()
+    counts.columns = [column, "count"]
+    counts.to_csv(f"csv/{filename}", index=False)
 
-print("✅ Logs parsed (clean commands only)!")
+
+save_counts("command", "commands.csv")
+save_counts("username", "usernames.csv")
+save_counts("password", "passwords.csv")
+save_counts("src_ip", "top_ips.csv")
+
+print("✅ Logs parsed (clean + structured)!")
