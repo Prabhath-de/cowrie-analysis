@@ -1,12 +1,12 @@
 username,count
-root,383
+root,389
 admin,63
-sol,57
+sol,63
 ubuntu,53
 user,47
 test,45
-solana,38
-solv,26
+solana,40
+solv,30
 git,22
 docker,21
 nginx,21
@@ -27,9 +27,9 @@ owner,12
 oracle,10
 raydium,7
 firedancer,7
+ubutnu,6
 hadoop,6
 es,6
-ubutnu,5
 app,4
 esuser,4
 flask,4
