@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import textwrap
 
+# ---------- SETTINGS ----------
 plt.rcParams['text.usetex'] = False
 plt.style.use('default')
 
@@ -24,49 +25,50 @@ timeline = df['hour'].value_counts().sort_index()
 setup_plot("Attack Timeline (Hourly)", "Hour of Day", "Number of Attacks")
 plt.bar(timeline.index, timeline.values, color='#2E6F9E')
 
-plt.tight_layout()
+plt.tight_layout(rect=[0,0,1,0.95])
 plt.savefig("images/timeline.png")
 plt.close()
 
-# ---------- TOP COMMANDS (FIXED) ----------
-
+# ---------- CLEAN COMMAND FUNCTION (FINAL FIX) ----------
 def clean_command(cmd):
     if pd.isna(cmd):
         return None
 
     cmd = cmd.strip()
 
-    # remove paths
+    # ❌ ignore useless redirections
+    if ">/dev/null" in cmd:
+        return None
+
+    # take first command before ;
+    cmd = cmd.split(";")[0]
+
+    # remove path (e.g. /bin/uname → uname)
     cmd = cmd.split("/")[-1]
 
-    # remove symbols
-    cmd = cmd.replace(";", "")
+    # take main command only
+    cmd = cmd.split(" ")[0]
 
-    # remove redirections like 2>/dev/null
-    if ">" in cmd:
-        cmd = cmd.split(">")[0]
+    return cmd
 
-    return cmd.split(" ")[0]
-
-# APPLY FUNCTION 🔥
+# APPLY CLEANING
 df['clean_command'] = df['command'].apply(clean_command)
 
-# REMOVE EMPTY
+# REMOVE EMPTY VALUES
 df = df[df['clean_command'].notna()]
 
+# ---------- TOP COMMANDS ----------
 top_commands = df['clean_command'].value_counts().head(15)
 
 setup_plot("Top Commands Used by Attackers", "", "Count")
 
-labels = [cmd.replace('$', r'\$') for cmd in top_commands.index]
-labels = [textwrap.fill(cmd, 20) for cmd in labels]
+labels = [textwrap.fill(cmd, 20) for cmd in top_commands.index]
 
 plt.barh(range(len(top_commands)), top_commands.values, color='#2E6F9E')
 plt.yticks(range(len(labels)), labels)
 
 plt.subplots_adjust(left=0.3)
-
-plt.tight_layout()
+plt.tight_layout(rect=[0,0,1,0.95])
 plt.savefig("images/commands.png")
 plt.close()
 
@@ -78,7 +80,7 @@ setup_plot("Top Attacker IPs", "", "Count")
 plt.bar(range(len(top_ips)), top_ips.values, color='#2E6F9E')
 plt.xticks(range(len(top_ips)), top_ips.index, rotation=60, ha='right')
 
-plt.tight_layout()
+plt.tight_layout(rect=[0,0,1,0.95])
 plt.savefig("images/top_ips.png")
 plt.close()
 
@@ -90,7 +92,7 @@ setup_plot("Top Usernames", "", "Count")
 plt.bar(range(len(top_usernames)), top_usernames.values, color='#2E6F9E')
 plt.xticks(range(len(top_usernames)), top_usernames.index, rotation=45, ha='right')
 
-plt.tight_layout()
+plt.tight_layout(rect=[0,0,1,0.95])
 plt.savefig("images/usernames.png")
 plt.close()
 
@@ -103,8 +105,9 @@ setup_plot("Top Attacking Countries", "", "Count")
 plt.bar(range(len(top_countries)), top_countries['Count'], color='#2E6F9E')
 plt.xticks(range(len(top_countries)), top_countries['Country'], rotation=45, ha='right')
 
-plt.tight_layout()
+plt.tight_layout(rect=[0,0,1,0.95])
 plt.savefig("images/countries.png")
 plt.close()
 
 print("✅ All charts generated successfully!")
+
