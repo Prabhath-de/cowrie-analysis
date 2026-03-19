@@ -32,10 +32,42 @@ plt.savefig("images/timeline.png")
 plt.close()
 
 
-# ---------- TOP COMMANDS (FINAL FIXED) ----------
-top_commands = df['command'].value_counts().head(15)[::-1]
+# ---------- TOP COMMANDS (CLEANED) ----------
+
+def clean_command(cmd):
+    if pd.isna(cmd):
+        return "unknown"
+
+    # take only first part
+    cmd = cmd.split(";")[0]
+
+    # limit length
+    return cmd[:40]
+
+df['clean_command'] = df['command'].apply(clean_command)
+
+top_commands = df['clean_command'].value_counts().head(15)
 
 setup_plot("Top Commands Used by Attackers", "", "Count")
+
+# 🔥 escape $ and wrap text
+labels = [cmd.replace('$', r'\$') for cmd in top_commands.index]
+labels = [textwrap.fill(cmd, 40) for cmd in labels]
+
+# 🔥 SINGLE plot only
+plt.barh(range(len(top_commands)), top_commands.values, color='#2E6F9E')
+plt.yticks(range(len(labels)), labels)
+
+# better spacing
+plt.subplots_adjust(left=0.4)
+
+plt.tight_layout()
+plt.savefig("images/commands.png")
+plt.close()
+
+
+
+
 
 # 🔥 escape $ and wrap text
 labels = [cmd.replace('$', r'\$') for cmd in top_commands.index]
