@@ -1,10 +1,11 @@
 command,count
 uname,154
-hostname,6
+hostname,7
+cat,3
 ps,2
+ls,2
 ifconfig,1
 ip,1
-cat,1
-ls,1
 locate,1
 echo,1
+cd,1
