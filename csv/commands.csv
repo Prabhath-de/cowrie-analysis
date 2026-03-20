@@ -1,15 +1,2 @@
 command,count
-uname,220
-ls,10
-hostname,9
-ps,8
-cd,8
-cat,8
-ip,4
-ifconfig,4
-locate,4
-echo,4
-ssh,2
-rm,1
-admin,1
-exit,1
+uname,9
