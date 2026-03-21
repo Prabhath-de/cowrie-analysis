@@ -1,6 +1,9 @@
 command,count
-uname,61
+uname,66
 cat,14
 hostname,4
 whoami,2
 pwd,1
+ps,1
+uptime,1
+ls,1
