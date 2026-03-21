@@ -1,4 +1,5 @@
 command,count
-uname,53
+uname,54
 cat,14
 hostname,1
+whoami,1
