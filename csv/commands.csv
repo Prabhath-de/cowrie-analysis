@@ -1,6 +1,6 @@
 command,count
-uname,89
-cat,16
+uname,125
+cat,34
 hostname,5
 whoami,5
 pwd,4
@@ -11,3 +11,4 @@ nproc,1
 grep,1
 mount,1
 history,1
+chmod,1
