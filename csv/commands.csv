@@ -1,6 +1,8 @@
 command,count
-ps,5
-uname,4
+ps,7
+uname,6
+exit,4
+pwd,3
 echo,3
 sudo,2
-exit,1
+ls,1
