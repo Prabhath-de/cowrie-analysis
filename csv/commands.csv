@@ -1,7 +1,7 @@
 command,count
-uname,93
+uname,96
+hostname,9
 ps,7
-hostname,6
 exit,4
 pwd,3
 echo,3
