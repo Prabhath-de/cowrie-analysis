@@ -1,12 +1,3 @@
 command,count
-uname,137
-hostname,24
-ps,7
-exit,4
-pwd,3
-echo,3
-sudo,2
-ls,2
-cat,2
-createfs,1
-chmod,1
+uname,20
+hostname,3
