@@ -1,6 +1,6 @@
 command,count
-uname,117
-hostname,17
+uname,126
+hostname,20
 ps,7
 exit,4
 pwd,3
@@ -9,3 +9,4 @@ sudo,2
 ls,2
 cat,2
 createfs,1
+chmod,1
