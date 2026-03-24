@@ -1,14 +1,4 @@
 command,count
-uname,84
-hostname,56
-echo,24
-ls,5
-ps,2
-cat,1
-ifconfig,1
-ip,1
-locate,1
-chmod,1
-exit,1
-history,1
-pwd,1
+uname,10
+hostname,3
+uptime,1
