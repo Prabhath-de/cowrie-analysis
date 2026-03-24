@@ -1,12 +1,13 @@
 command,count
 uname,82
 hostname,53
+echo,24
 ls,4
 ps,2
 ip,1
-cat,1
 ifconfig,1
+cat,1
 locate,1
-echo,1
 chmod,1
 exit,1
+history,1
