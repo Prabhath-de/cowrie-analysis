@@ -1,7 +1,7 @@
 username,count
-root,133
+root,142
 sol,76
-admin,50
+admin,52
 solv,35
 ubuntu,30
 solana,24
@@ -30,14 +30,14 @@ flask,4
 user1,4
 app,4
 hadoop,4
+ftpuser,4
 node,4
-steam,3
 oscar,3
 elastic,3
 sniper,3
 es,3
 ftp,3
-ftpuser,3
+steam,3
 evm,3
 bot,3
 www,2
