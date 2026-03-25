@@ -1,9 +1,9 @@
 command,count
 uname,153
+hostname,29
 cat,29
-hostname,28
+whoami,2
 uptime,1
 history,1
 ps,1
 env,1
-whoami,1
