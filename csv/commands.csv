@@ -1,7 +1,8 @@
 command,count
-uname,125
+uname,132
 cat,29
-hostname,24
+hostname,25
 uptime,1
 history,1
 ps,1
+env,1
