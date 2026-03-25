@@ -1,14 +1,2 @@
 command,count
-uname,163
-hostname,31
-cat,30
-ps,3
-whoami,2
-history,1
-uptime,1
-env,1
-ip,1
-ifconfig,1
-ls,1
-locate,1
-echo,1
+uname,1
