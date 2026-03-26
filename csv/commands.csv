@@ -1,13 +1,1 @@
 command,count
-echo,191
-uname,45
-hostname,6
-ps,2
-chmod,1
-ip,1
-ifconfig,1
-cat,1
-ls,1
-locate,1
-history,1
-whoami,1
