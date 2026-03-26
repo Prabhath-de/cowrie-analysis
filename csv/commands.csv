@@ -1,10 +1,10 @@
 command,count
 echo,191
-uname,37
+uname,38
 ps,2
+hostname,2
 chmod,1
 ip,1
-hostname,1
 ifconfig,1
 cat,1
 ls,1
