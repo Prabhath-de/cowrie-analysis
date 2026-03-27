@@ -1,8 +1,9 @@
 command,count
-uname,75
+uname,82
 hostname,12
 whoami,2
 chmod,1
 pwd,1
 nproc,1
 grep,1
+history,1
