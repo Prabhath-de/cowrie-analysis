@@ -1,5 +1,6 @@
 command,count
-uname,31
+uname,45
 hostname,10
+whoami,2
 chmod,1
-whoami,1
+pwd,1
