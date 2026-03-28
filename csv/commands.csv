@@ -1,11 +1,4 @@
 command,count
-uname,347
-hostname,10
-grep,3
-ssh,3
-ls,2
-pwd,2
-nproc,1
-ps,1
-whoami,1
-chmod,1
+uname,10
+cd,6
+hostname,2
