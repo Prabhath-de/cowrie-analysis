@@ -1,8 +1,8 @@
 command,count
-uname,223
-ls,2
+uname,232
+ssh,3
 pwd,2
-ssh,2
+ls,2
 hostname,2
 nproc,1
 grep,1
