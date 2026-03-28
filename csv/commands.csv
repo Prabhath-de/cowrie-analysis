@@ -1,4 +1,6 @@
 command,count
-uname,174
+uname,197
 ls,2
 pwd,1
+nproc,1
+grep,1
