@@ -1,4 +1,6 @@
 command,count
 cd,12
+uname,8
 echo,6
-uname,5
+chmod,1
+ls,1
