@@ -1,5 +1,6 @@
 command,count
-uname,190
+uname,198
 cd,118
 hostname,16
+echo,4
 chmod,1
