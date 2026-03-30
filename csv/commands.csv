@@ -1,8 +1,9 @@
 command,count
+uname,143
 cd,114
-uname,107
-cat,18
+cat,36
 echo,6
 chmod,1
 ls,1
 hostname,1
+ps,1
