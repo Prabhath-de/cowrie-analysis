@@ -1,7 +1,7 @@
 command,count
-uname,51
-cd,50
+uname,66
+cd,52
+cat,10
 echo,6
-cat,3
 chmod,1
 ls,1
