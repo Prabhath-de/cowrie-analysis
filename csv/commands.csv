@@ -1,4 +1,5 @@
 command,count
-uname,47
+uname,65
 cd,45
 cat,10
+chmod,1
