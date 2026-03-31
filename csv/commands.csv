@@ -1,7 +1,7 @@
 command,count
 uname,323
 cat,139
-cd,109
+cd,115
 echo,1
 rm,1
 free,1
@@ -13,3 +13,4 @@ top,1
 whoami,1
 lscpu,1
 df,1
+chmod,1
