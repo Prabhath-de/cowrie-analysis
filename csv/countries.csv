@@ -1,8 +1,8 @@
 Country,Count
 United States,500
 Canada,341
-Romania,240
-Vietnam,62
+Romania,261
+Vietnam,104
 Indonesia,35
 South Korea,35
 Singapore,34
@@ -10,10 +10,10 @@ Hong Kong,30
 Bulgaria,30
 China,28
 Taiwan,15
+India,15
 Germany,10
-United Arab Emirates,10
-India,10
 Brazil,10
+United Arab Emirates,10
 France,10
 The Netherlands,7
 Iran,6
@@ -28,5 +28,5 @@ Malaysia,5
 Ghana,5
 Poland,5
 United Kingdom,5
-Ukraine,3
+Ukraine,4
 Israel,1
