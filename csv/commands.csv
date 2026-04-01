@@ -1,6 +1,6 @@
 command,count
-uname,310
-cd,131
+uname,332
+cd,159
 cat,60
 ps,2
 chmod,1
@@ -10,3 +10,4 @@ ls,1
 locate,1
 echo,1
 hostname,1
+ssh,1
