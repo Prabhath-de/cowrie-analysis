@@ -1,10 +1,10 @@
 command,count
-cd,172
-uname,90
-hostname,28
-cat,3
+cd,258
+uname,98
+hostname,32
+cat,4
+id,2
 pwd,1
-id,1
 echo,1
 rm,1
 free,1
