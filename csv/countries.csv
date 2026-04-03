@@ -1,7 +1,8 @@
 Country,Count
-Romania,231
-Taiwan,50
-Singapore,32
+Romania,233
+Vietnam,66
+Taiwan,55
+Singapore,42
 Indonesia,25
 China,21
 Bulgaria,15
@@ -10,12 +11,11 @@ India,10
 Spain,10
 United States,9
 Seychelles,9
-The Netherlands,6
 United Kingdom,6
-Brazil,5
+The Netherlands,6
 Hong Kong,5
 Italy,5
-Vietnam,5
+Brazil,5
 Macao,5
 Morocco,5
 Egypt,5
@@ -24,5 +24,5 @@ Estonia,5
 Ecuador,5
 France,5
 Argentina,5
-Ukraine,3
+Ukraine,4
 Iran,1
