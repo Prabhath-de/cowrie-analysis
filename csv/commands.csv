@@ -1,11 +1,11 @@
 command,count
-cd,756
-uname,145
+cd,836
+uname,156
 id,10
 cat,9
 whoami,9
 ls,8
-echo,3
+echo,4
 rm,3
 which,3
 free,3
