@@ -1,5 +1,5 @@
 command,count
-cd,266
+cd,414
 uname,45
 cat,6
 echo,2
@@ -14,3 +14,5 @@ whoami,2
 lscpu,2
 df,2
 chmod,1
+uptime,1
+pwd,1
