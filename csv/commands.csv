@@ -1,8 +1,8 @@
 command,count
+cd,102
 uname,27
-cd,22
 cat,3
-chmod,1
+chmod,2
 echo,1
 rm,1
 free,1
