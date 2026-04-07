@@ -1,6 +1,6 @@
 command,count
-cd,464
-uname,190
+cd,526
+uname,192
 cat,22
 echo,9
 ls,8
@@ -13,7 +13,7 @@ top,7
 whoami,7
 lscpu,7
 rm,6
-chmod,3
+chmod,4
 ps,2
 enter,1
 ip,1
