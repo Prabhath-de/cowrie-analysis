@@ -1,10 +1,10 @@
 command,count
 cd,318
-uname,85
+uname,86
 cat,12
 echo,7
+ls,6
 free,4
-ls,4
 which,4
 w,4
 crontab,4
