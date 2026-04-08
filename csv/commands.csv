@@ -1,6 +1,6 @@
 command,count
-cd,308
-uname,79
+cd,318
+uname,84
 cat,12
 echo,7
 free,4
@@ -13,5 +13,5 @@ top,4
 whoami,4
 df,4
 enter,3
-chmod,2
+chmod,3
 rm,1
