@@ -1,8 +1,8 @@
 command,count
-cd,52
+cd,106
 uname,16
+echo,9
 cat,9
-echo,8
 rm,3
 free,3
 ls,3
