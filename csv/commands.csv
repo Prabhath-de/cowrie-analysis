@@ -1,9 +1,9 @@
 command,count
-cd,254
-uname,101
+cd,256
+uname,102
 ls,4
+hostname,2
 whoami,2
-hostname,1
 nproc,1
 grep,1
 history,1
