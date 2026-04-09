@@ -8,3 +8,4 @@ nproc,1
 grep,1
 history,1
 ps,1
+echo,1
