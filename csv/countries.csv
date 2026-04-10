@@ -1,26 +1,26 @@
 Country,Count
 Hong Kong,459
-Romania,348
-South Korea,172
+Romania,386
+South Korea,188
 Bulgaria,115
 Brazil,105
+Singapore,93
 Mexico,89
 Indonesia,89
+Taiwan,86
 Nigeria,86
 Morocco,81
-Taiwan,81
-Singapore,74
 Belgium,74
 Japan,73
 Malaysia,72
-China,62
+China,64
+United States,54
 Egypt,53
-United States,52
-Sweden,44
-India,43
-The Netherlands,36
+The Netherlands,48
+Sweden,47
+India,45
+Russia,10
 Pakistan,9
-Russia,9
 Spain,8
 Iraq,7
 Vietnam,6
@@ -32,11 +32,12 @@ Venezuela,2
 Hungary,1
 Portugal,1
 Slovakia,1
-Argentina,1
-Brunei,1
 Ethiopia,1
-Tunisia,1
+Brunei,1
+Argentina,1
 Türkiye,1
+Tunisia,1
 Antigua and Barbuda,1
 Afghanistan,1
 Seychelles,1
+United Arab Emirates,1
