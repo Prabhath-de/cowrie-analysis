@@ -1,7 +1,7 @@
 command,count
-cd,575
-uname,72
-echo,47
+cd,625
+uname,84
+echo,50
 cat,20
 rm,7
 ls,6
@@ -13,6 +13,6 @@ w,6
 top,6
 whoami,6
 df,6
+chmod,2
 hostname,1
 netstat,1
-chmod,1
