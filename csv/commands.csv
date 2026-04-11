@@ -1,11 +1,11 @@
 command,count
-cd,107
-uname,78
+cd,183
+uname,87
 echo,18
 cat,4
 enter,2
+ls,2
 free,1
-ls,1
 which,1
 crontab,1
 w,1
@@ -13,3 +13,4 @@ top,1
 whoami,1
 lscpu,1
 df,1
+ssh,1
