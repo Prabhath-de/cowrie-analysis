@@ -1,9 +1,9 @@
 command,count
-cd,492
-uname,149
+cd,600
+uname,151
 cat,25
 echo,23
-whoami,18
+whoami,19
 ls,9
 rm,8
 free,8
@@ -14,9 +14,10 @@ top,8
 lscpu,8
 df,8
 ps,2
+grep,2
+ssh,2
 ip,1
-ifconfig,1
 locate,1
+ifconfig,1
 chmod,1
-grep,1
 pwd,1
