@@ -1,8 +1,8 @@
 command,count
-cd,406
-uname,141
+cd,492
+uname,149
 cat,25
-echo,22
+echo,23
 whoami,18
 ls,9
 rm,8
@@ -18,3 +18,5 @@ ip,1
 ifconfig,1
 locate,1
 chmod,1
+grep,1
+pwd,1
