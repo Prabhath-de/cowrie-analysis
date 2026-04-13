@@ -1,9 +1,9 @@
 command,count
-cd,712
-uname,184
+cd,720
+uname,192
 cat,43
-echo,33
-whoami,28
+echo,34
+whoami,29
 ls,15
 free,14
 which,14
