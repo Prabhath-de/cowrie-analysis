@@ -1,3 +1,15 @@
 command,count
-cd,2
-whoami,2
+cd,160
+uname,8
+whoami,6
+cat,3
+rm,1
+echo,1
+free,1
+ls,1
+crontab,1
+which,1
+w,1
+top,1
+lscpu,1
+df,1
