@@ -1,7 +1,7 @@
 command,count
-cd,160
+cd,189
+whoami,8
 uname,8
-whoami,6
 cat,3
 rm,1
 echo,1
