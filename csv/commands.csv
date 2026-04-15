@@ -1,12 +1,12 @@
 command,count
-cd,291
-whoami,10
+cd,307
+whoami,12
 uname,8
 cat,3
-rm,1
-free,1
-ls,1
 echo,1
+free,1
+rm,1
+ls,1
 which,1
 crontab,1
 w,1
@@ -15,3 +15,6 @@ lscpu,1
 df,1
 env,1
 hostname,1
+mount,1
+netstat,1
+pwd,1
