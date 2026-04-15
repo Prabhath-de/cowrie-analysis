@@ -1,13 +1,13 @@
 command,count
-cd,187
-uname,18
+cd,193
+uname,21
 whoami,4
 ls,3
 ps,2
 pwd,2
+hostname,2
 env,1
-nproc,1
 free,1
+nproc,1
 cat,1
-hostname,1
 netstat,1
