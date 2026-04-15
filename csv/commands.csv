@@ -1,9 +1,9 @@
 command,count
 cd,309
-whoami,14
-uname,9
+uname,42
+whoami,15
 cat,4
-ls,3
+ls,4
 echo,2
 hostname,2
 ps,2
