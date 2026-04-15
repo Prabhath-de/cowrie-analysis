@@ -1,13 +1,13 @@
 command,count
-cd,695
-uname,98
+cd,701
+uname,99
 whoami,26
 ls,5
 cat,5
 ps,4
+hostname,3
+mount,3
 echo,3
-mount,2
-hostname,2
 ip,2
 locate,2
 ifconfig,2
