@@ -1,4 +1,10 @@
 command,count
-cd,101
+cd,119
+uname,10
 ls,3
+whoami,2
 env,1
+pwd,1
+nproc,1
+free,1
+cat,1
