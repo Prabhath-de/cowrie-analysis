@@ -1,11 +1,11 @@
 command,count
-uname,32
+uname,35
 cd,13
 sudo,2
 ps,2
-lsof,1
+whoami,2
 source,1
 netstat,1
+lsof,1
 dwdwd,1
-whoami,1
 uptime,1
