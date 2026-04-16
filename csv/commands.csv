@@ -1,8 +1,8 @@
 command,count
-uname,266
-cd,43
-whoami,6
-echo,5
+uname,307
+cd,53
+echo,8
+whoami,7
 ps,4
 ls,2
 sudo,2
