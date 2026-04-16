@@ -5,9 +5,10 @@ whoami,5
 ls,3
 ps,3
 env,2
-hostname,2
 pwd,2
-free,1
+hostname,2
 nproc,1
 cat,1
+free,1
 netstat,1
+mount,1
