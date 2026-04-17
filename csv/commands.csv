@@ -1,4 +1,5 @@
 command,count
-uname,35
+uname,76
 cd,20
-echo,2
+echo,4
+pwd,1
