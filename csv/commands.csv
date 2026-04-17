@@ -1,3 +1,5 @@
 command,count
-uname,174
-echo,7
+uname,186
+cd,18
+echo,9
+whoami,1
