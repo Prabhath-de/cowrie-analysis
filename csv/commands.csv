@@ -1,7 +1,7 @@
 command,count
-uname,177
-cd,154
-echo,28
+uname,650
+cd,180
+echo,29
 whoami,5
 scp,2
 ps,2
