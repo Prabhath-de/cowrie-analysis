@@ -1,8 +1,8 @@
 command,count
 uname,177
 cd,142
-echo,25
-whoami,4
+echo,28
+whoami,5
 scp,2
 ps,2
 pwd,1
