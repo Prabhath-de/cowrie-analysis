@@ -1,6 +1,6 @@
 command,count
 uname,172
-cd,20
-echo,8
+cd,36
+echo,10
+whoami,2
 pwd,1
-whoami,1
