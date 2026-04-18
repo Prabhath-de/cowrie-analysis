@@ -2,9 +2,10 @@ command,count
 cd,25
 echo,7
 ps,4
+uname,3
 ip,2
 ifconfig,2
 cat,2
-uname,2
 ls,2
 locate,2
+whoami,1
