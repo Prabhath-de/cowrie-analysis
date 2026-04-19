@@ -1,7 +1,7 @@
 command,count
-cd,146
-uname,125
-echo,32
+cd,158
+uname,147
+echo,34
 whoami,12
 cat,11
 hostname,9
