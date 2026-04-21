@@ -1,12 +1,13 @@
 command,count
 uname,312
-cd,107
+cd,113
 ps,4
-pgwyafhw,2
 scp,2
-ifconfig,2
 ip,2
+pgwyafhw,2
+ifconfig,2
 cat,2
 ls,2
 locate,2
 echo,2
+hostname,2
