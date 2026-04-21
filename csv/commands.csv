@@ -1,4 +1,11 @@
 command,count
-uname,686
+uname,693
 cd,22
 whoami,2
+ps,2
+ifconfig,1
+ip,1
+cat,1
+ls,1
+locate,1
+echo,1
