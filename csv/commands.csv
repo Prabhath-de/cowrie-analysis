@@ -1,11 +1,11 @@
 command,count
-uname,1464
+uname,1484
 cd,126
 echo,23
 ps,8
 whoami,5
-cat,5
 ls,5
+cat,5
 ip,4
 ifconfig,4
 locate,4
@@ -13,3 +13,4 @@ head,2
 hostname,1
 id,1
 uptime,1
+history,1
