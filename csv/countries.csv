@@ -1,36 +1,36 @@
 Country,Count
 Sweden,1390
 Germany,1372
-Romania,109
-Vietnam,73
-India,68
-China,61
-United States,53
-The Netherlands,39
-South Korea,32
+Romania,110
+India,84
+Vietnam,74
+China,65
+United States,58
+The Netherlands,41
+Singapore,32
 Indonesia,32
-Singapore,27
+South Korea,32
 Hong Kong,26
-Brazil,23
+Brazil,24
 Taiwan,20
+Poland,16
 Japan,16
 Russia,12
-Poland,11
-Argentina,10
+Argentina,11
+Iraq,10
 Israel,10
-Iraq,9
 Malaysia,8
 Colombia,7
 Pakistan,7
 Italy,6
-Spain,5
 United Kingdom,5
+Estonia,5
 Tanzania,5
 Philippines,5
-Syria,5
-Estonia,5
 Myanmar,5
 France,5
+Spain,5
+Syria,5
 Ukraine,3
 Egypt,3
 Ethiopia,2
@@ -39,3 +39,4 @@ Venezuela,1
 Ireland,1
 Bangladesh,1
 Cabo Verde,1
+New Zealand,1
