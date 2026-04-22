@@ -1,21 +1,21 @@
 Country,Count
 Sweden,1390
 Germany,1372
-Romania,105
-India,61
-China,58
-Vietnam,56
-United States,43
+Romania,106
+Vietnam,73
+India,65
+China,60
+United States,44
 The Netherlands,39
 Indonesia,32
-South Korea,26
+South Korea,31
 Hong Kong,25
 Singapore,25
-Brazil,18
-Taiwan,15
-Poland,11
+Brazil,23
+Taiwan,16
+Russia,12
 Japan,11
-Russia,11
+Poland,11
 Argentina,10
 Israel,10
 Iraq,8
@@ -31,8 +31,8 @@ Syria,5
 Myanmar,5
 France,5
 Spain,5
+Ukraine,3
 Egypt,3
-Ukraine,2
 Canada,2
 Ethiopia,2
 Venezuela,1
