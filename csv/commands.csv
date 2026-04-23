@@ -1,9 +1,9 @@
 command,count
-cd,79
+cd,91
 uname,58
 echo,13
+sh,3
 cat,3
-sh,2
 enter,1
 free,1
 ls,1
