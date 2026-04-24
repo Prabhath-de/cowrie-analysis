@@ -1,4 +1,5 @@
 command,count
-cd,86
+cd,90
 uname,53
-echo,9
+echo,10
+sh,1
