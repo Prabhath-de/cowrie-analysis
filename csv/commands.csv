@@ -1,4 +1,10 @@
 command,count
-cd,8
-echo,4
-uname,1
+uname,45
+cd,20
+echo,6
+ps,2
+ip,1
+ifconfig,1
+cat,1
+ls,1
+locate,1
