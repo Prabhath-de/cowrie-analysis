@@ -1,6 +1,4 @@
 command,count
-uname,751
-cd,156
-echo,19
-sh,1
-ps,1
+cd,6
+echo,3
+uname,1
