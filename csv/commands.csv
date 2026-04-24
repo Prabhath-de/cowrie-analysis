@@ -1,11 +1,13 @@
 command,count
 uname,198
-cd,24
+cd,30
 echo,8
 ps,2
-ifconfig,1
+hostname,2
 ip,1
 cat,1
+ifconfig,1
 ls,1
 locate,1
 uptime,1
+history,1
