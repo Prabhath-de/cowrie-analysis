@@ -4,9 +4,9 @@ cd,86
 echo,16
 hostname,7
 uptime,7
+ps,5
 env,5
 pwd,4
-ps,4
 mount,3
 history,3
 ls,2
