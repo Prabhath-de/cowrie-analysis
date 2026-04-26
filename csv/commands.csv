@@ -1,9 +1,9 @@
 command,count
-uname,1466
+uname,1473
 cd,79
-echo,19
+echo,20
 cat,4
-ls,2
+ls,3
 rm,1
 free,1
 which,1
