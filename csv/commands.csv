@@ -1,15 +1,3 @@
 command,count
-uname,1473
-cd,79
-echo,21
-cat,4
-ls,3
-rm,1
-free,1
-which,1
-crontab,1
-w,1
-top,1
-whoami,1
-lscpu,1
-df,1
+cd,4
+echo,1
