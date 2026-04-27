@@ -1,4 +1,5 @@
 command,count
-uname,94
-cd,72
+uname,102
+cd,92
 echo,8
+scp,2
