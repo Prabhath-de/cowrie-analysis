@@ -1,6 +1,6 @@
 command,count
-uname,70
-cd,54
+uname,71
+cd,62
 ps,4
 echo,3
 cat,3
@@ -8,5 +8,5 @@ ip,2
 ifconfig,2
 ls,2
 locate,2
+unset,2
 grep,2
-unset,1
