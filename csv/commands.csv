@@ -1,12 +1,2 @@
 command,count
-uname,73
-cd,66
-ps,6
-echo,4
-cat,4
-ip,3
-ifconfig,3
-ls,3
-locate,3
-unset,2
-grep,2
+cd,4
