@@ -1,4 +1,5 @@
 command,count
-uname,19
+uname,46
 cd,16
-echo,1
+echo,2
+unset,1
