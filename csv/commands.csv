@@ -1,6 +1,8 @@
 command,count
-uname,79
-cd,47
+uname,100
+cd,57
 echo,10
-unset,1
+ls,3
+unset,2
 chmod,1
+exit,1
