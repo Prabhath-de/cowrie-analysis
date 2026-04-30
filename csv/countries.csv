@@ -1,24 +1,25 @@
 Country,Count
 United States,29
-China,15
-Singapore,14
-India,12
-Romania,8
-Brazil,8
+Singapore,16
+China,16
+Brazil,16
+India,14
+Romania,9
 Pakistan,6
 Indonesia,6
 Germany,5
 Taiwan,5
-Kenya,5
+South Korea,5
+Italy,5
 Mexico,5
-Finland,5
 The Netherlands,5
+Finland,5
+Kenya,5
 Egypt,5
 Vietnam,3
-South Korea,3
-Italy,3
-Iraq,2
-France,2
+France,3
+Iraq,3
+Russia,2
 Peru,2
 United Kingdom,1
 Antigua and Barbuda,1
@@ -28,6 +29,6 @@ Lithuania,1
 Philippines,1
 Ethiopia,1
 Bolivia,1
-Russia,1
 Argentina,1
 Malaysia,1
+Ukraine,1
