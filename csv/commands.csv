@@ -1,5 +1,6 @@
 command,count
-cd,22
+cd,24
 uname,17
-echo,3
+echo,5
 chmod,1
+cat,1
