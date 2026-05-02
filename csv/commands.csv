@@ -1,14 +1,4 @@
 command,count
-uname,1434
-cd,84
-echo,24
-chmod,6
-nohup,5
-ls,4
-cat,2
-ps,2
-ip,1
-ifconfig,1
-locate,1
-exit,1
-env,1
+cd,10
+uname,7
+echo,1
