@@ -1,6 +1,12 @@
 command,count
-uname,715
-cd,31
-echo,8
-chmod,1
-cat,1
+uname,1148
+cd,35
+echo,9
+chmod,6
+nohup,5
+cat,2
+ps,2
+ip,1
+ifconfig,1
+ls,1
+locate,1
