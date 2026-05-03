@@ -1,12 +1,12 @@
 command,count
 uname,118
-cd,60
+cd,62
 echo,14
+sudo,8
+root,7
 mc,4
-sudo,3
-root,2
-cat,2
 ps,2
+cat,2
 ip,1
 ifconfig,1
 ls,1
