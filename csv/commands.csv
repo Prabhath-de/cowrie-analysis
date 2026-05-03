@@ -1,7 +1,7 @@
 command,count
-uname,56
-cd,40
-echo,8
+uname,63
+cd,44
+echo,11
 ps,2
 ip,1
 ifconfig,1
