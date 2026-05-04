@@ -1,12 +1,13 @@
 command,count
 uname,706
-cd,32
+cd,36
 echo,2
-scp,2
 ps,2
+scp,2
 nc,1
+ifconfig,1
 ip,1
 cat,1
-ifconfig,1
 ls,1
 locate,1
+chmod,1
