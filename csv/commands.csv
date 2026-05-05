@@ -1,8 +1,8 @@
 command,count
-uname,878
+uname,885
 hostname,169
-cd,69
-echo,10
+cd,75
+echo,11
 cat,7
 nohup,5
 chmod,5
