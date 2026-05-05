@@ -1,5 +1,6 @@
 command,count
-uname,804
+uname,831
 cd,30
 sudo,1
 root,1
+echo,1
