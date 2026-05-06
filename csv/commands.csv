@@ -1,6 +1,6 @@
 command,count
-uname,14
-cd,10
+uname,43
+cd,12
+echo,5
 cat,3
-echo,3
 exit,1
