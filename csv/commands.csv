@@ -1,7 +1,7 @@
 command,count
-uname,22
-echo,9
-cd,8
+uname,721
+cd,18
+echo,10
 chmod,5
 nohup,5
 ps,2
