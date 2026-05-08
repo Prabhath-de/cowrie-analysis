@@ -1,9 +1,9 @@
 command,count
 uname,22
-echo,7
-nohup,5
+echo,9
+cd,6
 chmod,5
-cd,4
+nohup,5
 ps,2
 ifconfig,1
 ip,1
