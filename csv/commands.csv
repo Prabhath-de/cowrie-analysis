@@ -1,10 +1,13 @@
 command,count
 uname,22
 echo,7
+nohup,5
+chmod,5
 cd,4
 ps,2
-ip,1
-cat,1
 ifconfig,1
-ls,1
+ip,1
 locate,1
+ls,1
+cat,1
+ssh,1
