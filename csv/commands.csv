@@ -1,8 +1,8 @@
 command,count
-uname,819
+uname,1072
 cd,42
-wget,20
-echo,14
+wget,23
+echo,16
 nohup,5
 chmod,5
 ps,2

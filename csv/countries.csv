@@ -1,18 +1,19 @@
 Country,Count
-Germany,1415
-Romania,214
-Finland,85
+Germany,1421
+Poland,480
+Romania,216
+Finland,112
+China,58
 Vietnam,56
-China,54
-India,43
+India,49
 Bulgaria,40
 Singapore,33
-United States,23
+United States,24
 Indonesia,22
 Taiwan,20
 South Korea,20
 Hong Kong,16
-Brazil,11
+Brazil,12
 Italy,11
 Latvia,10
 Iraq,9
@@ -20,28 +21,28 @@ Russia,9
 Sweden,8
 Argentina,6
 The Netherlands,6
-Portugal,5
-Nigeria,5
-Kazakhstan,5
 Kenya,5
+Kazakhstan,5
+Nigeria,5
+Portugal,5
 Malaysia,4
 Mozambique,4
-Ethiopia,3
+Ethiopia,4
 Pakistan,3
 Venezuela,2
 Uzbekistan,2
+Canada,2
 France,2
 Türkiye,2
-Canada,2
+Israel,1
 Lithuania,1
 Czechia,1
-Israel,1
 Japan,1
-Belgium,1
-United Kingdom,1
 Libya,1
+Belgium,1
 Colombia,1
-Kyrgyzstan,1
-Egypt,1
+United Kingdom,1
 Ukraine,1
+Egypt,1
+Kyrgyzstan,1
 Unknown,1
