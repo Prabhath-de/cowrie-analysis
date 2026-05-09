@@ -1,10 +1,10 @@
 command,count
-uname,154
+uname,156
 cd,51
-echo,12
+echo,20
+sudo,4
+root,3
 cat,3
-sudo,3
-root,2
 free,1
 ls,1
 chmod,1
