@@ -1,6 +1,6 @@
 command,count
 uname,154
-cd,43
+cd,51
 echo,12
 cat,3
 chmod,1
@@ -14,3 +14,5 @@ top,1
 whoami,1
 lscpu,1
 df,1
+sudo,1
+admin,1
