@@ -1,4 +1,5 @@
 command,count
 uname,776
-cd,82
-echo,18
+cd,86
+echo,20
+env,1
