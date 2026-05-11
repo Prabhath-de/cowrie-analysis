@@ -1,12 +1,12 @@
 command,count
 uname,285
-cd,40
+cd,44
 echo,9
+cat,2
 ps,2
+ip,1
 chmod,1
 ifconfig,1
-ip,1
-cat,1
 ls,1
 locate,1
 mount,1
