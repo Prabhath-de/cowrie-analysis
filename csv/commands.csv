@@ -1,8 +1,8 @@
 command,count
-uname,429
+uname,446
 cd,60
+echo,31
 cat,3
-echo,2
 enter,1
 free,1
 ls,1
@@ -14,3 +14,4 @@ whoami,1
 lscpu,1
 df,1
 ssh,1
+ps,1
