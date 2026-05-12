@@ -1,7 +1,7 @@
 command,count
-uname,446
+uname,469
+echo,79
 cd,60
-echo,31
 cat,3
 enter,1
 free,1
@@ -15,3 +15,5 @@ lscpu,1
 df,1
 ssh,1
 ps,1
+pwd,1
+hostname,1
