@@ -1,7 +1,7 @@
 command,count
-uname,1966
-cd,77
-ps,2
+uname,1967
+cd,81
+ps,3
 chmod,1
 whoami,1
 ifconfig,1
