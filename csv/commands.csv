@@ -1,9 +1,9 @@
 command,count
-uname,2008
+uname,2009
 cd,81
 ps,3
+whoami,2
 chmod,1
-whoami,1
 ip,1
 ifconfig,1
 cat,1
