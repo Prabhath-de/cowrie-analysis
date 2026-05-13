@@ -1,3 +1,7 @@
 command,count
-cd,12
+cd,14
+uname,13
 whoami,1
+ssh,1
+ls,1
+df,1
