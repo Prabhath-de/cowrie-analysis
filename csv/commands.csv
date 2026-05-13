@@ -1,12 +1,13 @@
 command,count
-uname,1988
+uname,2008
 cd,81
 ps,3
 chmod,1
 whoami,1
-ifconfig,1
 ip,1
+ifconfig,1
 cat,1
 ls,1
 locate,1
 echo,1
+ssh,1
