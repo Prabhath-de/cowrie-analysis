@@ -1,13 +1,3 @@
 command,count
-uname,13336
-cd,94
-echo,10
-ps,4
-ifconfig,2
-ip,2
-ls,2
-cat,2
-locate,2
-whoami,1
-chmod,1
-ssh,1
+cd,4
+echo,2
