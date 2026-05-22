@@ -1,8 +1,8 @@
 command,count
 cd,68
-uname,10
+uname,11
+echo,7
 cat,6
-echo,6
 which,2
 ls,2
 crontab,2
