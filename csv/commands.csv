@@ -1,9 +1,9 @@
 command,count
-cd,40
-hostname,3
-uname,1
+cd,46
+uname,6
+hostname,4
+ps,3
 whoami,1
-ps,1
 echo,1
 ssh,1
 pwd,1
