@@ -1,10 +1,11 @@
 command,count
-cd,48
-uname,11
-ps,4
-hostname,4
+cd,60
+uname,12
+ps,6
+hostname,5
+pwd,3
 echo,2
-pwd,2
 whoami,1
 ssh,1
 history,1
+env,1
