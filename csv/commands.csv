@@ -1,10 +1,10 @@
 command,count
-cd,164
-uname,55
+cd,172
+uname,107
 echo,8
+ls,8
 cat,7
-ls,6
-whoami,5
+whoami,6
 uptime,3
 ps,3
 env,3
