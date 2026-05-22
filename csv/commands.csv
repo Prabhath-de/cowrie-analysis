@@ -1,6 +1,9 @@
 command,count
-cd,10
-hostname,2
-whoami,1
+cd,40
+hostname,3
 uname,1
+whoami,1
 ps,1
+echo,1
+ssh,1
+pwd,1
