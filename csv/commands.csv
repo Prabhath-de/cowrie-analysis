@@ -1,2 +1,14 @@
 command,count
-cd,2
+cd,4
+hostname,3
+cat,3
+free,3
+df,3
+nproc,3
+curl,3
+ls,3
+systemctl,3
+whoami,3
+uname,2
+env,1
+history,1
