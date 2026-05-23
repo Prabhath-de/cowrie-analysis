@@ -1,8 +1,8 @@
 command,count
-cd,79
+cd,103
 uname,15
+ps,7
 hostname,6
-ps,6
 pwd,5
 whoami,4
 echo,3
