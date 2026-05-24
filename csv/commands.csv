@@ -1,5 +1,6 @@
 command,count
-cd,4
+uname,34
+cd,19
 hostname,2
-uname,1
 env,1
+ls,1
