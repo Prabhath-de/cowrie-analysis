@@ -1,6 +1,7 @@
 command,count
-uname,34
-cd,19
+uname,793
+cd,29
 hostname,2
 env,1
 ls,1
+whoami,1
