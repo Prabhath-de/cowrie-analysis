@@ -1,10 +1,10 @@
 command,count
-uname,1499
-cd,218
-echo,21
-hostname,18
+uname,1501
+cd,244
+echo,22
+hostname,19
 ls,14
-whoami,11
+whoami,12
 cat,10
 netstat,7
 df,6
