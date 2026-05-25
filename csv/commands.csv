@@ -1,8 +1,8 @@
 command,count
-uname,2038
-cd,194
+uname,2140
+cd,206
 hostname,14
-whoami,11
+whoami,12
 ls,10
 cat,7
 free,5
