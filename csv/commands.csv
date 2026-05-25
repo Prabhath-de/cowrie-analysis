@@ -1,11 +1,13 @@
 command,count
-uname,248
-hostname,4
-ps,3
+uname,355
+hostname,5
+ps,4
 ls,2
-history,1
 ip,1
+history,1
 cat,1
 ifconfig,1
 locate,1
 echo,1
+ssh,1
+netstat,1
