@@ -1,6 +1,6 @@
 command,count
-uname,1760
-cd,51
+uname,1761
+cd,67
 hostname,5
 ls,4
 whoami,4
@@ -9,13 +9,13 @@ env,2
 echo,2
 free,2
 df,2
+pwd,2
 rm,1
-crontab,1
 which,1
 w,1
-top,1
+crontab,1
 lscpu,1
-pwd,1
+top,1
 history,1
 nproc,1
 curl,1
