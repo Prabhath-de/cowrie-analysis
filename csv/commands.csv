@@ -1,4 +1,6 @@
 command,count
-uname,943
+uname,1860
 cd,16
 ps,1
+pwd,1
+netstat,1
