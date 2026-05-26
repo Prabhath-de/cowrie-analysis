@@ -1,9 +1,9 @@
 command,count
-uname,435
+uname,439
 hostname,13
 ps,6
 ls,5
-pwd,4
+pwd,5
 netstat,3
 mount,3
 ssh,3
