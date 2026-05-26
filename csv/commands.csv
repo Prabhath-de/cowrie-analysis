@@ -1,11 +1,11 @@
 command,count
-uname,6712
-hostname,17
+uname,7671
+hostname,18
 ps,9
+ls,6
 pwd,6
-ls,5
 netstat,5
-ssh,4
+ssh,5
 whoami,4
 cd,4
 history,3
