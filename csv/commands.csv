@@ -1,8 +1,8 @@
 command,count
-uname,409
+uname,414
 hostname,9
+ls,5
 ps,4
-ls,4
 pwd,3
 history,2
 mount,2
