@@ -2,3 +2,6 @@ command,count
 cd,30
 mount,1
 pwd,1
+uname,1
+ls,1
+whoami,1
