@@ -1,12 +1,12 @@
 command,count
-uname,2668
-cd,134
+uname,2709
+cd,140
 ls,11
-whoami,9
+hostname,9
 ps,9
-hostname,8
+whoami,9
+history,7
 pwd,6
-history,6
 mount,5
 uptime,5
 netstat,4
@@ -17,8 +17,8 @@ free,3
 systemctl,3
 curl,3
 ssh,3
+env,2
 ip,1
 ifconfig,1
 locate,1
 echo,1
-env,1
