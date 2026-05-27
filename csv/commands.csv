@@ -1,11 +1,12 @@
 command,count
-cd,36
-ls,2
+cd,62
+ls,3
+whoami,2
 netstat,2
 mount,1
-uname,1
 pwd,1
-whoami,1
+uname,1
 chmod,1
 history,1
 hostname,1
+ssh,1
