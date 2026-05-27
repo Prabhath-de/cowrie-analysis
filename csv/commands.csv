@@ -1,7 +1,11 @@
 command,count
-cd,30
+cd,36
+ls,2
+netstat,2
 mount,1
-pwd,1
 uname,1
-ls,1
+pwd,1
 whoami,1
+chmod,1
+history,1
+hostname,1
