@@ -1,8 +1,8 @@
 command,count
 uname,1861
-cd,18
-ls,4
-whoami,4
+cd,32
+whoami,6
+ls,5
 free,3
 df,3
 nproc,3
@@ -10,9 +10,9 @@ cat,3
 hostname,3
 curl,3
 systemctl,3
-uptime,2
 pwd,2
-mount,1
+ps,2
+uptime,2
 netstat,1
-ps,1
+mount,1
 history,1
