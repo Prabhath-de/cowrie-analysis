@@ -1,12 +1,12 @@
 command,count
 uname,2666
-cd,88
-ls,9
+cd,106
+ls,10
 ps,7
 whoami,7
-pwd,5
+pwd,6
 uptime,5
-hostname,4
+hostname,5
 cat,4
 netstat,3
 systemctl,3
