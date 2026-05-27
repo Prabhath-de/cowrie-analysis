@@ -1,9 +1,9 @@
 command,count
-uname,2666
+uname,2667
 cd,134
 ls,10
 whoami,9
-ps,8
+ps,9
 hostname,8
 pwd,6
 uptime,5
