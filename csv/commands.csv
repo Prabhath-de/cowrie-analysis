@@ -1,9 +1,9 @@
 command,count
-uname,802
-cd,82
+uname,804
+cd,94
+whoami,4
 mount,3
 ls,3
-whoami,3
 uptime,2
 chmod,2
 netstat,2
