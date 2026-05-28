@@ -1,5 +1,8 @@
 command,count
 cd,6
+hostname,2
 mount,1
 history,1
 lspci,1
+ssh,1
+pwd,1
