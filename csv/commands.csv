@@ -1,17 +1,17 @@
 command,count
 uname,810
-cd,162
+cd,172
 whoami,6
 pwd,5
 mount,4
 ls,4
 netstat,4
-hostname,3
 ssh,3
+hostname,3
 uptime,3
-cat,3
 ps,3
 echo,3
+cat,3
 chmod,2
 history,1
 enter,1
@@ -19,3 +19,4 @@ free,1
 ip,1
 ifconfig,1
 locate,1
+env,1
