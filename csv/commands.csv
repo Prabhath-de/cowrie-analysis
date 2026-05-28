@@ -1,8 +1,9 @@
 command,count
-cd,6
+cd,8
 hostname,2
+pwd,2
 mount,1
-history,1
 lspci,1
+history,1
 ssh,1
-pwd,1
+env,1
