@@ -1,10 +1,10 @@
 command,count
 uname,805
-cd,94
-whoami,4
+cd,100
+whoami,5
 mount,3
+pwd,3
 ls,3
-pwd,2
 chmod,2
 netstat,2
 uptime,2
