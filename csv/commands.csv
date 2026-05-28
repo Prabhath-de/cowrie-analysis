@@ -1,13 +1,13 @@
 command,count
-uname,804
+uname,805
 cd,94
 whoami,4
 mount,3
 ls,3
-uptime,2
+pwd,2
 chmod,2
 netstat,2
+uptime,2
 ssh,2
-pwd,1
 history,1
 hostname,1
