@@ -1,6 +1,6 @@
 command,count
-uname,90
-cd,14
+uname,228
+cd,22
 ls,4
 pwd,3
 netstat,2
@@ -11,3 +11,4 @@ env,1
 history,1
 nproc,1
 df,1
+ps,1
