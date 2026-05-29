@@ -1,9 +1,12 @@
 command,count
-cd,8
+uname,13
+cd,10
+ls,2
+pwd,2
 hostname,2
-uname,1
-ls,1
-netstat,1
 whoami,1
+netstat,1
 env,1
-pwd,1
+uptime,1
+history,1
+nproc,1
