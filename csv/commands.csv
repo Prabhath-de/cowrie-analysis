@@ -1,6 +1,6 @@
 command,count
-uname,249
-cd,70
+uname,257
+cd,72
 ls,5
 whoami,5
 env,4
@@ -9,6 +9,7 @@ netstat,3
 hostname,2
 uptime,2
 history,2
+scp,2
 nproc,1
 df,1
 ps,1
