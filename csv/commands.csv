@@ -1,11 +1,11 @@
 command,count
-uname,236
-cd,58
+uname,240
+cd,70
 ls,5
+env,4
 pwd,4
-whoami,3
 netstat,3
-env,3
+whoami,3
 hostname,2
 uptime,2
 history,2
