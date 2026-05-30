@@ -2,13 +2,14 @@ command,count
 uname,236
 cd,30
 ls,5
-pwd,3
-netstat,2
+pwd,4
 whoami,2
-hostname,2
+netstat,2
 uptime,2
+hostname,2
 history,2
 env,1
 nproc,1
 df,1
 ps,1
+echo,1
