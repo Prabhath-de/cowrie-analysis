@@ -1,5 +1,5 @@
 command,count
-cd,34
+cd,40
+ls,2
 chmod,1
-ls,1
 whoami,1
