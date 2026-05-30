@@ -1,8 +1,8 @@
 command,count
-uname,271
+uname,290
 cd,94
+whoami,6
 ls,5
-whoami,5
 env,4
 pwd,4
 netstat,3
