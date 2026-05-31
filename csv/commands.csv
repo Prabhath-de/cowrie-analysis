@@ -1,7 +1,8 @@
 command,count
 uname,799
-cd,52
+cd,54
 whoami,19
 ls,2
 chmod,1
 mount,1
+hostname,1
