@@ -1,6 +1,7 @@
 command,count
-uname,452
-cd,40
+uname,799
+cd,50
+whoami,18
 ls,2
 chmod,1
-whoami,1
+mount,1
