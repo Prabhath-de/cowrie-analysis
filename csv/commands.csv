@@ -1,9 +1,9 @@
 command,count
 uname,1675
-echo,108
-cd,98
+cd,110
+echo,110
 whoami,22
-hostname,3
+hostname,4
 ls,2
 chmod,2
 mount,1
