@@ -1,8 +1,9 @@
 command,count
-uname,1417
-cd,64
+uname,1642
+echo,94
+cd,66
 whoami,22
+hostname,2
 ls,2
 chmod,1
 mount,1
-hostname,1
