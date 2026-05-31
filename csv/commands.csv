@@ -1,3 +1,12 @@
 command,count
-echo,4
+echo,8
+cd,4
+ps,2
 whoami,1
+ip,1
+uname,1
+ifconfig,1
+cat,1
+ls,1
+locate,1
+env,1
