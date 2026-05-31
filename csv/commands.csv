@@ -1,1 +1,3 @@
 command,count
+echo,4
+whoami,1
