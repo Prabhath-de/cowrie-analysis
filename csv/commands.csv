@@ -1,6 +1,6 @@
 command,count
-echo,8
-cd,4
+cd,12
+echo,11
 ps,2
 whoami,1
 ip,1
