@@ -1,7 +1,7 @@
 command,count
-echo,150
-whoami,69
-cd,68
+echo,152
+cd,86
+whoami,70
 chmod,33
 wget,32
 curl,32
@@ -11,12 +11,12 @@ meow,16
 rm,16
 ulimit,16
 ps,3
-ip,1
+uname,2
 ifconfig,1
+ip,1
 if,1
-env,1
 mount,1
 ls,1
 cat,1
-uname,1
+env,1
 locate,1
