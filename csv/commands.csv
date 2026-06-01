@@ -1,7 +1,7 @@
 command,count
-echo,113
+echo,146
+whoami,68
 cd,68
-whoami,67
 chmod,33
 wget,32
 curl,32
