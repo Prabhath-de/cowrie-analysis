@@ -1,11 +1,11 @@
 command,count
-echo,107
+echo,110
 whoami,67
 cd,64
-useradd,32
-chmod,32
+chmod,33
 wget,32
 curl,32
+useradd,32
 usermod,16
 meow,16
 rm,16
