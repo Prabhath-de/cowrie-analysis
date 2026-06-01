@@ -1,2 +1,4 @@
 command,count
-echo,280
+echo,427
+cd,12
+whoami,1
