@@ -1,8 +1,8 @@
 command,count
-echo,1648
-uname,730
-cd,42
+echo,1650
+uname,1165
+cd,62
 touch,6
+whoami,3
 cat,3
-whoami,2
 chmod,2
