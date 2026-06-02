@@ -1,5 +1,7 @@
 command,count
-echo,681
-cd,26
+echo,793
+uname,68
+cd,30
+touch,4
+cat,2
 whoami,1
-uname,1
