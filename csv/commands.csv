@@ -1,7 +1,7 @@
 command,count
-echo,1028
+echo,1155
 uname,382
-cd,34
-touch,4
+cd,36
+touch,6
+cat,3
 whoami,2
-cat,2
