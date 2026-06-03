@@ -1,10 +1,11 @@
 command,count
-uname,380
-cd,22
+uname,383
+cd,24
 echo,3
 free,2
-cat,1
 ps,1
+cat,1
 ls,1
 env,1
 hostname,1
+whoami,1
