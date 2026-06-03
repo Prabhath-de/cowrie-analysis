@@ -1,14 +1,14 @@
 command,count
-uname,1187
-cd,54
-echo,8
-cat,5
-free,3
+uname,1317
+cd,74
+echo,9
+cat,6
+free,4
 ps,3
 ls,3
+hostname,2
 whoami,2
 env,1
-hostname,1
 ip,1
 ifconfig,1
 locate,1
@@ -17,3 +17,5 @@ which,1
 crontab,1
 w,1
 top,1
+df,1
+curl,1
