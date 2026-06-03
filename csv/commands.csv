@@ -1,8 +1,8 @@
 command,count
-uname,376
+uname,380
 cd,14
+echo,3
 free,2
-echo,2
 cat,1
 ps,1
 ls,1
