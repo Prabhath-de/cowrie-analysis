@@ -1,8 +1,8 @@
 username,count
-root,543
-0,238
+root,1108
+0,399
 admin,80
-345gs5662d34,51
+345gs5662d34,53
 user,45
 ubuntu,42
 deploy,41
@@ -23,12 +23,12 @@ hadoop,15
 testuser,15
 openclaw,15
 guest,15
+bot,14
 claude,13
-server,13
 ftp,13
-support,12
+server,13
 deployer,12
-bot,12
+support,12
 sam,12
 student,11
 app,11
