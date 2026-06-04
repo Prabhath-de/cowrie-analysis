@@ -2,10 +2,14 @@ command,count
 uname,80
 cd,34
 echo,4
+hostname,2
 whoami,2
-free,1
-df,1
+history,2
 cat,1
-hostname,1
+df,1
+free,1
 curl,1
 ssh,1
+ls,1
+mount,1
+ps,1
