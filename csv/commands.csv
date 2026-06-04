@@ -1,9 +1,11 @@
 command,count
-uname,79
-cd,28
-echo,3
+uname,80
+cd,34
+echo,4
+whoami,2
 free,1
 df,1
-hostname,1
 cat,1
+hostname,1
 curl,1
+ssh,1
