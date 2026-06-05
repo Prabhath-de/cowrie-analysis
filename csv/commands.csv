@@ -1,10 +1,10 @@
 command,count
 uname,1238
-cd,46
+cd,50
 hostname,4
 netstat,3
+whoami,3
 uptime,2
-whoami,2
 ls,2
 chmod,2
 nproc,1
