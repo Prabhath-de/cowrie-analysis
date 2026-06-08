@@ -1,13 +1,2 @@
 command,count
-uname,759
-cd,82
-echo,4
-ps,4
-cat,2
-chmod,2
-ifconfig,2
-ip,2
-locate,2
-ls,2
-hostname,2
-whoami,1
+cd,2
