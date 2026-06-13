@@ -1,7 +1,2 @@
 command,count
-echo,13431
-uname,994
-cd,144
-which,12
-busybox,2
-hostname,1
+cd,12
