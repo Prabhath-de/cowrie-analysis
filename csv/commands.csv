@@ -1,5 +1,6 @@
 command,count
 echo,13431
 uname,994
-cd,121
-busybox,1
+cd,124
+which,4
+busybox,2
