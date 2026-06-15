@@ -1,3 +1,8 @@
 command,count
-uname,57
-cd,4
+uname,817
+cd,8
+hostname,4
+free,1
+df,1
+cat,1
+curl,1
