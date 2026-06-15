@@ -1,7 +1,7 @@
 command,count
 uname,1075
-echo,80
-cd,58
+echo,120
+cd,64
 hostname,11
 cat,7
 free,3
