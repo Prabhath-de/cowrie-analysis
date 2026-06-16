@@ -1,6 +1,6 @@
 command,count
-echo,512
-cd,78
+echo,545
+cd,82
 hostname,8
 uname,2
 ssh,1
