@@ -1,4 +1,5 @@
 command,count
-echo,42
-cd,8
-hostname,1
+echo,165
+cd,18
+hostname,3
+uname,1
