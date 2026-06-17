@@ -1,14 +1,4 @@
 command,count
-echo,957
-uname,112
-cd,106
-cat,34
-hostname,7
-ps,3
-which,2
-ifconfig,1
-ip,1
-ls,1
-locate,1
-chmod,1
-command,1
+uname,151
+echo,39
+cd,5
