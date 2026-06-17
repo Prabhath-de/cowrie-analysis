@@ -1,6 +1,13 @@
 command,count
-echo,488
-cd,54
-uname,38
+echo,568
+cd,76
+uname,40
 hostname,5
 which,2
+ps,2
+ifconfig,1
+ip,1
+cat,1
+ls,1
+locate,1
+chmod,1
