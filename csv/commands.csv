@@ -1,13 +1,14 @@
 command,count
-echo,877
+echo,918
 uname,112
-cd,102
+cd,103
 cat,34
 hostname,7
 ps,3
 which,2
-ip,1
 ifconfig,1
+ip,1
 ls,1
 locate,1
 chmod,1
+command,1
