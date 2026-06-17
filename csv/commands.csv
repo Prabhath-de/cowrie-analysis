@@ -1,9 +1,9 @@
 command,count
-echo,797
+echo,836
 uname,112
-cd,100
+cd,102
 cat,34
-hostname,6
+hostname,7
 ps,3
 which,2
 ip,1
