@@ -1,5 +1,6 @@
 command,count
-echo,369
+echo,409
 cd,40
+uname,14
 hostname,5
-uname,1
+which,1
