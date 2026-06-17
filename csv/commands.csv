@@ -1,8 +1,8 @@
 command,count
-echo,608
-cd,80
-uname,40
-hostname,5
+echo,647
+cd,84
+uname,44
+hostname,6
 which,2
 ps,2
 ifconfig,1
