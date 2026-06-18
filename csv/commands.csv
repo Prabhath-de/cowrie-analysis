@@ -1,9 +1,9 @@
 command,count
 uname,3429
-echo,729
-cd,51
+echo,770
+cd,53
 cat,44
-hostname,7
+hostname,8
 ps,2
 free,1
 df,1
