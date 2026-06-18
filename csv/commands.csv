@@ -1,8 +1,8 @@
 command,count
-echo,364
-uname,313
-cd,21
-hostname,3
+echo,404
+uname,314
+cd,27
+hostname,4
 cat,2
 ps,2
 free,1
