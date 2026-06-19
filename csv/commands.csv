@@ -1,6 +1,6 @@
 command,count
 uname,3935
-echo,79
+echo,80
 cat,55
 cd,42
 hostname,16
@@ -9,3 +9,4 @@ ip,1
 ifconfig,1
 ls,1
 locate,1
+history,1
