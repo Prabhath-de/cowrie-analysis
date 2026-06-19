@@ -1,9 +1,9 @@
 command,count
 uname,1708
-echo,49
+echo,51
 cat,39
-cd,18
-hostname,3
+cd,24
+hostname,16
 ps,2
 ip,1
 ifconfig,1
