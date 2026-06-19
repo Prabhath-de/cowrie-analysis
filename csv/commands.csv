@@ -1,6 +1,11 @@
 command,count
-uname,1705
-echo,42
-cat,37
-cd,14
+uname,1708
+echo,45
+cat,39
+cd,16
 hostname,3
+ps,2
+ip,1
+ifconfig,1
+ls,1
+locate,1
