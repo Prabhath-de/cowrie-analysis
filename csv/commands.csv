@@ -1,8 +1,8 @@
 command,count
 uname,1708
-echo,46
+echo,48
 cat,39
-cd,16
+cd,18
 hostname,3
 ps,2
 ip,1
