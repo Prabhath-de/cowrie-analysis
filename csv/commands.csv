@@ -1,4 +1,5 @@
 command,count
 uname,1044
-echo,34
+echo,35
 cat,28
+cd,2
