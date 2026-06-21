@@ -1,6 +1,8 @@
 command,count
-echo,8927
-uname,1265
-cd,78
-cat,58
+echo,8932
+uname,2065
+cd,90
+cat,59
+scp,2
+fvmrakyr,2
 chmod,1
