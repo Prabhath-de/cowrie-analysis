@@ -1,7 +1,7 @@
 command,count
 uname,781
-cd,30
-echo,10
+cd,32
+echo,11
 ps,2
 cat,2
 ifconfig,1
