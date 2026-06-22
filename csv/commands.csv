@@ -1,9 +1,9 @@
 command,count
-uname,1547
+uname,1581
 cd,62
-echo,28
+echo,46
+cat,24
 ps,12
-cat,7
 ifconfig,6
 ip,6
 ls,6
