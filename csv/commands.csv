@@ -1,11 +1,4 @@
 command,count
-uname,1570
-echo,50
-cd,46
-cat,21
-ps,2
-ip,1
-ifconfig,1
-ls,1
-locate,1
-uptime,1
+uname,51
+cd,6
+echo,1
