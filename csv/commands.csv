@@ -1,3 +1,5 @@
 command,count
-echo,7
-cd,6
+echo,14
+uname,10
+cd,8
+cat,5
