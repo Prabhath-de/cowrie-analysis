@@ -1,5 +1,6 @@
 command,count
 uname,977
-echo,65
+echo,66
 cat,41
 cd,38
+ps,1
