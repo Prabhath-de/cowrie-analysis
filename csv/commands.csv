@@ -1,6 +1,6 @@
 command,count
 uname,913
-cd,68
+cd,72
 cat,44
 echo,43
 hostname,1
@@ -14,3 +14,4 @@ top,1
 whoami,1
 lscpu,1
 df,1
+env,1
