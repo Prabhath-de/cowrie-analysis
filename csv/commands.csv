@@ -1,8 +1,8 @@
 command,count
-uname,913
-cd,96
-cat,44
-echo,43
+uname,931
+cd,100
+cat,53
+echo,52
 env,2
 hostname,1
 free,1
