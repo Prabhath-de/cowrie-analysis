@@ -1,6 +1,7 @@
 command,count
-uname,1046
-cat,142
-cd,34
-echo,28
+uname,1078
+cat,158
+cd,36
+echo,29
+id,2
 chmod,1
