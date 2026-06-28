@@ -1,7 +1,7 @@
 command,count
 uname,2340
-echo,63
-cd,36
+echo,64
+cd,48
 cat,19
 head,6
 busybox,6
