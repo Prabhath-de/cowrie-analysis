@@ -1,7 +1,7 @@
 command,count
-uname,2263
+uname,2328
 echo,43
-cd,32
+cd,34
 cat,19
 scp,2
 busybox,2
