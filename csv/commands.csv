@@ -1,9 +1,14 @@
 command,count
-uname,2409
-echo,67
+uname,2420
+echo,69
 cd,62
 head,29
 busybox,29
-cat,19
+cat,20
 scp,2
+ps,2
 wget,1
+ip,1
+ifconfig,1
+ls,1
+locate,1
