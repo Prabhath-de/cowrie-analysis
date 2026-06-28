@@ -1,9 +1,9 @@
 command,count
-uname,2340
-echo,64
-cd,50
+uname,2409
+echo,66
+cd,62
+head,29
+busybox,29
 cat,19
-head,6
-busybox,6
 scp,2
 wget,1
