@@ -1,7 +1,9 @@
 command,count
-uname,1561
-echo,42
-cd,28
+uname,2263
+echo,43
+cd,32
 cat,19
 scp,2
+busybox,2
+head,2
 wget,1
