@@ -1,5 +1,6 @@
 command,count
-uname,1560
-echo,41
+uname,1561
+echo,42
 cd,26
 cat,19
+wget,1
