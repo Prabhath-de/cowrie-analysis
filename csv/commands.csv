@@ -1,14 +1,3 @@
 command,count
-uname,3311
-echo,408
-cd,136
-busybox,57
-head,57
-ps,4
-ip,2
-ifconfig,2
-cat,2
-ls,2
-locate,2
-chmod,2
-whoami,1
+echo,43
+cd,6
