@@ -1,9 +1,9 @@
 command,count
 uname,2246
-cd,46
+cd,48
 busybox,11
 head,11
-echo,4
+echo,5
 ps,2
 ip,1
 ifconfig,1
