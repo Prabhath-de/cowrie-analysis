@@ -1,9 +1,9 @@
 command,count
-uname,926
-echo,737
-cd,128
-busybox,53
-head,53
+uname,938
+echo,770
+cd,140
+busybox,57
+head,57
 cat,3
 whoami,2
 rm,1
