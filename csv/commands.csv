@@ -1,7 +1,7 @@
 command,count
 uname,2871
-echo,605
-cd,176
+echo,630
+cd,180
 busybox,31
 head,31
 hostname,11
