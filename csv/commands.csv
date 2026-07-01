@@ -1,3 +1,6 @@
 command,count
-uname,249
-echo,23
+uname,380
+echo,49
+id,2
+busybox,2
+head,2
