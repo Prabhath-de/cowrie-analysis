@@ -1,12 +1,12 @@
 command,count
-uname,2089
-echo,354
-cd,91
+uname,2090
+echo,375
+cd,107
 busybox,27
 head,27
-hostname,3
+hostname,6
+ls,4
 whoami,3
-ls,2
 ps,2
 id,2
 ssh,2
