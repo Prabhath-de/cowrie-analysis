@@ -1,6 +1,6 @@
 command,count
-uname,2863
-echo,501
+uname,2864
+echo,529
 cd,156
 busybox,29
 head,29
@@ -8,11 +8,11 @@ hostname,11
 ls,5
 whoami,5
 ps,3
-id,2
+uptime,2
 ssh,2
+id,2
 mount,2
 env,1
 netstat,1
 history,1
-uptime,1
 pwd,1
