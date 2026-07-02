@@ -35,17 +35,14 @@ def extract_command(cmd):
     # remove path (/bin/uname → uname)
     main_cmd = main_cmd.split("/")[-1]
 
-    # ❌ remove only true garbage
     invalid = ["", "null", "bin:$path", "$path", "export"]
 
     if main_cmd in invalid:
         return None
 
-    # ❌ skip environment variables (e.g. $PATH)
     if main_cmd.startswith("$"):
         return None
 
-    # ❌ skip non-commands (numbers / weird)
     if not main_cmd.isalpha():
         return None
 
@@ -61,7 +58,6 @@ with open(log_file) as f:
 
             # ---------- COMMAND EVENTS ----------
             if event == "cowrie.command.input":
-
                 raw_cmd = log.get("input")
                 clean_cmd = extract_command(raw_cmd)
 
@@ -70,6 +66,7 @@ with open(log_file) as f:
 
                 entry = {
                     "timestamp": log.get("timestamp"),
+                    "event": event,
                     "src_ip": log.get("src_ip"),
                     "username": log.get("username"),
                     "password": log.get("password"),
@@ -80,9 +77,9 @@ with open(log_file) as f:
 
             # ---------- LOGIN EVENTS ----------
             elif event == "cowrie.login.failed" or event == "cowrie.login.success":
-
                 entry = {
                     "timestamp": log.get("timestamp"),
+                    "event": event,
                     "src_ip": log.get("src_ip"),
                     "username": log.get("username"),
                     "password": log.get("password"),
@@ -91,7 +88,7 @@ with open(log_file) as f:
 
                 data.append(entry)
 
-        except:
+        except Exception:
             continue
 
 
@@ -103,7 +100,6 @@ os.makedirs("csv", exist_ok=True)
 
 # ---------- SAVE MAIN LOG ----------
 df.to_csv("csv/all_logs.csv", index=False)
-
 
 # ---------- GENERATE CLEAN STATS ----------
 
@@ -131,7 +127,6 @@ ips_df = ips.reset_index()
 ips_df.columns = ['src_ip', 'count']
 ips_df.to_csv("csv/top_ips.csv", index=False)
 
-
 # ---------- GEOIP COUNTRIES ----------
 try:
     import geoip2.database
@@ -156,5 +151,4 @@ try:
 except Exception as e:
     print("⚠️ GeoIP not working:", e)
 
-
-print("✅ Logs parsed (clean + structured)!")
+print("✅ Logs parsed with event column successfully!")
