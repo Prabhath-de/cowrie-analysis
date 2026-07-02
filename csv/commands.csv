@@ -1,9 +1,9 @@
 command,count
-uname,1501
-echo,620
-cd,106
-busybox,93
-head,93
+uname,1531
+echo,648
+cd,108
+busybox,103
+head,103
 id,2
 ps,2
 scp,2
