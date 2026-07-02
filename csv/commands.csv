@@ -1,11 +1,12 @@
 command,count
 uname,1084
-echo,518
-cd,98
-head,81
+echo,575
+cd,100
 busybox,81
+head,81
 id,2
 ps,2
+scp,2
 ifconfig,1
 ip,1
 cat,1
