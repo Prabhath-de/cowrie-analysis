@@ -1,9 +1,9 @@
 command,count
-uname,1461
-echo,358
+uname,2060
+echo,378
 cd,174
-busybox,14
-head,14
+busybox,23
+head,23
 cat,3
 enter,1
 free,1
@@ -17,3 +17,4 @@ lscpu,1
 df,1
 chmod,1
 hostname,1
+mount,1
