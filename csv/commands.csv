@@ -1,7 +1,7 @@
 command,count
-uname,835
-echo,327
-cd,162
+uname,1461
+echo,358
+cd,174
 busybox,14
 head,14
 cat,3
@@ -16,3 +16,4 @@ whoami,1
 lscpu,1
 df,1
 chmod,1
+hostname,1
