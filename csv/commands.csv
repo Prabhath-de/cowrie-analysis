@@ -1,5 +1,7 @@
 command,count
-echo,95
+echo,112
 cd,16
-uname,9
+uname,15
+busybox,2
+head,2
 netstat,1
