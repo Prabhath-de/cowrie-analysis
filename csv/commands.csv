@@ -1,4 +1,5 @@
 command,count
-echo,68
+echo,95
 cd,16
-uname,3
+uname,9
+netstat,1
