@@ -1,7 +1,7 @@
 command,count
-uname,303
-echo,158
-cd,16
-busybox,2
-head,2
+uname,833
+echo,176
+head,21
+busybox,21
+cd,18
 netstat,1
