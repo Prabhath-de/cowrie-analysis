@@ -1,7 +1,7 @@
 command,count
 uname,1071
-echo,505
-cd,116
+echo,528
+cd,118
 busybox,100
 head,100
 netstat,1
