@@ -1,8 +1,8 @@
 username,count
-root,352
+root,366
+0,50
 admin,47
-0,45
-support,28
+support,33
 ubuntu,26
 user,25
 deploy,22
@@ -272,3 +272,4 @@ devuser,1
 vbox,1
 trinity,1
 balancer,1
+barbados,1
