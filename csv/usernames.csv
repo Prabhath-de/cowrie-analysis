@@ -1,10 +1,10 @@
 username,count
-root,335
+root,352
 admin,47
-0,40
-ubuntu,25
+0,45
+support,28
+ubuntu,26
 user,25
-support,25
 deploy,22
 test,19
 345gs5662d34,17
@@ -271,3 +271,4 @@ btc,1
 devuser,1
 vbox,1
 trinity,1
+balancer,1
