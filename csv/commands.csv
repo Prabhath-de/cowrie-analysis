@@ -1,8 +1,8 @@
 command,count
 uname,1427
+echo,104
 busybox,70
 head,70
-echo,49
 cd,44
 scp,2
 chmod,1
