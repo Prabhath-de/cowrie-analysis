@@ -2,7 +2,7 @@ command,count
 uname,1388
 busybox,70
 head,70
-echo,34
-cd,20
+echo,37
+cd,28
 scp,2
 chmod,1
