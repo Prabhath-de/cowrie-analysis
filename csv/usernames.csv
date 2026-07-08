@@ -1,7 +1,7 @@
 username,count
-root,64
-0,13
-admin,6
+root,70
+0,17
+admin,10
 345gs5662d34,5
 support,4
 vpnbot,2
@@ -10,3 +10,5 @@ jira2,1
 deploy,1
 glassfish,1
 xrpwallet,1
+lsfadmin,1
+postgres,1
