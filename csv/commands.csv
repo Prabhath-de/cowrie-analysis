@@ -1,6 +1,6 @@
 command,count
-uname,42
-echo,26
-cd,16
-busybox,14
-head,14
+uname,57
+echo,53
+busybox,19
+head,19
+cd,18
