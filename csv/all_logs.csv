@@ -348,3 +348,16 @@ timestamp,event,src_ip,username,password,command
 2026-07-09T04:56:33.391992Z,cowrie.login.success,94.154.35.215,0,0,
 2026-07-09T04:59:36.408435Z,cowrie.login.success,45.198.224.92,postgres,abcdef,
 2026-07-09T04:59:36.925471Z,cowrie.command.input,45.198.224.92,,,echo
+2026-07-09T05:02:16.830569Z,cowrie.login.success,179.43.139.58,0,0,
+2026-07-09T05:05:48.798661Z,cowrie.login.success,176.53.159.196,support,support,
+2026-07-09T05:09:59.096499Z,cowrie.login.success,103.82.36.79,root,checking!@!@%,
+2026-07-09T05:15:36.750875Z,cowrie.login.success,50.6.173.74,youhodler,youhodler123,
+2026-07-09T05:15:37.423246Z,cowrie.command.input,50.6.173.74,,,echo
+2026-07-09T05:22:04.482655Z,cowrie.login.success,51.250.105.222,root,checking!@!@%,
+2026-07-09T05:25:12.949360Z,cowrie.login.success,45.198.224.92,deploy,admin12345678,
+2026-07-09T05:25:13.336619Z,cowrie.command.input,45.198.224.92,,,echo
+2026-07-09T05:37:40.768277Z,cowrie.login.success,67.231.24.5,root,ZkSync!S3cur3#P@ss,
+2026-07-09T05:37:41.361480Z,cowrie.command.input,67.231.24.5,,,echo
+2026-07-09T05:38:17.935329Z,cowrie.login.success,94.154.35.215,0,0,
+2026-07-09T05:50:53.783236Z,cowrie.login.success,45.198.224.92,ubuntu,p4ssw0rd,
+2026-07-09T05:50:54.181284Z,cowrie.command.input,45.198.224.92,,,echo
