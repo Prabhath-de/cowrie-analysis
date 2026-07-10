@@ -1,24 +1,24 @@
 Country,Count
-United States,1139
-Bulgaria,484
-Singapore,357
-France,340
-Germany,255
-The Netherlands,139
-Sweden,61
-India,48
-Türkiye,44
+United States,1253
+Bulgaria,612
+Singapore,377
+France,372
+Germany,275
+The Netherlands,148
+Sweden,65
+India,56
+Türkiye,47
 Russia,43
-Canada,38
-Switzerland,27
-Panama,26
+Canada,40
+Switzerland,28
+Panama,28
+Romania,26
+Thailand,20
 Mongolia,20
 Hong Kong,18
-Romania,18
-Thailand,18
-Australia,16
+Australia,18
+Malaysia,16
 Argentina,15
-Malaysia,14
 Japan,14
 Indonesia,12
 Mexico,10
@@ -27,4 +27,5 @@ United Kingdom,5
 Colombia,5
 China,5
 North Macedonia,5
+Brazil,5
 Belgium,1
