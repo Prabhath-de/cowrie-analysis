@@ -1,10 +1,12 @@
 command,count
-echo,862
-uname,136
+echo,958
+uname,189
 cd,18
+busybox,14
+head,14
 ps,2
 ip,1
-ifconfig,1
 cat,1
-ls,1
+ifconfig,1
 locate,1
+ls,1
