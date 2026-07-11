@@ -1,5 +1,5 @@
 command,count
-uname,9
+uname,29
+echo,5
 busybox,3
 head,3
-echo,3
