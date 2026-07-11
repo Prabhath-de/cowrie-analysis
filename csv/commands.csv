@@ -1,9 +1,9 @@
 command,count
-uname,1278
-echo,70
+uname,1424
+echo,73
 busybox,64
 head,64
-cd,31
+cd,39
 ps,2
 ifconfig,1
 ip,1
