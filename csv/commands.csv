@@ -2,7 +2,7 @@ command,count
 uname,1231
 busybox,60
 head,60
-echo,46
+echo,50
 cd,16
 ps,2
 ip,1
