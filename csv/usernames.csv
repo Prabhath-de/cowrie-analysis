@@ -1,7 +1,7 @@
 username,count
-root,544
-0,97
-nobody,91
+root,556
+0,103
+nobody,95
 admin,79
 deploy,50
 ubuntu,50
@@ -9,7 +9,7 @@ user,42
 test,30
 dev,26
 debian,22
-support,20
+support,21
 pi,20
 claude,20
 postgres,17
