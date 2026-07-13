@@ -2,8 +2,8 @@ command,count
 uname,2065
 busybox,144
 head,144
-echo,29
-cd,28
+echo,32
+cd,30
 whoami,2
 chmod,2
 ps,2
