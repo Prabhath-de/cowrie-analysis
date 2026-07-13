@@ -1,8 +1,8 @@
 username,count
-root,320
+root,323
 admin,64
-0,42
-ubuntu,37
+0,50
+ubuntu,38
 deploy,31
 user,30
 administrator,19
@@ -13,8 +13,8 @@ admin1,16
 claude,15
 pi,14
 minecraft,14
+support,13
 dev,12
-support,12
 deployer,11
 ftpuser,11
 postgres,10
