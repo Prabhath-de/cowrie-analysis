@@ -1,9 +1,9 @@
 command,count
-uname,2211
+uname,2559
 busybox,169
 head,169
 cd,48
-echo,43
+echo,45
 ps,4
 whoami,2
 chmod,2
