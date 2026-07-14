@@ -1,6 +1,6 @@
 username,count
-root,401
-0,57
+root,406
+0,344
 admin,47
 ubuntu,45
 user,42
@@ -20,13 +20,13 @@ bot,14
 admin1,13
 appuser,12
 frappe,12
+support,12
 postgres,12
-ftpuser,12
 sam,12
+ftpuser,12
 student,11
-git,11
 cloud,11
-support,11
+git,11
 developer,11
 nobody,11
 testuser,11
