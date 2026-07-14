@@ -1,7 +1,7 @@
 command,count
-uname,1395
-busybox,19
-head,19
-cd,14
+uname,2159
+busybox,20
+head,20
+cd,18
 echo,12
-whoami,3
+whoami,4
