@@ -1,13 +1,13 @@
 command,count
 uname,1714
-echo,42
+echo,102
 cd,32
 busybox,13
 head,13
 whoami,4
+hostname,2
 ps,2
 ip,1
-hostname,1
 ifconfig,1
 cat,1
 ls,1
