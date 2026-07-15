@@ -1,13 +1,13 @@
 username,count
-root,406
-0,378
+root,410
+0,384
+admin,45
 ubuntu,44
-admin,44
 user,41
 deploy,36
 test,26
+support,20
 claude,20
-support,19
 pi,18
 minecraft,16
 dev,16
@@ -266,3 +266,4 @@ coo,1
 ubnt,1
 dongqishi1,1
 xrp,1
+vilnius_lithuania,1
