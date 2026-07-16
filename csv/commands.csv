@@ -1,10 +1,10 @@
 command,count
-uname,549
-echo,31
-cd,24
+uname,591
+echo,33
+cd,28
 busybox,19
 head,19
-whoami,4
+whoami,5
 ps,2
 ip,1
 ifconfig,1
