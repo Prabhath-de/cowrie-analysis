@@ -1,9 +1,9 @@
 command,count
 uname,540
-echo,17
-head,16
+echo,21
+cd,18
 busybox,16
-cd,14
+head,16
 ps,2
 whoami,1
 ip,1
