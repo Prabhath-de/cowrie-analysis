@@ -1,11 +1,11 @@
 command,count
-uname,540
-echo,21
-cd,18
-busybox,16
-head,16
+uname,549
+echo,23
+cd,20
+busybox,19
+head,19
+whoami,2
 ps,2
-whoami,1
 ip,1
 ifconfig,1
 cat,1
