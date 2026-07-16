@@ -1,11 +1,11 @@
 command,count
-uname,797
+uname,798
 busybox,45
 head,45
-echo,41
+echo,43
 cd,34
 whoami,5
-chmod,2
+chmod,3
 ps,2
 ifconfig,1
 ip,1
