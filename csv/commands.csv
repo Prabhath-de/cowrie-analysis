@@ -1,5 +1,8 @@
 command,count
-uname,168
-cd,20
-echo,15
-whoami,1
+uname,172
+cd,22
+echo,19
+whoami,2
+chmod,1
+busybox,1
+head,1
