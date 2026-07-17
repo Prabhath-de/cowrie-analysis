@@ -1,12 +1,12 @@
 command,count
-uname,176
-cd,38
-echo,28
+uname,210
+cd,46
+echo,30
+busybox,12
+head,12
 whoami,5
 cat,3
 chmod,1
-busybox,1
-head,1
 rm,1
 free,1
 ls,1
