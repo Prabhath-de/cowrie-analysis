@@ -1,10 +1,10 @@
 command,count
-uname,813
-busybox,125
-head,125
-cd,48
-echo,38
-whoami,7
+uname,829
+busybox,130
+head,130
+cd,56
+echo,39
+whoami,8
 cat,3
 chmod,1
 rm,1
