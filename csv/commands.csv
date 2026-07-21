@@ -1,4 +1,6 @@
 command,count
-uname,357
+uname,788
 cd,10
-echo,3
+busybox,9
+head,9
+echo,4
