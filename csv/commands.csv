@@ -1,7 +1,7 @@
 command,count
-uname,395
+uname,398
 cd,64
-head,27
-busybox,27
-echo,16
+head,28
+busybox,28
+echo,19
 scp,2
