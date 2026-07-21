@@ -1,7 +1,7 @@
 command,count
-uname,428
-cd,78
-head,38
-busybox,38
-echo,26
+uname,455
+cd,86
+head,43
+busybox,43
+echo,28
 scp,2
