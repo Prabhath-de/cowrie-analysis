@@ -1,6 +1,7 @@
 command,count
-uname,788
-cd,10
-busybox,9
-head,9
-echo,4
+uname,1750
+cd,18
+head,11
+busybox,11
+echo,7
+chmod,1
