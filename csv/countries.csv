@@ -1,22 +1,22 @@
 Country,Count
 United Kingdom,625
 Bulgaria,229
-The Netherlands,78
-Sweden,45
-Vietnam,27
-United States,23
+The Netherlands,82
+Sweden,47
+Vietnam,28
+United States,24
 Indonesia,20
 Germany,16
 Switzerland,16
-China,15
-France,15
-Türkiye,15
+Türkiye,16
 India,15
-Canada,12
+France,15
+China,15
+Canada,14
+Hong Kong,10
 Japan,10
 Brazil,10
 Austria,10
-Hong Kong,10
 Russia,8
 Kenya,5
 Argentina,5
@@ -24,3 +24,4 @@ Bangladesh,5
 Pakistan,5
 Taiwan,5
 Macao,5
+Nigeria,1
