@@ -1,10 +1,10 @@
 username,count
-root,714
+root,719
 admin,87
 ubuntu,81
 user,80
 deploy,72
-0,55
+0,62
 test,52
 claude,40
 pi,36
@@ -33,7 +33,7 @@ teamspeak,20
 server,20
 student,20
 username,20
-support,16
+support,17
 app,16
 mysql,16
 user2,16

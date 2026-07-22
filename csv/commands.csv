@@ -1,9 +1,9 @@
 command,count
 uname,3128
-head,27
 busybox,27
+head,27
 cd,24
-echo,16
+echo,17
 cat,3
 chmod,2
 enter,1
@@ -16,3 +16,4 @@ top,1
 whoami,1
 lscpu,1
 df,1
+hostname,1
