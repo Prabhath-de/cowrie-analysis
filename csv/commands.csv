@@ -2,11 +2,12 @@ command,count
 uname,492
 busybox,12
 head,12
-cd,6
+cd,11
 echo,2
 ps,2
-ip,1
 ifconfig,1
+ip,1
 cat,1
 ls,1
 locate,1
+wget,1
