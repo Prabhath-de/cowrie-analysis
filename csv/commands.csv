@@ -2,5 +2,5 @@ command,count
 uname,1023
 busybox,44
 head,44
-cd,32
-echo,11
+cd,36
+echo,12
