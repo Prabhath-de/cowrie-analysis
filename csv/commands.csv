@@ -1,13 +1,14 @@
 command,count
 uname,492
-cd,19
+cd,29
 busybox,12
 head,12
-echo,3
+echo,4
 ps,2
-ifconfig,1
 ip,1
+ifconfig,1
 cat,1
 ls,1
 locate,1
 wget,1
+chmod,1
