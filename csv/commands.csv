@@ -1,11 +1,11 @@
 command,count
-uname,2867
+uname,2869
 busybox,148
 head,148
-cd,55
-echo,3
+cd,57
+whoami,3
 hostname,3
-whoami,2
+echo,3
 wget,2
 ps,2
 mount,1
