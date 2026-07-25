@@ -1,5 +1,15 @@
 command,count
-uname,1464
-cd,4
+uname,1505
+cd,14
+head,11
+busybox,11
+ps,2
 whoami,1
+ip,1
+hostname,1
 mount,1
+ifconfig,1
+ls,1
+cat,1
+echo,1
+locate,1
