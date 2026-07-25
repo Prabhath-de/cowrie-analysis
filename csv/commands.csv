@@ -1,12 +1,12 @@
 command,count
-uname,1883
+uname,2040
 head,127
 busybox,127
-cd,35
-echo,2
+cd,37
+hostname,3
 ps,2
+echo,2
 whoami,2
-hostname,2
 cat,1
 ifconfig,1
 ip,1
