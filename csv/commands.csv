@@ -1,8 +1,8 @@
 command,count
-uname,1779
-busybox,93
-head,93
-cd,28
+uname,1782
+busybox,94
+head,94
+cd,31
 ps,2
 hostname,2
 whoami,2
