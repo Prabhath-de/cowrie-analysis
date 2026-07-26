@@ -1,16 +1,18 @@
 Country,Count
-The Netherlands,3365
+The Netherlands,3367
 Sweden,1056
-Romania,320
+United Kingdom,1000
+Romania,334
 Malaysia,309
-United States,163
-Vietnam,92
+United States,217
+Vietnam,134
 Bulgaria,62
-Germany,60
-Switzerland,24
-Türkiye,24
-Indonesia,12
+Germany,62
+Switzerland,26
+Türkiye,25
+Indonesia,17
 Hong Kong,10
+Bolivia,10
 Japan,10
 Uzbekistan,9
 Nigeria,9
@@ -19,14 +21,13 @@ India,6
 Greece,5
 Brazil,5
 Seychelles,5
-Bolivia,5
 France,5
 Denmark,5
 China,5
 Austria,5
 Bangladesh,5
-Singapore,5
 Mexico,5
+Singapore,5
 Australia,5
 South Korea,5
 Portugal,5
