@@ -1,7 +1,7 @@
 command,count
-uname,190
+uname,239
+head,16
+busybox,16
 cd,12
-head,10
-busybox,10
 uptime,1
 wget,1
