@@ -1,7 +1,8 @@
 command,count
-uname,1051
+uname,1812
 cd,32
-head,20
 busybox,20
-uptime,1
+head,20
 wget,1
+uptime,1
+netstat,1
