@@ -1,4 +1,5 @@
 command,count
-uname,109
-busybox,34
-head,34
+uname,215
+busybox,67
+head,67
+cd,6
