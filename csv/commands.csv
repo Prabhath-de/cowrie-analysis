@@ -1,9 +1,9 @@
 command,count
-uname,1906
-cd,62
+uname,1913
+cd,68
 busybox,31
 head,31
-wget,2
+wget,3
 uptime,1
 netstat,1
 env,1
