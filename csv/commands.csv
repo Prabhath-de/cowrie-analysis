@@ -1,10 +1,4 @@
 command,count
-uname,2969
-cd,76
-busybox,40
-head,40
-wget,3
-uptime,1
-netstat,1
-env,1
-echo,1
+uname,109
+busybox,34
+head,34
