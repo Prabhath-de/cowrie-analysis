@@ -1,8 +1,9 @@
 command,count
-uname,268
+uname,297
 busybox,67
 head,67
 cd,15
-echo,1
+echo,2
 hostname,1
 wget,1
+chmod,1
