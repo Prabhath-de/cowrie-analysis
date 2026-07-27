@@ -1,12 +1,12 @@
 command,count
-uname,506
+uname,911
 busybox,73
 head,73
-cd,41
+cd,43
 echo,3
+wget,2
 cat,2
 hostname,1
-wget,1
 chmod,1
 rm,1
 free,1
