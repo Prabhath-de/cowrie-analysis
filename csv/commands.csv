@@ -1,8 +1,9 @@
 command,count
-uname,669
-busybox,47
-head,47
-cd,14
+uname,754
+busybox,73
+head,73
+cd,16
 nano,2
 ls,1
 nno,1
+wget,1
