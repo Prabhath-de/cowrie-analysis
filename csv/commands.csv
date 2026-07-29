@@ -1,9 +1,9 @@
 command,count
-echo,9321
-uname,1821
+echo,11133
+uname,1829
 head,90
 busybox,90
-cd,60
+cd,68
 ps,4
 ls,3
 nano,2
