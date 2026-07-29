@@ -1,15 +1,3 @@
 command,count
-echo,13091
-uname,1836
-head,90
-busybox,90
-cd,68
-ps,4
-ls,3
-nano,2
-wget,2
-ip,2
-cat,2
-ifconfig,2
-locate,2
-nno,1
+echo,1999
+uname,334
