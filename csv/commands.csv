@@ -1,8 +1,8 @@
 command,count
-uname,980
-busybox,231
-head,231
-cd,62
+uname,996
+busybox,234
+head,234
+cd,66
 echo,24
 cat,4
 ps,4
