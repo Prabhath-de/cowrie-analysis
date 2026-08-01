@@ -1255,3 +1255,17 @@ timestamp,event,src_ip,username,password,command
 2026-08-01T07:58:04.853534Z,cowrie.command.input,193.32.162.82,,,uname
 2026-08-01T08:00:02.934202Z,cowrie.login.success,31.77.227.120,solana,solana,
 2026-08-01T08:00:03.409847Z,cowrie.command.input,31.77.227.120,,,echo
+2026-08-01T08:06:39.004833Z,cowrie.login.success,193.32.162.82,root,p@ssword,
+2026-08-01T08:06:39.598391Z,cowrie.command.input,193.32.162.82,,,uname
+2026-08-01T08:15:21.203202Z,cowrie.login.success,193.32.162.82,root,master,
+2026-08-01T08:15:21.764527Z,cowrie.command.input,193.32.162.82,,,uname
+2026-08-01T08:24:05.014481Z,cowrie.login.success,193.32.162.82,root,Password1,
+2026-08-01T08:24:05.427291Z,cowrie.command.input,193.32.162.82,,,uname
+2026-08-01T08:32:50.451466Z,cowrie.login.success,193.32.162.82,root,Password12,
+2026-08-01T08:32:50.989726Z,cowrie.command.input,193.32.162.82,,,uname
+2026-08-01T08:41:29.405888Z,cowrie.login.success,193.32.162.82,root,Password123,
+2026-08-01T08:41:29.851873Z,cowrie.command.input,193.32.162.82,,,uname
+2026-08-01T08:50:11.564174Z,cowrie.login.success,193.32.162.82,root,Master,
+2026-08-01T08:50:12.115807Z,cowrie.command.input,193.32.162.82,,,uname
+2026-08-01T08:58:53.091527Z,cowrie.login.success,193.32.162.82,root,r00t,
+2026-08-01T08:58:53.630918Z,cowrie.command.input,193.32.162.82,,,uname
