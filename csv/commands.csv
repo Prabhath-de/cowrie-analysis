@@ -1,3 +1,7 @@
 command,count
-uname,796
-cd,6
+uname,850
+cd,8
+busybox,8
+head,8
+echo,1
+bash,1
