@@ -1,3 +1,5 @@
 command,count
-uname,110
+uname,123
 cd,4
+busybox,2
+head,2
