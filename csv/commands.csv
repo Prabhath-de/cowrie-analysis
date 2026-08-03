@@ -1,9 +1,9 @@
 command,count
-uname,800
+uname,1417
 cd,67
-busybox,47
-head,47
+busybox,51
+head,51
+chmod,2
 echo,1
 ip,1
 ifconfig,1
-chmod,1
