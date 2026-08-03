@@ -1,5 +1,8 @@
 command,count
-uname,274
-cd,23
+uname,577
+cd,35
 busybox,7
 head,7
+echo,1
+ip,1
+ifconfig,1
