@@ -1,7 +1,7 @@
 command,count
+uname,35
+echo,12
 cd,12
-echo,8
-uname,4
 cat,3
 chmod,1
 rm,1
@@ -14,3 +14,4 @@ top,1
 whoami,1
 lscpu,1
 df,1
+id,1
