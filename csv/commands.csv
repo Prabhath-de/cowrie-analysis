@@ -1,11 +1,11 @@
 command,count
-uname,56
+uname,83
+echo,52
 cd,49
-echo,45
+head,11
+busybox,11
 cat,3
 chmod,2
-busybox,2
-head,2
 ls,1
 free,1
 rm,1
