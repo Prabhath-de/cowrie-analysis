@@ -1,9 +1,9 @@
 command,count
-uname,1216
+uname,1240
 echo,112
 cd,93
-head,34
-busybox,34
+head,40
+busybox,40
 cat,3
 chmod,2
 ls,1
