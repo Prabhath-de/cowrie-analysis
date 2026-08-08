@@ -1,5 +1,7 @@
 command,count
-uname,812
+uname,1472
 busybox,50
 head,50
-cd,4
+cd,12
+echo,10
+hostname,1
