@@ -1,34 +1,34 @@
 Country,Count
 China,3753
-The Netherlands,1603
-United States,479
+The Netherlands,1611
+United States,511
+Germany,236
 Romania,234
-Germany,207
-South Korea,126
-France,87
-Australia,84
+South Korea,142
+France,103
+Australia,88
+Italy,64
+Sweden,62
 Brazil,61
-Sweden,57
-Italy,57
-United Kingdom,48
+United Kingdom,61
+Singapore,46
+India,45
 Canada,42
 Bulgaria,42
-India,38
-Vietnam,37
-Austria,37
-Singapore,31
+Vietnam,41
+Austria,39
+Hong Kong,37
+Taiwan,30
 Finland,30
-Hong Kong,30
-Indonesia,25
-Türkiye,20
-Taiwan,19
-Iran,18
+Indonesia,27
+Iran,24
+Türkiye,22
 Czechia,16
 Spain,15
+Mexico,12
 Japan,10
+Hungary,10
 Philippines,8
-Mexico,7
-Hungary,7
 Belgium,6
 Seychelles,6
 Bolivia,6
@@ -37,8 +37,8 @@ Russia,5
 Macao,5
 Botswana,5
 Switzerland,5
+Egypt,5
 Poland,4
 United Arab Emirates,4
 New Zealand,2
-Egypt,2
 Israel,2
