@@ -1,9 +1,9 @@
 command,count
-echo,2016
-uname,1505
-cd,116
-busybox,50
-head,50
+echo,2022
+uname,1539
+cd,126
+busybox,55
+head,55
 mkdir,10
 cat,2
 printf,1
