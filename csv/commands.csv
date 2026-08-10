@@ -1,10 +1,10 @@
 command,count
-echo,2003
-uname,1471
-cd,110
+echo,2009
+uname,1488
+cd,116
 busybox,46
 head,46
-mkdir,4
+mkdir,10
 cat,2
 printf,1
 usermod,1
