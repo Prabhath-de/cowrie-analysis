@@ -1,9 +1,9 @@
 command,count
-echo,1965
-uname,368
-cd,98
-busybox,33
-head,33
+echo,1972
+uname,1028
+cd,100
+busybox,43
+head,43
 cat,2
 usermod,1
 printf,1
