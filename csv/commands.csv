@@ -1,9 +1,9 @@
 command,count
-uname,979
+uname,1019
 echo,142
 busybox,48
 head,48
-cd,42
+cd,46
 mkdir,6
 chmod,3
 printf,1
