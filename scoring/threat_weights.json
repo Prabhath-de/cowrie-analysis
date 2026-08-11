@@ -110,7 +110,7 @@
   "risk_thresholds_raw": {
     "low_max": 2.0,
     "medium_max": 5.0,
-    "high_max": 11.0,
+    "high_max": 10.0,
     "critical_min": 11.0
   },
   "excluded_features": {
