@@ -1,11 +1,3 @@
 command,count
-uname,1019
-echo,142
-busybox,48
-head,48
-cd,46
-mkdir,6
-chmod,3
-printf,1
-usermod,1
-openssl,1
+uname,7
+cd,2
