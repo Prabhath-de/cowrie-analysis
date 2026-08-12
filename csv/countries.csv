@@ -1,11 +1,11 @@
 Country,Count
-The Netherlands,3126
-Sweden,2568
+The Netherlands,3128
+Sweden,2909
+Romania,288
 Bulgaria,262
-Romania,222
-United States,134
-Australia,54
-Vietnam,39
+United States,141
+Australia,58
+Vietnam,40
 Pakistan,36
 China,31
 France,17
@@ -25,5 +25,5 @@ Canada,5
 Bolivia,5
 Bangladesh,5
 Singapore,3
-Germany,1
+Germany,2
 Belgium,1

@@ -1,0 +1,46 @@
+================================================================================
+POST-AUTH TEMPORAL DECISION V2
+================================================================================
+
+TEMPORAL BOUNDARIES
+--------------------------------------------------
+Burst minimum : 10
+High burst    : 40
+Extreme burst : 116
+
+TEMPORAL DISTRIBUTION
+--------------------------------------------------
+NORMAL            :  3846 ( 99.48%)
+BURST             :    14 (  0.36%)
+HIGH_BURST        :     4 (  0.10%)
+EXTREME_BURST     :     2 (  0.05%)
+
+MITIGATION DECISIONS
+--------------------------------------------------
+ACL_BLOCK_CANDIDATE      :    10 (  0.26%)
+HIGH_PRIORITY_REVIEW     :     1 (  0.03%)
+REVIEW                   :     0 (  0.00%)
+MONITOR                  :     9 (  0.23%)
+BASE_SCORE_REVIEW        :   118 (  3.05%)
+NO_ACTION                :  3728 ( 96.43%)
+
+================================================================================
+ACL BLOCK CANDIDATES
+================================================================================
+
+35.229.125.98      score= 8.67/15 burst=  125 max5s= 69 max1m=161 temporal=EXTREME_BURST
+34.75.237.227      score= 8.18/15 burst=   65 max5s= 46 max1m= 69 temporal=HIGH_BURST   
+34.139.191.163     score= 7.95/15 burst=   60 max5s= 69 max1m= 69 temporal=HIGH_BURST   
+136.107.187.197    score= 7.95/15 burst=   60 max5s= 69 max1m= 69 temporal=HIGH_BURST   
+128.1.44.162       score= 7.89/15 burst=   49 max5s= 18 max1m= 20 temporal=HIGH_BURST   
+34.150.142.107     score= 7.38/15 burst=   37 max5s= 46 max1m= 46 temporal=BURST        
+34.138.181.9       score= 7.38/15 burst=   37 max5s= 29 max1m= 46 temporal=BURST        
+158.180.79.132     score= 7.26/15 burst=   32 max5s= 15 max1m= 19 temporal=BURST        
+136.232.11.10      score= 7.11/15 burst=   24 max5s= 15 max1m= 19 temporal=BURST        
+182.93.7.194       score= 7.22/15 burst=   16 max5s= 17 max1m= 19 temporal=BURST        
+
+================================================================================
+HIGH PRIORITY REVIEW
+================================================================================
+
+103.105.67.170     score= 5.00/15 burst=13409 max5s= 22 max1m=251 temporal=EXTREME_BURST
