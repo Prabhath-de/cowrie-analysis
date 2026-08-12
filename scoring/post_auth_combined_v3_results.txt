@@ -1,0 +1,48 @@
+======================================================================
+POST-AUTH COMBINED V3
+======================================================================
+
+IPs analysed : 3866
+Maximum score: 15
+
+RISK DISTRIBUTION
+----------------------------------------
+LOW       :  3730
+MEDIUM    :   118
+HIGH      :    18
+CRITICAL  :     0
+
+TOP 30
+------------------------------------------------------------------------------------------
+35.229.125.98      commands=   161 unique=11 severity=4.01/7 intensity=2.83/5 diversity=1.83/3 TOTAL=8.67/15 HIGH
+200.89.69.247      commands=   983 unique=17 severity=1.98/7 intensity=3.63/5 diversity=3.00/3 TOTAL=8.61/15 HIGH
+34.75.237.227      commands=    92 unique=11 severity=3.71/7 intensity=2.64/5 diversity=1.83/3 TOTAL=8.18/15 HIGH
+34.139.191.163     commands=    69 unique=11 severity=3.56/7 intensity=2.56/5 diversity=1.83/3 TOTAL=7.95/15 HIGH
+136.107.187.197    commands=    69 unique=11 severity=3.56/7 intensity=2.56/5 diversity=1.83/3 TOTAL=7.95/15 HIGH
+128.1.44.162       commands=   127 unique=15 severity=2.78/7 intensity=2.75/5 diversity=2.35/3 TOTAL=7.89/15 HIGH
+103.116.107.209    commands=   161 unique=10 severity=3.18/7 intensity=2.83/5 diversity=1.77/3 TOTAL=7.77/15 HIGH
+70.54.182.130      commands=   112 unique=15 severity=2.71/7 intensity=2.71/5 diversity=2.35/3 TOTAL=7.77/15 HIGH
+88.210.14.13       commands=   120 unique=14 severity=2.80/7 intensity=2.73/5 diversity=2.00/3 TOTAL=7.53/15 HIGH
+94.183.186.131     commands=    85 unique=15 severity=2.53/7 intensity=2.62/5 diversity=2.35/3 TOTAL=7.50/15 HIGH
+118.196.114.236    commands=    82 unique=15 severity=2.53/7 intensity=2.61/5 diversity=2.35/3 TOTAL=7.49/15 HIGH
+120.48.11.36       commands=    77 unique=15 severity=2.48/7 intensity=2.59/5 diversity=2.35/3 TOTAL=7.42/15 HIGH
+34.150.142.107     commands=    46 unique=11 severity=3.36/7 intensity=2.19/5 diversity=1.83/3 TOTAL=7.38/15 HIGH
+34.138.181.9       commands=    46 unique=11 severity=3.36/7 intensity=2.19/5 diversity=1.83/3 TOTAL=7.38/15 HIGH
+158.180.79.132     commands=    84 unique=14 severity=2.65/7 intensity=2.61/5 diversity=2.00/3 TOTAL=7.26/15 HIGH
+182.93.7.194       commands=   156 unique=14 severity=2.40/7 intensity=2.82/5 diversity=2.00/3 TOTAL=7.22/15 HIGH
+45.91.169.93       commands=    75 unique=14 severity=2.54/7 intensity=2.58/5 diversity=2.00/3 TOTAL=7.12/15 HIGH
+136.232.11.10      commands=    71 unique=14 severity=2.54/7 intensity=2.56/5 diversity=2.00/3 TOTAL=7.11/15 HIGH
+5.129.252.199      commands=   361 unique=12 severity=1.87/7 intensity=3.16/5 diversity=1.89/3 TOTAL=6.93/15 MEDIUM
+106.251.244.178    commands=    58 unique=14 severity=2.40/7 intensity=2.51/5 diversity=2.00/3 TOTAL=6.91/15 MEDIUM
+112.151.178.49     commands=    54 unique=14 severity=2.40/7 intensity=2.45/5 diversity=2.00/3 TOTAL=6.85/15 MEDIUM
+219.92.11.46       commands=    54 unique=14 severity=2.40/7 intensity=2.45/5 diversity=2.00/3 TOTAL=6.85/15 MEDIUM
+138.99.80.102      commands=    75 unique=14 severity=2.20/7 intensity=2.58/5 diversity=2.00/3 TOTAL=6.78/15 MEDIUM
+183.110.116.87     commands=    59 unique=14 severity=2.20/7 intensity=2.51/5 diversity=2.00/3 TOTAL=6.71/15 MEDIUM
+188.166.216.131    commands=    42 unique=14 severity=2.40/7 intensity=2.05/5 diversity=2.00/3 TOTAL=6.46/15 MEDIUM
+187.85.187.100     commands=    39 unique=14 severity=2.20/7 intensity=1.95/5 diversity=2.00/3 TOTAL=6.14/15 MEDIUM
+217.60.39.166      commands=    39 unique=14 severity=2.20/7 intensity=1.95/5 diversity=2.00/3 TOTAL=6.14/15 MEDIUM
+172.203.134.70     commands=    39 unique=14 severity=2.20/7 intensity=1.95/5 diversity=2.00/3 TOTAL=6.14/15 MEDIUM
+45.156.87.209      commands=    61 unique=12 severity=1.49/7 intensity=2.52/5 diversity=1.89/3 TOTAL=5.91/15 MEDIUM
+203.189.188.153    commands=    36 unique= 8 severity=2.37/7 intensity=1.83/5 diversity=1.61/3 TOTAL=5.82/15 MEDIUM
+
+Created: scoring/post_auth_combined_v3.csv
