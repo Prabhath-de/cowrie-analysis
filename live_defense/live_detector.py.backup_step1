@@ -1,0 +1,324 @@
+#!/usr/bin/env python3
+
+import json
+import os
+import time
+from collections import defaultdict, deque
+from datetime import datetime, timezone
+
+from watchdog.observers import Observer
+from watchdog.events import FileSystemEventHandler
+
+from detect_advanced_patterns import (
+    has_ssh_backdoor_pattern,
+    has_dropper_oneliner_pattern,
+)
+
+LOG_FILE = "/home/cowrie/cowrie/var/log/cowrie/cowrie.json"
+LOG_DIR = "/home/cowrie/cowrie/var/log/cowrie"
+
+# ------------------------------------------------------------
+# LIVE DETECTION PARAMETERS
+# ------------------------------------------------------------
+
+WINDOW_SECONDS = 60
+
+FAILED_LOGIN_THRESHOLD = 10
+COMMAND_THRESHOLD = 10
+DIRECT_TCPIP_THRESHOLD = 5
+DOWNLOAD_THRESHOLD = 2
+
+# Burst threshold:
+# number of relevant events from same IP within WINDOW_SECONDS
+BURST_THRESHOLD = 10
+
+# ------------------------------------------------------------
+# PER-IP STATE
+# ------------------------------------------------------------
+
+state = defaultdict(
+    lambda: {
+        "failed_login": 0,
+        "success_login": 0,
+        "commands": 0,
+        "downloads": 0,
+        "uploads": 0,
+        "direct_tcpip": 0,
+        "backdoor": 0,
+        "dropper": 0,
+        "events": deque(),
+    }
+)
+
+
+def cleanup_old_events(ip, now):
+
+    events = state[ip]["events"]
+
+    cutoff = now - WINDOW_SECONDS
+
+    while events and events[0] < cutoff:
+        events.popleft()
+
+
+def decision(ip):
+
+    s = state[ip]
+
+    now = time.time()
+
+    cleanup_old_events(ip, now)
+
+    burst = len(s["events"])
+
+    # --------------------------------------------------------
+    # CRITICAL ATTACK PATTERNS
+    # --------------------------------------------------------
+
+    if s["backdoor"] > 0:
+        return "ACL_BLOCK_CANDIDATE", "SSH_BACKDOOR_PATTERN"
+
+    if s["dropper"] > 0:
+        return "ACL_BLOCK_CANDIDATE", "DROPPER_PATTERN"
+
+    # --------------------------------------------------------
+    # DIRECT TCP/IP ABUSE
+    # --------------------------------------------------------
+
+    if s["direct_tcpip"] >= DIRECT_TCPIP_THRESHOLD:
+        return "ACL_BLOCK_CANDIDATE", "DIRECT_TCPIP_ABUSE"
+
+    # --------------------------------------------------------
+    # HIGH LOGIN FAILURE RATE
+    # --------------------------------------------------------
+
+    if s["failed_login"] >= FAILED_LOGIN_THRESHOLD:
+        return "ACL_BLOCK_CANDIDATE", "BRUTE_FORCE"
+
+    # --------------------------------------------------------
+    # HIGH COMMAND ACTIVITY + BURST
+    # --------------------------------------------------------
+
+    if (
+        s["commands"] >= COMMAND_THRESHOLD
+        and burst >= BURST_THRESHOLD
+    ):
+        return "ACL_BLOCK_CANDIDATE", "COMMAND_BURST"
+
+    # --------------------------------------------------------
+    # DOWNLOAD ACTIVITY
+    # --------------------------------------------------------
+
+    if (
+        s["downloads"] >= DOWNLOAD_THRESHOLD
+        and burst >= BURST_THRESHOLD
+    ):
+        return "ACL_BLOCK_CANDIDATE", "DOWNLOAD_BURST"
+
+    # --------------------------------------------------------
+    # MONITOR
+    # --------------------------------------------------------
+
+    if burst >= BURST_THRESHOLD:
+        return "MONITOR", "EVENT_BURST"
+
+    return "NO_ACTION", "NORMAL"
+
+
+# ------------------------------------------------------------
+# EVENT PROCESSOR
+# ------------------------------------------------------------
+
+def process_event(event):
+
+    if not isinstance(event, dict):
+        return
+
+    eventid = event.get("eventid")
+    ip = event.get("src_ip")
+
+    if not eventid or not ip:
+        return
+
+    now = time.time()
+
+    s = state[ip]
+
+    # Track event time
+    s["events"].append(now)
+
+    cleanup_old_events(ip, now)
+
+    # --------------------------------------------------------
+    # FEATURES
+    # --------------------------------------------------------
+
+    if eventid == "cowrie.login.failed":
+        s["failed_login"] += 1
+
+    elif eventid == "cowrie.login.success":
+        s["success_login"] += 1
+
+    elif eventid == "cowrie.command.input":
+
+        s["commands"] += 1
+
+        command = event.get("input", "")
+
+        if has_ssh_backdoor_pattern(command):
+            s["backdoor"] += 1
+
+        if has_dropper_oneliner_pattern(command):
+            s["dropper"] += 1
+
+    elif eventid == "cowrie.session.file_download":
+        s["downloads"] += 1
+
+    elif eventid == "cowrie.session.file_upload":
+        s["uploads"] += 1
+
+    elif eventid == "cowrie.direct-tcpip.request":
+        s["direct_tcpip"] += 1
+
+    # --------------------------------------------------------
+    # DECISION
+    # --------------------------------------------------------
+
+    action, reason = decision(ip)
+
+    burst = len(s["events"])
+
+    print(
+        f"[DETECT] "
+        f"{eventid:<32} "
+        f"IP={ip:<15} "
+        f"burst={burst:<3} "
+        f"failed={s['failed_login']:<3} "
+        f"cmd={s['commands']:<3} "
+        f"tcpip={s['direct_tcpip']:<3} "
+        f"download={s['downloads']:<2} "
+        f"action={action:<22} "
+        f"reason={reason}",
+        flush=True
+    )
+
+
+# ------------------------------------------------------------
+# FILE WATCHER
+# ------------------------------------------------------------
+
+class CowrieHandler(FileSystemEventHandler):
+
+    def __init__(self):
+
+        self.position = os.path.getsize(LOG_FILE)
+        self.buffer = ""
+
+    def process_new_lines(self):
+
+        try:
+
+            with open(
+                LOG_FILE,
+                "r",
+                encoding="utf-8",
+                errors="ignore"
+            ) as f:
+
+                f.seek(self.position)
+
+                data = f.read()
+
+                if not data:
+                    return
+
+                self.position = f.tell()
+
+                self.buffer += data
+
+                lines = self.buffer.split("\n")
+
+                self.buffer = lines.pop()
+
+                for line in lines:
+
+                    line = line.strip()
+
+                    if not line:
+                        continue
+
+                    try:
+
+                        event = json.loads(line)
+
+                    except json.JSONDecodeError:
+
+                        continue
+
+                    process_event(event)
+
+        except FileNotFoundError:
+
+            print(
+                "[ERROR] Cowrie log not found",
+                flush=True
+            )
+
+        except Exception as e:
+
+            print(
+                f"[ERROR] {type(e).__name__}: {e}",
+                flush=True
+            )
+
+    def on_modified(self, event):
+
+        if event.is_directory:
+            return
+
+        if os.path.abspath(event.src_path) == os.path.abspath(LOG_FILE):
+
+            self.process_new_lines()
+
+
+# ------------------------------------------------------------
+# MAIN
+# ------------------------------------------------------------
+
+print("=" * 110)
+print("COWRIE LIVE DETECTION ENGINE")
+print("=" * 110)
+print(f"Watching : {LOG_FILE}")
+print(f"Window   : {WINDOW_SECONDS} seconds")
+print("Starting from current end of file.")
+print("Waiting for NEW attacks...")
+print("Press Ctrl+C to stop.")
+print("=" * 110)
+
+handler = CowrieHandler()
+
+observer = Observer()
+
+observer.schedule(
+    handler,
+    LOG_DIR,
+    recursive=False
+)
+
+observer.start()
+
+try:
+
+    while True:
+        time.sleep(1)
+
+except KeyboardInterrupt:
+
+    print("\nStopping live detector...")
+
+finally:
+
+    observer.stop()
+    observer.join()
+
+print("Live detector stopped.")
