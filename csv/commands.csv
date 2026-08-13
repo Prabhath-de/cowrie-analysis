@@ -1,8 +1,8 @@
 command,count
-uname,628
+uname,656
 busybox,105
 head,105
-cd,51
+cd,57
 echo,29
 cat,3
 scp,2
