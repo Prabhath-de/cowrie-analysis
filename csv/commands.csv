@@ -1,11 +1,13 @@
 command,count
-uname,270
+uname,353
+busybox,27
+head,27
 cd,23
-cat,3
 echo,3
+cat,3
 enter,1
 free,1
-ls,1
 which,1
-crontab,1
+ls,1
 w,1
+crontab,1
