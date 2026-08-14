@@ -1,0 +1,93 @@
+================================================================================
+POST-AUTH TEMPORAL BURST + V3 CROSS-CHECK
+================================================================================
+
+IPs analysed: 3866
+
+TEMPORAL CLASSIFICATION
+--------------------------------------------------
+NORMAL          :  3586
+ELEVATED        :   256
+HIGH_FREQUENCY  :     0
+BURST           :    24
+
+ACL DECISION MODIFIER
+--------------------------------------------------
+BASE_SCORE_ONLY     :  3586
+MONITOR             :   256
+REVIEW              :     0
+IMMEDIATE_REVIEW    :    24
+
+BURST IPs: 24
+
+TOP BURST IPs
+--------------------------------------------------------------------------------
+103.105.67.170     score= 5.00/15 risk=MEDIUM   max5s= 22 max1m=251 burst=13409 IMMEDIATE_REVIEW
+35.229.125.98      score= 8.67/15 risk=HIGH     max5s= 69 max1m=161 burst=  125 IMMEDIATE_REVIEW
+34.75.237.227      score= 8.18/15 risk=HIGH     max5s= 46 max1m= 69 burst=   65 IMMEDIATE_REVIEW
+34.139.191.163     score= 7.95/15 risk=HIGH     max5s= 69 max1m= 69 burst=   60 IMMEDIATE_REVIEW
+136.107.187.197    score= 7.95/15 risk=HIGH     max5s= 69 max1m= 69 burst=   60 IMMEDIATE_REVIEW
+128.1.44.162       score= 7.89/15 risk=HIGH     max5s= 18 max1m= 20 burst=   49 IMMEDIATE_REVIEW
+34.150.142.107     score= 7.38/15 risk=HIGH     max5s= 46 max1m= 46 burst=   37 IMMEDIATE_REVIEW
+34.138.181.9       score= 7.38/15 risk=HIGH     max5s= 29 max1m= 46 burst=   37 IMMEDIATE_REVIEW
+158.180.79.132     score= 7.26/15 risk=HIGH     max5s= 15 max1m= 19 burst=   32 IMMEDIATE_REVIEW
+136.232.11.10      score= 7.11/15 risk=HIGH     max5s= 15 max1m= 19 burst=   24 IMMEDIATE_REVIEW
+103.42.74.124      score= 5.74/15 risk=MEDIUM   max5s= 18 max1m= 20 burst=   18 IMMEDIATE_REVIEW
+182.93.7.194       score= 7.22/15 risk=HIGH     max5s= 17 max1m= 19 burst=   16 IMMEDIATE_REVIEW
+106.251.244.178    score= 6.91/15 risk=MEDIUM   max5s= 17 max1m= 19 burst=   16 IMMEDIATE_REVIEW
+219.92.11.46       score= 6.85/15 risk=MEDIUM   max5s= 17 max1m= 19 burst=   16 IMMEDIATE_REVIEW
+188.166.216.131    score= 6.46/15 risk=MEDIUM   max5s= 17 max1m= 19 burst=   16 IMMEDIATE_REVIEW
+112.151.178.49     score= 6.85/15 risk=MEDIUM   max5s= 16 max1m= 19 burst=   16 IMMEDIATE_REVIEW
+35.185.206.243     score= 2.44/15 risk=LOW      max5s= 18 max1m= 24 burst=   12 IMMEDIATE_REVIEW
+35.187.231.181     score= 1.34/15 risk=LOW      max5s= 18 max1m= 20 burst=   11 IMMEDIATE_REVIEW
+49.228.244.133     score= 5.52/15 risk=MEDIUM   max5s= 19 max1m= 19 burst=   10 IMMEDIATE_REVIEW
+85.87.1.47         score= 5.56/15 risk=MEDIUM   max5s= 11 max1m= 19 burst=   10 IMMEDIATE_REVIEW
+
+Created: scoring/post_auth_temporal_crosscheck_v1.csv
+Created: scoring/post_auth_temporal_crosscheck_v1_results.txt
+nique=14 logins=  18 score= 6.85/15 risk=MEDIUM   max5s= 17 max1m= 19 burst=   16 decision=IMMEDIATE_REVIEW
+188.166.216.131    commands=   42 unique=14 logins=   6 score= 6.46/15 risk=MEDIUM   max5s= 17 max1m= 19 burst=   16 decision=IMMEDIATE_REVIEW
+112.151.178.49     commands=   54 unique=14 logins=  20 score= 6.85/15 risk=MEDIUM   max5s= 16 max1m= 19 burst=   16 decision=IMMEDIATE_REVIEW
+35.185.206.243     commands=   24 unique= 2 logins=   8 score= 2.44/15 risk=LOW      max5s= 18 max1m= 24 burst=   12 decision=IMMEDIATE_REVIEW
+35.187.231.181     commands=   20 unique= 1 logins=  20 score= 1.34/15 risk=LOW      max5s= 18 max1m= 20 burst=   11 decision=IMMEDIATE_REVIEW
+49.228.244.133     commands=   19 unique=14 logins=   1 score= 5.52/15 risk=MEDIUM   max5s= 19 max1m= 19 burst=   10 decision=IMMEDIATE_REVIEW
+85.87.1.47         commands=   21 unique=14 logins=   3 score= 5.56/15 risk=MEDIUM   max5s= 11 max1m= 19 burst=   10 decision=IMMEDIATE_REVIEW
+218.255.103.194    commands=   24 unique=14 logins=   7 score= 5.04/15 risk=MEDIUM   max5s= 18 max1m= 20 burst=    9 decision=IMMEDIATE_REVIEW
+101.36.110.164     commands=   20 unique=14 logins=   1 score= 4.95/15 risk=MEDIUM   max5s= 14 max1m= 20 burst=    9 decision=IMMEDIATE_REVIEW
+123.231.115.91     commands=   19 unique=14 logins=   1 score= 5.52/15 risk=MEDIUM   max5s= 17 max1m= 19 burst=    8 decision=IMMEDIATE_REVIEW
+103.49.188.186     commands=   19 unique=14 logins=   1 score= 5.52/15 risk=MEDIUM   max5s= 17 max1m= 19 burst=    8 decision=IMMEDIATE_REVIEW
+
+================================================================================
+TOP BURST IPs BY TEMPORAL ACTIVITY
+================================================================================
+
+103.105.67.170     burst=13409 max5s= 22 max1m=251 score= 5.00/15 MEDIUM   IMMEDIATE_REVIEW
+35.229.125.98      burst=  125 max5s= 69 max1m=161 score= 8.67/15 HIGH     IMMEDIATE_REVIEW
+34.75.237.227      burst=   65 max5s= 46 max1m= 69 score= 8.18/15 HIGH     IMMEDIATE_REVIEW
+34.139.191.163     burst=   60 max5s= 69 max1m= 69 score= 7.95/15 HIGH     IMMEDIATE_REVIEW
+136.107.187.197    burst=   60 max5s= 69 max1m= 69 score= 7.95/15 HIGH     IMMEDIATE_REVIEW
+128.1.44.162       burst=   49 max5s= 18 max1m= 20 score= 7.89/15 HIGH     IMMEDIATE_REVIEW
+34.150.142.107     burst=   37 max5s= 46 max1m= 46 score= 7.38/15 HIGH     IMMEDIATE_REVIEW
+34.138.181.9       burst=   37 max5s= 29 max1m= 46 score= 7.38/15 HIGH     IMMEDIATE_REVIEW
+158.180.79.132     burst=   32 max5s= 15 max1m= 19 score= 7.26/15 HIGH     IMMEDIATE_REVIEW
+136.232.11.10      burst=   24 max5s= 15 max1m= 19 score= 7.11/15 HIGH     IMMEDIATE_REVIEW
+103.42.74.124      burst=   18 max5s= 18 max1m= 20 score= 5.74/15 MEDIUM   IMMEDIATE_REVIEW
+182.93.7.194       burst=   16 max5s= 17 max1m= 19 score= 7.22/15 HIGH     IMMEDIATE_REVIEW
+106.251.244.178    burst=   16 max5s= 17 max1m= 19 score= 6.91/15 MEDIUM   IMMEDIATE_REVIEW
+219.92.11.46       burst=   16 max5s= 17 max1m= 19 score= 6.85/15 MEDIUM   IMMEDIATE_REVIEW
+188.166.216.131    burst=   16 max5s= 17 max1m= 19 score= 6.46/15 MEDIUM   IMMEDIATE_REVIEW
+112.151.178.49     burst=   16 max5s= 16 max1m= 19 score= 6.85/15 MEDIUM   IMMEDIATE_REVIEW
+35.185.206.243     burst=   12 max5s= 18 max1m= 24 score= 2.44/15 LOW      IMMEDIATE_REVIEW
+35.187.231.181     burst=   11 max5s= 18 max1m= 20 score= 1.34/15 LOW      IMMEDIATE_REVIEW
+49.228.244.133     burst=   10 max5s= 19 max1m= 19 score= 5.52/15 MEDIUM   IMMEDIATE_REVIEW
+85.87.1.47         burst=   10 max5s= 11 max1m= 19 score= 5.56/15 MEDIUM   IMMEDIATE_REVIEW
+218.255.103.194    burst=    9 max5s= 18 max1m= 20 score= 5.04/15 MEDIUM   IMMEDIATE_REVIEW
+101.36.110.164     burst=    9 max5s= 14 max1m= 20 score= 4.95/15 MEDIUM   IMMEDIATE_REVIEW
+123.231.115.91     burst=    8 max5s= 17 max1m= 19 score= 5.52/15 MEDIUM   IMMEDIATE_REVIEW
+103.49.188.186     burst=    8 max5s= 17 max1m= 19 score= 5.52/15 MEDIUM   IMMEDIATE_REVIEW
+103.116.107.209    burst=    0 max5s=  9 max1m= 18 score= 7.77/15 HIGH     MONITOR
+70.54.182.130      burst=    0 max5s=  9 max1m= 20 score= 7.77/15 HIGH     MONITOR
+103.68.68.121      burst=    0 max5s=  9 max1m= 35 score= 5.77/15 MEDIUM   MONITOR
+89.108.66.217      burst=    0 max5s=  9 max1m= 19 score= 5.52/15 MEDIUM   MONITOR
+89.223.38.250      burst=    0 max5s=  9 max1m= 19 score= 5.52/15 MEDIUM   MONITOR
+218.157.205.238    burst=    0 max5s=  9 max1m=  9 score= 3.67/15 LOW      MONITOR

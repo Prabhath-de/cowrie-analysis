@@ -1,0 +1,239 @@
+"""
+temporal_decision_final.py
+
+Consolidates post_auth_temporal_crosscheck_v1.py + post_auth_temporal_decision_v2.py
+into one stage. The crosscheck_v1 stage's own temporal_level/decision columns
+are dropped -- traced through decision_v2.py's source and confirmed they are
+never read for the actual decision, only carried forward unused via
+dict(row). temporal_level() and mitigation_decision() below are copied
+VERBATIM from post_auth_temporal_decision_v2.py -- same constants
+(BURST_MIN=10, HIGH_BURST=40, EXTREME_BURST=116, HIGH_SCORE=7.0,
+MEDIUM_SCORE=4.0), same logic, nothing re-derived or guessed.
+
+The one deliberate change: mitigation_decision() is applied TWICE per IP --
+once against total_old (severity/intensity/diversity on the original 0-15
+scale, from post_auth_combined_final.csv's severity_old) and once against
+total_new (0-18.5 scale, includes the backdoor/dropper patch) -- using the
+SAME 7.0/4.0 thresholds both times. mitigation_decision_old is your
+validated, unchanged production decision. mitigation_decision_new is
+DIAGNOSTIC ONLY: those thresholds were calibrated for the 0-15 scale and
+have not been re-derived for 0-18.5, so treat any newly-appearing
+ACL_BLOCK_CANDIDATEs there as "worth investigating," not "ready to enforce."
+
+Inputs:
+    scoring/post_auth_combined_final.csv   -- output of post_auth_scoring_final.py
+    scoring/post_auth_temporal_features.csv -- unchanged burst features
+
+Outputs:
+    scoring/temporal_decision_final.csv
+    scoring/temporal_decision_final_results.txt
+"""
+
+import csv
+from collections import Counter
+
+COMBINED = "scoring/post_auth_combined_final.csv"
+TEMPORAL = "scoring/post_auth_temporal_features.csv"
+
+OUTPUT = "scoring/temporal_decision_final.csv"
+RESULTS = "scoring/temporal_decision_final_results.txt"
+
+
+# ============================================================
+# UNCHANGED constants from post_auth_temporal_decision_v2.py
+# ============================================================
+
+BURST_MIN = 10
+HIGH_BURST = 40
+EXTREME_BURST = 116
+
+HIGH_SCORE = 7.0
+MEDIUM_SCORE = 4.0
+
+
+def temporal_level(burst):
+    """UNCHANGED from post_auth_temporal_decision_v2.py."""
+    if burst < BURST_MIN:
+        return "NORMAL"
+    elif burst < HIGH_BURST:
+        return "BURST"
+    elif burst < EXTREME_BURST:
+        return "HIGH_BURST"
+    else:
+        return "EXTREME_BURST"
+
+
+def mitigation_decision(score, temporal):
+    """UNCHANGED from post_auth_temporal_decision_v2.py. Applied to both
+    total_old and total_new using the same 7.0/4.0 thresholds -- see
+    module docstring for why total_new's result is diagnostic-only."""
+    if score >= HIGH_SCORE:
+        if temporal in ["BURST", "HIGH_BURST", "EXTREME_BURST"]:
+            return "ACL_BLOCK_CANDIDATE"
+        return "BASE_SCORE_REVIEW"
+
+    elif score >= MEDIUM_SCORE:
+        if temporal == "EXTREME_BURST":
+            return "HIGH_PRIORITY_REVIEW"
+        elif temporal == "HIGH_BURST":
+            return "REVIEW"
+        elif temporal == "BURST":
+            return "MONITOR"
+        return "BASE_SCORE_REVIEW"
+
+    else:
+        if temporal == "EXTREME_BURST":
+            return "HIGH_PRIORITY_REVIEW"
+        elif temporal in ["BURST", "HIGH_BURST"]:
+            return "MONITOR"
+        return "NO_ACTION"
+
+
+# ============================================================
+# LOAD + JOIN
+# ============================================================
+
+combined = {}
+with open(COMBINED, newline="", errors="ignore") as fh:
+    for row in csv.DictReader(fh):
+        ip = row["ip"]
+        combined[ip] = {
+            "commands": int(float(row["commands"])),
+            "unique": int(float(row["unique"])),
+            "severity_old": float(row["severity_old"]),
+            "severity_new": float(row["severity_new"]),
+            "intensity": float(row["intensity"]),
+            "diversity": float(row["diversity"]),
+            "total_old": float(row["total_old"]),
+            "total_new": float(row["total_new"]),
+            "risk_level_old": row["risk_level_old"],
+            "risk_level_new": row["risk_level_new"],
+            "persistence_backdoor_hits": int(row["persistence_backdoor_hits"]),
+            "dropper_execution_hits": int(row["dropper_execution_hits"]),
+        }
+
+rows = []
+with open(TEMPORAL, newline="", errors="ignore") as fh:
+    for row in csv.DictReader(fh):
+        ip = row["ip"]
+        if ip not in combined:
+            continue
+
+        burst = int(float(row["burst_10plus_5s"]))
+        temporal = temporal_level(burst)
+
+        c = combined[ip]
+        decision_old = mitigation_decision(c["total_old"], temporal)
+        decision_new = mitigation_decision(c["total_new"], temporal)
+
+        rows.append({
+            "ip": ip,
+            "commands": c["commands"],
+            "unique": c["unique"],
+            "severity_old": c["severity_old"],
+            "severity_new": c["severity_new"],
+            "intensity": c["intensity"],
+            "diversity": c["diversity"],
+            "total_old": c["total_old"],
+            "total_new": c["total_new"],
+            "risk_level_old": c["risk_level_old"],
+            "risk_level_new": c["risk_level_new"],
+            "persistence_backdoor_hits": c["persistence_backdoor_hits"],
+            "dropper_execution_hits": c["dropper_execution_hits"],
+            "successful_logins": int(float(row["successful_logins"])),
+            "commands_per_login": float(row["commands_per_login"]),
+            "activity_span_minutes": float(row["activity_span_minutes"]),
+            "max_commands_5s": int(float(row["max_commands_5s"])),
+            "max_commands_1min": int(float(row["max_commands_1min"])),
+            "burst_10plus_5s": burst,
+            "temporal_level": temporal,
+            "mitigation_decision_old": decision_old,
+            "mitigation_decision_new": decision_new,
+        })
+
+decision_priority = {
+    "ACL_BLOCK_CANDIDATE": 5, "HIGH_PRIORITY_REVIEW": 4, "REVIEW": 3,
+    "MONITOR": 2, "BASE_SCORE_REVIEW": 1, "NO_ACTION": 0,
+}
+rows.sort(
+    key=lambda r: (
+        decision_priority[r["mitigation_decision_old"]],
+        r["burst_10plus_5s"],
+        r["total_old"],
+    ),
+    reverse=True,
+)
+
+
+# ============================================================
+# WRITE CSV
+# ============================================================
+
+if rows:
+    fields = list(rows[0].keys())
+    with open(OUTPUT, "w", newline="") as fh:
+        writer = csv.DictWriter(fh, fieldnames=fields)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+# ============================================================
+# SUMMARY
+# ============================================================
+
+def summarize():
+    lines = []
+    lines.append("=" * 80)
+    lines.append("TEMPORAL + MITIGATION DECISION -- FINAL")
+    lines.append("=" * 80)
+    lines.append("")
+    lines.append(f"IPs analysed: {len(rows)}")
+    lines.append("")
+
+    old_counts = Counter(r["mitigation_decision_old"] for r in rows)
+    new_counts = Counter(r["mitigation_decision_new"] for r in rows)
+
+    lines.append("DECISION DISTRIBUTION -- validated (old) vs diagnostic (new)")
+    lines.append("-" * 80)
+    for d in ["ACL_BLOCK_CANDIDATE", "HIGH_PRIORITY_REVIEW", "REVIEW", "MONITOR", "BASE_SCORE_REVIEW", "NO_ACTION"]:
+        lines.append(f"{d:25s}: old={old_counts[d]:5d}   new={new_counts[d]:5d}")
+    lines.append("")
+
+    moved = [r for r in rows if r["mitigation_decision_old"] != r["mitigation_decision_new"]]
+    lines.append(f"IPs whose decision CHANGED under the patch: {len(moved)}")
+    lines.append("-" * 80)
+    for r in sorted(moved, key=lambda r: r["total_new"], reverse=True)[:30]:
+        lines.append(
+            f"{r['ip']:18s} {r['mitigation_decision_old']:20s} -> {r['mitigation_decision_new']:20s}  "
+            f"(backdoor={r['persistence_backdoor_hits']}, dropper={r['dropper_execution_hits']}, "
+            f"temporal={r['temporal_level']}, total {r['total_old']:.2f}->{r['total_new']:.2f})"
+        )
+    lines.append("")
+
+    newly_block = [
+        r for r in rows
+        if r["mitigation_decision_new"] == "ACL_BLOCK_CANDIDATE"
+        and r["mitigation_decision_old"] != "ACL_BLOCK_CANDIDATE"
+    ]
+    lines.append(f"IPs that would newly qualify as ACL_BLOCK_CANDIDATE under total_new: {len(newly_block)}")
+    lines.append("(NOT auto-enforced -- 7.0/4.0 thresholds not yet re-validated for the 0-18.5 scale)")
+    lines.append("-" * 80)
+    for r in sorted(newly_block, key=lambda r: r["total_new"], reverse=True):
+        lines.append(
+            f"{r['ip']:18s} old_decision={r['mitigation_decision_old']:20s} "
+            f"backdoor_hits={r['persistence_backdoor_hits']}  dropper_hits={r['dropper_execution_hits']}  "
+            f"total_old={r['total_old']:.2f}  total_new={r['total_new']:.2f}  temporal={r['temporal_level']}"
+        )
+    lines.append("")
+
+    return "\n".join(lines)
+
+
+summary_text = summarize()
+print(summary_text)
+
+with open(RESULTS, "w") as f:
+    f.write(summary_text + "\n")
+
+print(f"Created: {OUTPUT}")
+print(f"Created: {RESULTS}")

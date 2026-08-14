@@ -1,0 +1,24 @@
+======================================================================
+POST-AUTH COMBINED FINAL (severity/intensity/diversity)
+======================================================================
+
+IPs analysed        : 3866
+Old scale max       : 15.0 (severity 7 + intensity 5 + diversity 3)
+New scale max       : 18.5 (severity 10.5 + intensity 5 + diversity 3)
+
+RISK DISTRIBUTION -- OLD (v3, unchanged) vs NEW (with backdoor/dropper patch)
+----------------------------------------------------------------------
+LOW       : old= 3730   new= 3730
+MEDIUM    : old=  118   new=  118
+HIGH      : old=   18   new=   18
+CRITICAL  : old=    0   new=    0
+
+IPs whose risk tier CHANGED due to the patch: 0
+----------------------------------------------------------------------
+
+IPs matching the new patterns at all: 0
+----------------------------------------------------------------------
+
+NOTE ON RISK THRESHOLDS
+----------------------------------------------------------------------
+risk_level() cutoffs (>=10 CRITICAL, >=7 HIGH, >=4 MEDIUM) were calibrated on the OLD 0-15 scale and are applied UNCHANGED here to both total_old and total_new for direct comparability. The new scale's true ceiling is 18.5, not 15 -- if you want CRITICAL/HIGH cutoffs that reflect the new scale properly, re-run the same percentile approach you used for the other features against the total_new column and update these thresholds deliberately, rather than trusting this script's untouched carry-over values.

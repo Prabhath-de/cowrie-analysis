@@ -1,0 +1,22 @@
+{
+  "calibration_start": "2026-03-18",
+  "calibration_end": "2026-06-25",
+  "calibration_files": 100,
+  "events_processed": 1576296,
+  "unique_ips": 8718,
+  "malformed_lines": 0,
+  "raw_score_distribution": {
+    "p50": 0.0,
+    "p75": 2.0,
+    "p90": 5.0,
+    "p97": 11.0,
+    "p99": 12.0,
+    "max": 15
+  },
+  "risk_counts": {
+    "LOW": 6689,
+    "MEDIUM": 1162,
+    "HIGH": 643,
+    "CRITICAL": 224
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "model": {
+    "name": "Deterministic Threat Scoring v2",
+    "max_raw_score": 29,
+    "score_formula": "round((raw_total / 29) * 100)",
+    "calibration_days": 100
+  },
+  "calibration_period": {
+    "start": "2026-03-18",
+    "end": "2026-06-25"
+  },
+  "validation_period": {
+    "start": "2026-06-26",
+    "note": "Held-out validation data. Do not use for recalibration."
+  },
+  "features": {
+    "sessions": {
+      "method": "percentile_bucket",
+      "p75": 6.0,
+      "p90": 15.0,
+      "p95": 49.0,
+      "p99": 368.4899999999998,
+      "points": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "login_failed": {
+      "method": "percentile_bucket",
+      "p75": 0.0,
+      "p90": 1.0,
+      "p95": 6.0,
+      "p99": 49.82999999999993,
+      "points": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "commands": {
+      "method": "percentile_bucket",
+      "p75": 2.0,
+      "p90": 7.0,
+      "p95": 22.0,
+      "p99": 206.29999999999927,
+      "points": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "dropper_pattern": {
+      "method": "percentile_bucket",
+      "p75": 1.0,
+      "p90": 2.0,
+      "p95": 3.0,
+      "p99": 16.0,
+      "points": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "direct_tcpip": {
+      "method": "percentile_bucket",
+      "p75": 0.0,
+      "p90": 4.0,
+      "p95": 7.0,
+      "p99": 19.0,
+      "points": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "command_failed_other": {
+      "method": "presence",
+      "points": {
+        "zero": 0,
+        "nonzero": 2
+      }
+    },
+    "file_upload": {
+      "method": "magnitude_aware",
+      "points": {
+        "zero": 0,
+        "one": 2,
+        "two_or_more": 4
+      }
+    },
+    "failed_download": {
+      "method": "presence",
+      "points": {
+        "zero": 0,
+        "nonzero": 3
+      }
+    }
+  },
+  "risk_thresholds_raw": {
+    "low_max": 2.0,
+    "medium_max": 5.0,
+    "high_max": 10.0,
+    "critical_min": 11.0
+  },
+  "excluded_features": {
+    "login_success": "Excluded due to near-universal base rate.",
+    "client_fingerprint": "Deferred; current implementation lacks independent clustering signal.",
+    "campaign_correlation": "Deferred; current implementation lacks validated cross-IP clustering signal."
+  }
+}
