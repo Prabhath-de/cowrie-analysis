@@ -6,17 +6,17 @@ IPs analysed: 3866
 
 DECISION DISTRIBUTION -- validated (old) vs diagnostic (new)
 --------------------------------------------------------------------------------
-ACL_BLOCK_CANDIDATE      : old=   10   new=   10
+ACL_BLOCK_CANDIDATE      : old=   11   new=   11
 HIGH_PRIORITY_REVIEW     : old=    1   new=    1
 REVIEW                   : old=    0   new=    0
-MONITOR                  : old=    9   new=    9
-BASE_SCORE_REVIEW        : old=  118   new=  118
-NO_ACTION                : old= 3728   new= 3728
+MONITOR                  : old=    8   new=    8
+BASE_SCORE_REVIEW        : old=  369   new=  369
+NO_ACTION                : old= 3477   new= 3477
 
 IPs whose decision CHANGED under the patch: 0
 --------------------------------------------------------------------------------
 
 IPs that would newly qualify as ACL_BLOCK_CANDIDATE under total_new: 0
-(NOT auto-enforced -- 7.0/4.0 thresholds not yet re-validated for the 0-18.5 scale)
+(NOT auto-enforced -- final data-driven ACL threshold (6.8918) and burst threshold (10))
 --------------------------------------------------------------------------------
 

@@ -43,28 +43,12 @@ RESULTS = "scoring/temporal_decision_final_results.txt"
 # UNCHANGED constants from post_auth_temporal_decision_v2.py
 # ============================================================
 
-# ============================================================
-# FINAL DATA-DRIVEN THRESHOLDS
-# ============================================================
-# Risk thresholds derived from the held-out post-auth score
-# distribution:
-#   P90  = 2.4848
-#   P95  = 3.5745
-#   P99  = 5.5190
-#
-# Automatic mitigation threshold:
-#   P99.5 = 6.8918
-#
-# Temporal confirmation:
-#   burst_10plus_5s >= 10
-# ============================================================
-
 BURST_MIN = 10
 HIGH_BURST = 40
 EXTREME_BURST = 116
 
-MEDIUM_SCORE = 2.4848
-ACL_SCORE = 6.8918
+HIGH_SCORE = 7.0
+MEDIUM_SCORE = 4.0
 
 
 def temporal_level(burst):
@@ -80,28 +64,14 @@ def temporal_level(burst):
 
 
 def mitigation_decision(score, temporal):
-    """
-    Final deterministic mitigation decision.
-
-    Automatic ACL blocking requires BOTH:
-      1. threat score >= P99.5 (6.8918)
-      2. temporal burst >= 10 events in the 5-second burst measure
-
-    Lower scores are handled according to temporal severity.
-    """
-
-    # --------------------------------------------------------
-    # AUTOMATIC ACL CANDIDATE
-    # --------------------------------------------------------
-    if score >= ACL_SCORE:
+    """UNCHANGED from post_auth_temporal_decision_v2.py. Applied to both
+    total_old and total_new using the same 7.0/4.0 thresholds -- see
+    module docstring for why total_new's result is diagnostic-only."""
+    if score >= HIGH_SCORE:
         if temporal in ["BURST", "HIGH_BURST", "EXTREME_BURST"]:
             return "ACL_BLOCK_CANDIDATE"
-
         return "BASE_SCORE_REVIEW"
 
-    # --------------------------------------------------------
-    # MEDIUM-AND-ABOVE SCORE RANGE
-    # --------------------------------------------------------
     elif score >= MEDIUM_SCORE:
         if temporal == "EXTREME_BURST":
             return "HIGH_PRIORITY_REVIEW"
@@ -109,18 +79,13 @@ def mitigation_decision(score, temporal):
             return "REVIEW"
         elif temporal == "BURST":
             return "MONITOR"
-
         return "BASE_SCORE_REVIEW"
 
-    # --------------------------------------------------------
-    # LOW SCORE RANGE
-    # --------------------------------------------------------
     else:
         if temporal == "EXTREME_BURST":
             return "HIGH_PRIORITY_REVIEW"
         elif temporal in ["BURST", "HIGH_BURST"]:
             return "MONITOR"
-
         return "NO_ACTION"
 
 
@@ -251,7 +216,7 @@ def summarize():
         and r["mitigation_decision_old"] != "ACL_BLOCK_CANDIDATE"
     ]
     lines.append(f"IPs that would newly qualify as ACL_BLOCK_CANDIDATE under total_new: {len(newly_block)}")
-    lines.append("(NOT auto-enforced -- final data-driven ACL threshold (6.8918) and burst threshold (10))")
+    lines.append("(NOT auto-enforced -- 7.0/4.0 thresholds not yet re-validated for the 0-18.5 scale)")
     lines.append("-" * 80)
     for r in sorted(newly_block, key=lambda r: r["total_new"], reverse=True):
         lines.append(

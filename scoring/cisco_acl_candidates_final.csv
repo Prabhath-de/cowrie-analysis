@@ -9,3 +9,4 @@ ip,score,risk,temporal,burst,acl_action,acl_rule
 158.180.79.132,7.2599,HIGH,BURST,32,DENY_SSH,deny tcp host 158.180.79.132 any eq 22
 182.93.7.194,7.2242,HIGH,BURST,16,DENY_SSH,deny tcp host 182.93.7.194 any eq 22
 136.232.11.10,7.1054,HIGH,BURST,24,DENY_SSH,deny tcp host 136.232.11.10 any eq 22
+106.251.244.178,6.9121,MEDIUM,BURST,16,DENY_SSH,deny tcp host 106.251.244.178 any eq 22
