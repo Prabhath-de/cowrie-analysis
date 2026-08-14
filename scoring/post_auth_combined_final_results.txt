@@ -8,16 +8,76 @@ New scale max       : 18.5 (severity 10.5 + intensity 5 + diversity 3)
 
 RISK DISTRIBUTION -- OLD (v3, unchanged) vs NEW (with backdoor/dropper patch)
 ----------------------------------------------------------------------
-LOW       : old= 3730   new= 3730
-MEDIUM    : old=  118   new=  118
-HIGH      : old=   18   new=   18
+LOW       : old= 3730   new= 3690
+MEDIUM    : old=  118   new=  144
+HIGH      : old=   18   new=   32
 CRITICAL  : old=    0   new=    0
 
-IPs whose risk tier CHANGED due to the patch: 0
+IPs whose risk tier CHANGED due to the patch: 54
 ----------------------------------------------------------------------
+138.99.80.102      MEDIUM   -> HIGH      (backdoor_hits=59, dropper_hits=0, total 6.78 -> 8.78)
+106.251.244.178    MEDIUM   -> HIGH      (backdoor_hits=25, dropper_hits=0, total 6.91 -> 8.74)
+183.110.116.87     MEDIUM   -> HIGH      (backdoor_hits=43, dropper_hits=0, total 6.71 -> 8.67)
+112.151.178.49     MEDIUM   -> HIGH      (backdoor_hits=21, dropper_hits=0, total 6.85 -> 8.64)
+219.92.11.46       MEDIUM   -> HIGH      (backdoor_hits=21, dropper_hits=0, total 6.85 -> 8.64)
+188.166.216.131    MEDIUM   -> HIGH      (backdoor_hits=9, dropper_hits=0, total 6.46 -> 8.04)
+172.203.134.70     MEDIUM   -> HIGH      (backdoor_hits=29, dropper_hits=0, total 6.14 -> 8.01)
+187.85.187.100     MEDIUM   -> HIGH      (backdoor_hits=23, dropper_hits=0, total 6.14 -> 7.95)
+217.60.39.166      MEDIUM   -> HIGH      (backdoor_hits=23, dropper_hits=0, total 6.14 -> 7.95)
+14.103.117.81      MEDIUM   -> HIGH      (backdoor_hits=10, dropper_hits=0, total 5.66 -> 7.27)
+103.42.74.124      MEDIUM   -> HIGH      (backdoor_hits=5, dropper_hits=0, total 5.74 -> 7.20)
+187.210.77.100     MEDIUM   -> HIGH      (backdoor_hits=7, dropper_hits=0, total 5.60 -> 7.13)
+222.222.168.9      MEDIUM   -> HIGH      (backdoor_hits=5, dropper_hits=0, total 5.56 -> 7.02)
+85.87.1.47         MEDIUM   -> HIGH      (backdoor_hits=5, dropper_hits=0, total 5.56 -> 7.02)
+193.90.12.40       LOW      -> MEDIUM    (backdoor_hits=51, dropper_hits=51, total 2.82 -> 6.32)
+103.30.75.85       LOW      -> MEDIUM    (backdoor_hits=42, dropper_hits=42, total 2.51 -> 5.93)
+167.99.148.102     LOW      -> MEDIUM    (backdoor_hits=3, dropper_hits=0, total 3.96 -> 5.31)
+20.203.42.204      LOW      -> MEDIUM    (backdoor_hits=111, dropper_hits=0, total 2.70 -> 4.70)
+102.88.137.80      LOW      -> MEDIUM    (backdoor_hits=115, dropper_hits=0, total 2.63 -> 4.63)
+102.88.137.213     LOW      -> MEDIUM    (backdoor_hits=97, dropper_hits=0, total 2.63 -> 4.63)
+27.50.25.190       LOW      -> MEDIUM    (backdoor_hits=87, dropper_hits=0, total 2.62 -> 4.62)
+213.209.159.158    LOW      -> MEDIUM    (backdoor_hits=35, dropper_hits=0, total 2.71 -> 4.62)
+85.239.151.41      LOW      -> MEDIUM    (backdoor_hits=0, dropper_hits=2, total 3.64 -> 4.60)
+151.80.141.196     LOW      -> MEDIUM    (backdoor_hits=81, dropper_hits=0, total 2.59 -> 4.59)
+94.26.106.29       LOW      -> MEDIUM    (backdoor_hits=0, dropper_hits=25, total 3.21 -> 4.58)
+103.144.28.85      LOW      -> MEDIUM    (backdoor_hits=69, dropper_hits=0, total 2.55 -> 4.55)
+52.187.9.8         LOW      -> MEDIUM    (backdoor_hits=65, dropper_hits=0, total 2.54 -> 4.54)
+120.62.8.17        LOW      -> MEDIUM    (backdoor_hits=61, dropper_hits=0, total 2.52 -> 4.52)
+46.225.127.111     LOW      -> MEDIUM    (backdoor_hits=61, dropper_hits=0, total 2.52 -> 4.52)
+165.154.5.173      LOW      -> MEDIUM    (backdoor_hits=59, dropper_hits=0, total 2.51 -> 4.51)
 
-IPs matching the new patterns at all: 0
+IPs matching the new patterns at all: 2926
 ----------------------------------------------------------------------
+35.229.125.98      backdoor_hits=  0  dropper_hits= 15  risk_old=HIGH      risk_new=HIGH    
+128.1.44.162       backdoor_hits= 25  dropper_hits=  0  risk_old=HIGH      risk_new=HIGH    
+70.54.182.130      backdoor_hits= 27  dropper_hits=  0  risk_old=HIGH      risk_new=HIGH    
+34.75.237.227      backdoor_hits=  0  dropper_hits=  9  risk_old=HIGH      risk_new=HIGH    
+88.210.14.13       backdoor_hits= 19  dropper_hits=  0  risk_old=HIGH      risk_new=HIGH    
+182.93.7.194       backdoor_hits=129  dropper_hits=  0  risk_old=HIGH      risk_new=HIGH    
+94.183.186.131     backdoor_hits= 15  dropper_hits=  0  risk_old=HIGH      risk_new=HIGH    
+118.196.114.236    backdoor_hits= 12  dropper_hits=  0  risk_old=HIGH      risk_new=HIGH    
+34.139.191.163     backdoor_hits=  0  dropper_hits=  7  risk_old=HIGH      risk_new=HIGH    
+136.107.187.197    backdoor_hits=  0  dropper_hits=  7  risk_old=HIGH      risk_new=HIGH    
+120.48.11.36       backdoor_hits= 13  dropper_hits=  0  risk_old=HIGH      risk_new=HIGH    
+158.180.79.132     backdoor_hits= 17  dropper_hits=  0  risk_old=HIGH      risk_new=HIGH    
+45.91.169.93       backdoor_hits= 25  dropper_hits=  0  risk_old=HIGH      risk_new=HIGH    
+136.232.11.10      backdoor_hits= 23  dropper_hits=  0  risk_old=HIGH      risk_new=HIGH    
+138.99.80.102      backdoor_hits= 59  dropper_hits=  0  risk_old=MEDIUM    risk_new=HIGH    
+106.251.244.178    backdoor_hits= 25  dropper_hits=  0  risk_old=MEDIUM    risk_new=HIGH    
+183.110.116.87     backdoor_hits= 43  dropper_hits=  0  risk_old=MEDIUM    risk_new=HIGH    
+112.151.178.49     backdoor_hits= 21  dropper_hits=  0  risk_old=MEDIUM    risk_new=HIGH    
+219.92.11.46       backdoor_hits= 21  dropper_hits=  0  risk_old=MEDIUM    risk_new=HIGH    
+34.150.142.107     backdoor_hits=  0  dropper_hits=  5  risk_old=HIGH      risk_new=HIGH    
+34.138.181.9       backdoor_hits=  0  dropper_hits=  5  risk_old=HIGH      risk_new=HIGH    
+188.166.216.131    backdoor_hits=  9  dropper_hits=  0  risk_old=MEDIUM    risk_new=HIGH    
+172.203.134.70     backdoor_hits= 29  dropper_hits=  0  risk_old=MEDIUM    risk_new=HIGH    
+187.85.187.100     backdoor_hits= 23  dropper_hits=  0  risk_old=MEDIUM    risk_new=HIGH    
+217.60.39.166      backdoor_hits= 23  dropper_hits=  0  risk_old=MEDIUM    risk_new=HIGH    
+14.103.117.81      backdoor_hits= 10  dropper_hits=  0  risk_old=MEDIUM    risk_new=HIGH    
+103.42.74.124      backdoor_hits=  5  dropper_hits=  0  risk_old=MEDIUM    risk_new=HIGH    
+187.210.77.100     backdoor_hits=  7  dropper_hits=  0  risk_old=MEDIUM    risk_new=HIGH    
+222.222.168.9      backdoor_hits=  5  dropper_hits=  0  risk_old=MEDIUM    risk_new=HIGH    
+85.87.1.47         backdoor_hits=  5  dropper_hits=  0  risk_old=MEDIUM    risk_new=HIGH    
 
 NOTE ON RISK THRESHOLDS
 ----------------------------------------------------------------------

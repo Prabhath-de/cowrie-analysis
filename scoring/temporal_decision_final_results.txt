@@ -6,17 +6,52 @@ IPs analysed: 3866
 
 DECISION DISTRIBUTION -- validated (old) vs diagnostic (new)
 --------------------------------------------------------------------------------
-ACL_BLOCK_CANDIDATE      : old=   11   new=   11
+ACL_BLOCK_CANDIDATE      : old=   11   new=   16
 HIGH_PRIORITY_REVIEW     : old=    1   new=    1
 REVIEW                   : old=    0   new=    0
-MONITOR                  : old=    8   new=    8
-BASE_SCORE_REVIEW        : old=  369   new=  369
-NO_ACTION                : old= 3477   new= 3477
+MONITOR                  : old=    8   new=    3
+BASE_SCORE_REVIEW        : old=  371   new=  819
+NO_ACTION                : old= 3475   new= 3027
 
-IPs whose decision CHANGED under the patch: 0
+IPs whose decision CHANGED under the patch: 453
 --------------------------------------------------------------------------------
+112.151.178.49     MONITOR              -> ACL_BLOCK_CANDIDATE   (backdoor=21, dropper=0, temporal=BURST, total 6.85->8.64)
+219.92.11.46       MONITOR              -> ACL_BLOCK_CANDIDATE   (backdoor=21, dropper=0, temporal=BURST, total 6.85->8.64)
+188.166.216.131    MONITOR              -> ACL_BLOCK_CANDIDATE   (backdoor=9, dropper=0, temporal=BURST, total 6.46->8.04)
+103.42.74.124      MONITOR              -> ACL_BLOCK_CANDIDATE   (backdoor=5, dropper=0, temporal=BURST, total 5.74->7.20)
+85.87.1.47         MONITOR              -> ACL_BLOCK_CANDIDATE   (backdoor=5, dropper=0, temporal=BURST, total 5.56->7.02)
+102.23.122.235     NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=55, dropper=0, temporal=NORMAL, total 2.45->4.45)
+49.207.40.162      NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=55, dropper=0, temporal=NORMAL, total 2.45->4.45)
+189.8.5.118        NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=57, dropper=0, temporal=NORMAL, total 2.45->4.45)
+202.165.29.123     NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=51, dropper=0, temporal=NORMAL, total 2.32->4.32)
+203.121.40.210     NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=51, dropper=0, temporal=NORMAL, total 2.32->4.32)
+37.143.61.130      NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=51, dropper=0, temporal=NORMAL, total 2.32->4.32)
+181.167.144.229    NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=49, dropper=0, temporal=NORMAL, total 2.26->4.25)
+103.183.74.214     NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=47, dropper=0, temporal=NORMAL, total 2.19->4.18)
+185.158.22.150     NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=47, dropper=0, temporal=NORMAL, total 2.19->4.18)
+156.232.13.218     NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=47, dropper=0, temporal=NORMAL, total 2.12->4.11)
+101.47.159.125     NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=45, dropper=0, temporal=NORMAL, total 2.05->4.03)
+40.81.244.142      NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=43, dropper=0, temporal=NORMAL, total 2.05->4.02)
+135.235.138.43     NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=43, dropper=0, temporal=NORMAL, total 2.05->4.02)
+198.98.55.71       NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=43, dropper=0, temporal=NORMAL, total 2.05->4.02)
+173.249.41.171     NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=41, dropper=0, temporal=NORMAL, total 1.98->3.93)
+187.141.71.166     NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=41, dropper=0, temporal=NORMAL, total 1.98->3.93)
+182.93.50.90       NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=45, dropper=0, temporal=NORMAL, total 1.91->3.88)
+52.172.177.191     NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=43, dropper=0, temporal=NORMAL, total 1.91->3.87)
+94.156.221.46      NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=39, dropper=0, temporal=NORMAL, total 1.91->3.85)
+121.168.139.251    NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=39, dropper=0, temporal=NORMAL, total 1.91->3.85)
+148.66.132.204     NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=39, dropper=0, temporal=NORMAL, total 1.91->3.85)
+37.143.61.84       NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=39, dropper=0, temporal=NORMAL, total 1.91->3.85)
+5.181.124.105      NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=39, dropper=0, temporal=NORMAL, total 1.91->3.85)
+152.32.162.42      NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=9, dropper=0, temporal=NORMAL, total 2.21->3.80)
+187.110.238.50     NO_ACTION            -> BASE_SCORE_REVIEW     (backdoor=41, dropper=0, temporal=NORMAL, total 1.83->3.78)
 
-IPs that would newly qualify as ACL_BLOCK_CANDIDATE under total_new: 0
+IPs that would newly qualify as ACL_BLOCK_CANDIDATE under total_new: 5
 (NOT auto-enforced -- final data-driven ACL threshold (6.8918) and burst threshold (10))
 --------------------------------------------------------------------------------
+112.151.178.49     old_decision=MONITOR              backdoor_hits=21  dropper_hits=0  total_old=6.85  total_new=8.64  temporal=BURST
+219.92.11.46       old_decision=MONITOR              backdoor_hits=21  dropper_hits=0  total_old=6.85  total_new=8.64  temporal=BURST
+188.166.216.131    old_decision=MONITOR              backdoor_hits=9  dropper_hits=0  total_old=6.46  total_new=8.04  temporal=BURST
+103.42.74.124      old_decision=MONITOR              backdoor_hits=5  dropper_hits=0  total_old=5.74  total_new=7.20  temporal=BURST
+85.87.1.47         old_decision=MONITOR              backdoor_hits=5  dropper_hits=0  total_old=5.56  total_new=7.02  temporal=BURST
 

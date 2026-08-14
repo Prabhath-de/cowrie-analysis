@@ -145,25 +145,31 @@ def calculate_severity(command_data):
                   of SEVERITY_MAX_OLD
     """
     counts = Counter()
-    for command in command_data:
+    full_texts = []
+    for entry in command_data:
+        command = entry["command"]              # mangled, first-token only
+        full_command = entry["full_command"]     # intact raw text (fixed parser)
+        full_texts.append(full_command)
+
+        # UNCHANGED: original 7 categories still classify off the mangled
+        # `command` field, exactly as post_auth_combined_v3.py did -- so
+        # severity_old stays byte-identical to your already-validated numbers.
         category = get_category(command)
         if category:
             counts[category] += 1
-        # Full-string, single-command scans -- independent of get_category().
-        if has_ssh_backdoor_pattern(command):
+
+        # NEW categories scan the INTACT full_command text, now that the
+        # parser bug (research_parse_logs.py silently truncating everything
+        # after the first ; or && ) has been fixed.
+        if has_ssh_backdoor_pattern(full_command):
             counts["persistence_backdoor"] += 1
-        if has_dropper_oneliner_pattern(command):
+        if has_dropper_oneliner_pattern(full_command):
             counts["dropper_execution"] += 1
 
-    # IP-level aggregate scans -- catches the same two patterns when they're
-    # split across separate command.input events rather than one chained
-    # string (all_logs_full.csv has no session column to scope this tighter;
-    # confirmed necessary by testing against the staged wget->chmod->./exec
-    # example, which has_dropper_oneliner_pattern alone does not catch).
-    # Counted once per IP, on top of any per-command hits above.
-    if has_staged_dropper_pattern(command_data):
+    # IP-level aggregate scans, also against full_command now.
+    if has_staged_dropper_pattern(full_texts):
         counts["dropper_execution"] += 1
-    if has_staged_ssh_backdoor_pattern(command_data):
+    if has_staged_ssh_backdoor_pattern(full_texts):
         counts["persistence_backdoor"] += 1
 
     old_total = 0.0
@@ -278,9 +284,10 @@ with open(LOGFILE, newline="", errors="ignore") as fh:
     for row in reader:
         ip = (row.get("src_ip") or "").strip()
         command = (row.get("command") or "").strip()
-        if not ip or not command:
+        full_command = (row.get("full_command") or "").strip()
+        if not ip or not full_command:
             continue
-        ip_commands.setdefault(ip, []).append(command)
+        ip_commands.setdefault(ip, []).append({"command": command, "full_command": full_command})
 
 
 # ============================================================

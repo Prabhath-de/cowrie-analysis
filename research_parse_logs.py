@@ -1,237 +1,266 @@
+"""
+research_parse_logs.py -- memory-safe version.
+
+The previous version built one giant Python list of every event across
+all 151+ backup files plus the live log, then constructed a single pandas
+DataFrame from it. Adding full_command (the intact raw command text,
+which can be hundreds of characters for chained attack one-liners) pushed
+peak memory past the server's limit and the process got OOM-killed.
+
+This version writes each row directly to the output CSV as it's read,
+one file at a time -- memory usage stays roughly constant regardless of
+how many backup files or events exist, instead of growing with the total
+dataset size. Summary stats (top IPs, usernames, passwords, commands,
+countries) are computed with running Counters during the same streaming
+pass, so the file never needs to be fully loaded into memory at all.
+
+One deliberate trade-off: the previous version did a global sort-by-
+timestamp and an exact-duplicate-row drop, both of which require holding
+everything in memory. Neither is needed by the downstream scoring scripts
+(they group by src_ip regardless of row order), so both are dropped here.
+If you ever need the CSV strictly time-sorted, that can be done afterward
+with the Unix `sort` command directly on the file, without touching
+Python memory at all.
+"""
+
 import json
-import pandas as pd
 import os
 import glob
+import csv
+from collections import Counter
 
-# =========================================================
-# RESEARCH DATASET PARSER
-# Reads:
-#   1) all backup JSON files in backups/
-#   2) current live cowrie.json
-# Outputs:
-#   research_csv/all_logs_full.csv
-#   research_csv/top_ips_full.csv
-#   research_csv/usernames_full.csv
-#   research_csv/passwords_full.csv
-#   research_csv/commands_full.csv
-#   research_csv/countries_full.csv
-# =========================================================
-
-# ---------- PATHS ----------
 BACKUP_DIR = "/home/cowrie/cowrie-analysis/backups"
 CURRENT_LOG = "/home/cowrie/cowrie/var/log/cowrie/cowrie.json"
 OUTPUT_DIR = "research_csv"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-data = []
+FIELDNAMES = ["timestamp", "event", "src_ip", "username", "password",
+              "command", "full_command", "source_file"]
 
 
-# ---------- CLEAN COMMAND FUNCTION ----------
 def extract_command(cmd):
     if not cmd:
         return None
-
     cmd = cmd.strip().lower()
-
-    # remove common redirection noise
     cmd = cmd.replace(">/dev/null", "")
-
-    # split multiple commands and keep first
     for sep in [";", "&&", "||"]:
         if sep in cmd:
             cmd = cmd.split(sep)[0]
-
-    # remove quotes
     cmd = cmd.replace('"', '').replace("'", "")
-
     parts = cmd.split()
     if len(parts) == 0:
         return None
-
     main_cmd = parts[0]
-
-    # remove path: /bin/uname -> uname
     main_cmd = main_cmd.split("/")[-1]
-
     invalid = ["", "null", "bin:$path", "$path", "export"]
-
     if main_cmd in invalid:
         return None
-
     if main_cmd.startswith("$"):
         return None
-
-    # keep only alphabetic command names
     if not main_cmd.isalpha():
         return None
-
     return main_cmd
 
 
-# ---------- FUNCTION TO READ ONE JSON LOG FILE ----------
-def process_log_file(log_file):
-    rows = []
+# ---------------------------------------------------------
+# Running counters -- replace the old "load everything into
+# a DataFrame, then .value_counts()" approach
+# ---------------------------------------------------------
+
+ip_counter = Counter()
+username_counter = Counter()
+password_counter = Counter()
+command_counter = Counter()
+event_counter = Counter()
+dates_seen = set()
+
+total_rows = 0
+earliest_ts = None
+latest_ts = None
+
+seen_signatures = set()  # lightweight dedup: (timestamp, event, src_ip, full_command)
+
+
+def process_log_file(log_file, writer):
+    global total_rows, earliest_ts, latest_ts
 
     if not os.path.exists(log_file):
-        print(f"⚠️ File not found: {log_file}")
-        return rows
+        print(f"WARNING File not found: {log_file}")
+        return
 
-    print(f"📄 Reading: {log_file}")
+    print(f"Reading: {log_file}")
+    rows_this_file = 0
 
     with open(log_file, "r", encoding="utf-8", errors="ignore") as f:
         for line in f:
             try:
                 log = json.loads(line)
                 event = log.get("eventid")
+                ts = log.get("timestamp")
+                src_ip = log.get("src_ip")
 
-                # ---------- COMMAND EVENTS ----------
+                if not ts or not src_ip:
+                    continue
+
                 if event == "cowrie.command.input":
                     raw_cmd = log.get("input")
                     clean_cmd = extract_command(raw_cmd)
-
-                    if not clean_cmd:
-                        continue
-
-                    rows.append({
-                        "timestamp": log.get("timestamp"),
+                    row = {
+                        "timestamp": ts,
                         "event": event,
-                        "src_ip": log.get("src_ip"),
+                        "src_ip": src_ip,
                         "username": log.get("username"),
                         "password": log.get("password"),
                         "command": clean_cmd,
-                        "source_file": os.path.basename(log_file)
-                    })
-
-                # ---------- LOGIN EVENTS ----------
-                elif event in ["cowrie.login.failed", "cowrie.login.success"]:
-                    rows.append({
-                        "timestamp": log.get("timestamp"),
+                        "full_command": raw_cmd,
+                        "source_file": os.path.basename(log_file),
+                    }
+                elif event in ("cowrie.login.failed", "cowrie.login.success"):
+                    row = {
+                        "timestamp": ts,
                         "event": event,
-                        "src_ip": log.get("src_ip"),
+                        "src_ip": src_ip,
                         "username": log.get("username"),
                         "password": log.get("password"),
                         "command": None,
-                        "source_file": os.path.basename(log_file)
-                    })
+                        "full_command": None,
+                        "source_file": os.path.basename(log_file),
+                    }
+                else:
+                    continue
+
+                sig = (ts, event, src_ip, row["full_command"])
+                if sig in seen_signatures:
+                    continue
+                seen_signatures.add(sig)
+
+                writer.writerow(row)
+                rows_this_file += 1
+                total_rows += 1
+
+                event_counter[event] += 1
+                ip_counter[src_ip] += 1
+                if row["username"]:
+                    username_counter[row["username"]] += 1
+                if row["password"]:
+                    password_counter[row["password"]] += 1
+                if row["command"]:
+                    command_counter[row["command"]] += 1
+
+                date_part = ts[:10]  # "2026-03-30T..." -> "2026-03-30"
+                dates_seen.add(date_part)
+                if earliest_ts is None or ts < earliest_ts:
+                    earliest_ts = ts
+                if latest_ts is None or ts > latest_ts:
+                    latest_ts = ts
 
             except Exception:
                 continue
 
-    return rows
+    print(f"  -> {rows_this_file} rows written")
 
 
 # =========================================================
-# 1) READ ALL BACKUP FILES
-# =========================================================
-backup_files = sorted(glob.glob(os.path.join(BACKUP_DIR, "cowrie_*.json")))
-
-print(f"🗂 Found {len(backup_files)} backup files")
-
-for bf in backup_files:
-    data.extend(process_log_file(bf))
-
-
-# =========================================================
-# 2) READ CURRENT LIVE LOG FILE
-# =========================================================
-if os.path.exists(CURRENT_LOG):
-    data.extend(process_log_file(CURRENT_LOG))
-else:
-    print(f"⚠️ Current log file not found: {CURRENT_LOG}")
-
-
-# =========================================================
-# 3) CREATE DATAFRAME
-# =========================================================
-df = pd.DataFrame(data)
-
-if df.empty:
-    print("❌ No data found. research_csv files were not generated.")
-    exit()
-
-# convert timestamp
-df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce")
-
-# drop rows without timestamp or src_ip
-df = df.dropna(subset=["timestamp", "src_ip"])
-
-# sort by time
-df = df.sort_values("timestamp")
-
-# remove exact duplicates
-df = df.drop_duplicates()
-
-# save full dataset
-df.to_csv(f"{OUTPUT_DIR}/all_logs_full.csv", index=False)
-
-
-# =========================================================
-# 4) GENERATE SUMMARY CSV FILES
+# MAIN
 # =========================================================
 
-# Top IPs
-ips_df = df["src_ip"].value_counts().reset_index()
-ips_df.columns = ["src_ip", "count"]
-ips_df.to_csv(f"{OUTPUT_DIR}/top_ips_full.csv", index=False)
+out_path = f"{OUTPUT_DIR}/all_logs_full.csv"
 
-# Usernames
-usernames_df = df["username"].dropna().value_counts().reset_index()
-usernames_df.columns = ["username", "count"]
-usernames_df.to_csv(f"{OUTPUT_DIR}/usernames_full.csv", index=False)
+with open(out_path, "w", newline="", encoding="utf-8") as out_f:
+    writer = csv.DictWriter(out_f, fieldnames=FIELDNAMES)
+    writer.writeheader()
 
-# Passwords
-passwords_df = df["password"].dropna().value_counts().reset_index()
-passwords_df.columns = ["password", "count"]
-passwords_df.to_csv(f"{OUTPUT_DIR}/passwords_full.csv", index=False)
+    backup_files = sorted(glob.glob(os.path.join(BACKUP_DIR, "cowrie_*.json")))
+    print(f"Found {len(backup_files)} backup files")
 
-# Commands
-commands_df = df["command"].dropna().value_counts().reset_index()
-commands_df.columns = ["command", "count"]
-commands_df.to_csv(f"{OUTPUT_DIR}/commands_full.csv", index=False)
+    for bf in backup_files:
+        process_log_file(bf, writer)
 
+    if os.path.exists(CURRENT_LOG):
+        process_log_file(CURRENT_LOG, writer)
+    else:
+        print(f"WARNING Current log file not found: {CURRENT_LOG}")
 
-# =========================================================
-# 5) GEOIP COUNTRIES
-# =========================================================
+if total_rows == 0:
+    print("No data found. research_csv files were not generated.")
+    raise SystemExit(0)
+
+# ---------------------------------------------------------
+# Summary CSVs -- built from the running counters, no need
+# to re-read all_logs_full.csv or use pandas at all
+# ---------------------------------------------------------
+
+with open(f"{OUTPUT_DIR}/top_ips_full.csv", "w", newline="") as f:
+    w = csv.writer(f)
+    w.writerow(["src_ip", "count"])
+    for ip, count in ip_counter.most_common():
+        w.writerow([ip, count])
+
+with open(f"{OUTPUT_DIR}/usernames_full.csv", "w", newline="") as f:
+    w = csv.writer(f)
+    w.writerow(["username", "count"])
+    for u, count in username_counter.most_common():
+        w.writerow([u, count])
+
+with open(f"{OUTPUT_DIR}/passwords_full.csv", "w", newline="") as f:
+    w = csv.writer(f)
+    w.writerow(["password", "count"])
+    for p, count in password_counter.most_common():
+        w.writerow([p, count])
+
+with open(f"{OUTPUT_DIR}/commands_full.csv", "w", newline="") as f:
+    w = csv.writer(f)
+    w.writerow(["command", "count"])
+    for c, count in command_counter.most_common():
+        w.writerow([c, count])
+
+# ---------------------------------------------------------
+# GeoIP -- looked up once PER UNIQUE IP (cached), not once
+# per row, since many rows share the same src_ip
+# ---------------------------------------------------------
+
 try:
     import geoip2.database
-
     reader = geoip2.database.Reader("/usr/share/GeoIP/GeoLite2-City.mmdb")
 
+    country_counter = Counter()
+    geo_cache = {}
+
     def get_country(ip):
-        try:
-            return reader.city(ip).country.name
-        except:
-            return "Unknown"
+        if ip not in geo_cache:
+            try:
+                geo_cache[ip] = reader.city(ip).country.name
+            except Exception:
+                geo_cache[ip] = "Unknown"
+        return geo_cache[ip]
 
-    df["country"] = df["src_ip"].apply(get_country)
+    for ip, count in ip_counter.items():
+        country_counter[get_country(ip)] += count
 
-    countries_df = df["country"].value_counts().reset_index()
-    countries_df.columns = ["Country", "Count"]
-    countries_df.to_csv(f"{OUTPUT_DIR}/countries_full.csv", index=False)
+    with open(f"{OUTPUT_DIR}/countries_full.csv", "w", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["Country", "Count"])
+        for country, count in country_counter.most_common():
+            w.writerow([country, count])
 
-    print("✅ countries_full.csv generated")
-
+    print("countries_full.csv generated")
 except Exception as e:
-    print("⚠️ GeoIP not working:", e)
+    print("GeoIP not working:", e)
 
 
-# =========================================================
-# 6) BASIC DATASET SUMMARY
-# =========================================================
+# ---------------------------------------------------------
+# SUMMARY
+# ---------------------------------------------------------
+
 print("\n================ RESEARCH DATASET SUMMARY ================")
-print("Total rows            :", len(df))
-print("Unique source IPs     :", df["src_ip"].nunique())
-print("Unique dates          :", df["timestamp"].dt.date.nunique())
+print("Total rows            :", total_rows)
+print("Unique source IPs     :", len(ip_counter))
+print("Unique dates          :", len(dates_seen))
 print("\nEvent counts:")
-print(df["event"].value_counts(dropna=False))
-
+for event, count in event_counter.most_common():
+    print(f"  {event}: {count}")
 print("\nDate range:")
-print("Earliest:", df["timestamp"].min())
-print("Latest  :", df["timestamp"].max())
-
-print("\nRows per date:")
-print(df["timestamp"].dt.date.value_counts().sort_index())
-
-print("\n✅ Research CSV files generated successfully!")
+print("Earliest:", earliest_ts)
+print("Latest  :", latest_ts)
+print("\nResearch CSV files generated successfully!")
