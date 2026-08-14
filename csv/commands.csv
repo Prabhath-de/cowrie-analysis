@@ -1,2 +1,5 @@
 command,count
+uname,3
 echo,1
+busybox,1
+head,1
