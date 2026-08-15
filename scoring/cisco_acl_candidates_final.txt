@@ -3,15 +3,15 @@
 !
 ip access-list extended COWRIE_DYNAMIC_BLOCK
  deny tcp host 35.229.125.98 any eq 22
+ deny tcp host 128.1.44.162 any eq 22
  deny tcp host 34.75.237.227 any eq 22
+ deny tcp host 182.93.7.194 any eq 22
  deny tcp host 34.139.191.163 any eq 22
  deny tcp host 136.107.187.197 any eq 22
- deny tcp host 128.1.44.162 any eq 22
- deny tcp host 34.150.142.107 any eq 22
- deny tcp host 34.138.181.9 any eq 22
  deny tcp host 158.180.79.132 any eq 22
- deny tcp host 182.93.7.194 any eq 22
  deny tcp host 136.232.11.10 any eq 22
  deny tcp host 106.251.244.178 any eq 22
+ deny tcp host 112.151.178.49 any eq 22
+ deny tcp host 219.92.11.46 any eq 22
  permit ip any any
 !

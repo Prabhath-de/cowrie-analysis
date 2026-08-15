@@ -5,23 +5,20 @@ Consolidates post_auth_temporal_crosscheck_v1.py + post_auth_temporal_decision_v
 into one stage. The crosscheck_v1 stage's own temporal_level/decision columns
 are dropped -- traced through decision_v2.py's source and confirmed they are
 never read for the actual decision, only carried forward unused via
-dict(row). temporal_level() and the non-final branch of mitigation_decision()
-are copied VERBATIM from post_auth_temporal_decision_v2.py -- same constants
+dict(row). temporal_level() and mitigation_decision() below are copied
+VERBATIM from post_auth_temporal_decision_v2.py -- same constants
 (BURST_MIN=10, HIGH_BURST=40, EXTREME_BURST=116, HIGH_SCORE=7.0,
-MEDIUM_SCORE=4.0), nothing re-derived or guessed there.
+MEDIUM_SCORE=4.0), same logic, nothing re-derived or guessed.
 
-UPDATE (post parser-bug-fix, now the official final rule): mitigation_decision()
-is applied TWICE per IP -- once against total_old (the frozen, original 0-15
-scale model, for audit/comparison -- mitigation_decision_old) and once against
-total_new (corrected 0-18.5 scale, backdoor/dropper signal included --
-mitigation_decision_new). mitigation_decision_new now uses the empirically
-re-derived FINAL_ACL_SCORE_THRESHOLD (8.5669, the P99.5 of total_new) combined
-with a raw burst >= 10 condition as the ACL_BLOCK_CANDIDATE entry rule,
-replacing the old HIGH_SCORE+temporal-category condition for that decision
-specifically. All other tiers (REVIEW/MONITOR/BASE_SCORE_REVIEW/NO_ACTION)
-are unchanged. mitigation_decision_new is the FINAL, official decision as of
-this version -- not diagnostic-only anymore, per the agreed thesis methodology
-(see threshold_analysis_new.py for the P99.5 derivation).
+The one deliberate change: mitigation_decision() is applied TWICE per IP --
+once against total_old (severity/intensity/diversity on the original 0-15
+scale, from post_auth_combined_final.csv's severity_old) and once against
+total_new (0-18.5 scale, includes the backdoor/dropper patch) -- using the
+SAME 7.0/4.0 thresholds both times. mitigation_decision_old is your
+validated, unchanged production decision. mitigation_decision_new is
+DIAGNOSTIC ONLY: those thresholds were calibrated for the 0-15 scale and
+have not been re-derived for 0-18.5, so treat any newly-appearing
+ACL_BLOCK_CANDIDATEs there as "worth investigating," not "ready to enforce."
 
 Inputs:
     scoring/post_auth_combined_final.csv   -- output of post_auth_scoring_final.py
@@ -46,22 +43,28 @@ RESULTS = "scoring/temporal_decision_final_results.txt"
 # UNCHANGED constants from post_auth_temporal_decision_v2.py
 # ============================================================
 
+# ============================================================
+# FINAL DATA-DRIVEN THRESHOLDS
+# ============================================================
+# Risk thresholds derived from the held-out post-auth score
+# distribution:
+#   P90  = 2.4848
+#   P95  = 3.5745
+#   P99  = 5.5190
+#
+# Automatic mitigation threshold:
+#   P99.5 = 6.8918
+#
+# Temporal confirmation:
+#   burst_10plus_5s >= 10
+# ============================================================
+
 BURST_MIN = 10
 HIGH_BURST = 40
 EXTREME_BURST = 116
 
-HIGH_SCORE = 7.0
-MEDIUM_SCORE = 4.0
-
-# ============================================================
-# FINAL ACL BLOCKING RULE -- empirically derived P99.5 of the
-# corrected total_new score distribution (parser bug fixed,
-# backdoor/dropper signal included). Supersedes HIGH_SCORE as
-# the entry condition specifically for ACL_BLOCK_CANDIDATE.
-# See threshold_analysis_new.py for the derivation.
-# ============================================================
-FINAL_ACL_SCORE_THRESHOLD = 8.5669
-FINAL_ACL_BURST_THRESHOLD = 10
+MEDIUM_SCORE = 2.4848
+ACL_SCORE = 6.8918
 
 
 def temporal_level(burst):
@@ -76,44 +79,29 @@ def temporal_level(burst):
         return "EXTREME_BURST"
 
 
-def mitigation_decision(score, temporal, burst=None, use_final_acl_rule=False):
-    """UNCHANGED from post_auth_temporal_decision_v2.py, EXCEPT:
-    when use_final_acl_rule=True, the ACL_BLOCK_CANDIDATE entry condition
-    is the empirically re-derived rule (score >= FINAL_ACL_SCORE_THRESHOLD
-    AND burst >= FINAL_ACL_BURST_THRESHOLD) instead of the original
-    HIGH_SCORE+temporal-category condition. All other tiers (REVIEW,
-    MONITOR, BASE_SCORE_REVIEW, NO_ACTION) are untouched either way.
-
-    mitigation_decision_old keeps use_final_acl_rule=False (the original,
-    frozen model, for audit/comparison). mitigation_decision_new sets
-    use_final_acl_rule=True -- this is now the FINAL, official rule, not
-    just diagnostic, per the agreed thesis methodology.
+def mitigation_decision(score, temporal):
     """
-    if use_final_acl_rule:
-        if score >= FINAL_ACL_SCORE_THRESHOLD and burst is not None and burst >= FINAL_ACL_BURST_THRESHOLD:
-            return "ACL_BLOCK_CANDIDATE"
-        if score >= HIGH_SCORE:
-            return "BASE_SCORE_REVIEW"
-        elif score >= MEDIUM_SCORE:
-            if temporal == "EXTREME_BURST":
-                return "HIGH_PRIORITY_REVIEW"
-            elif temporal == "HIGH_BURST":
-                return "REVIEW"
-            elif temporal == "BURST":
-                return "MONITOR"
-            return "BASE_SCORE_REVIEW"
-        else:
-            if temporal == "EXTREME_BURST":
-                return "HIGH_PRIORITY_REVIEW"
-            elif temporal in ["BURST", "HIGH_BURST"]:
-                return "MONITOR"
-            return "NO_ACTION"
+    Final deterministic mitigation decision.
 
-    if score >= HIGH_SCORE:
+    Automatic ACL blocking requires BOTH:
+      1. threat score >= P99.5 (6.8918)
+      2. temporal burst >= 10 events in the 5-second burst measure
+
+    Lower scores are handled according to temporal severity.
+    """
+
+    # --------------------------------------------------------
+    # AUTOMATIC ACL CANDIDATE
+    # --------------------------------------------------------
+    if score >= ACL_SCORE:
         if temporal in ["BURST", "HIGH_BURST", "EXTREME_BURST"]:
             return "ACL_BLOCK_CANDIDATE"
+
         return "BASE_SCORE_REVIEW"
 
+    # --------------------------------------------------------
+    # MEDIUM-AND-ABOVE SCORE RANGE
+    # --------------------------------------------------------
     elif score >= MEDIUM_SCORE:
         if temporal == "EXTREME_BURST":
             return "HIGH_PRIORITY_REVIEW"
@@ -121,13 +109,18 @@ def mitigation_decision(score, temporal, burst=None, use_final_acl_rule=False):
             return "REVIEW"
         elif temporal == "BURST":
             return "MONITOR"
+
         return "BASE_SCORE_REVIEW"
 
+    # --------------------------------------------------------
+    # LOW SCORE RANGE
+    # --------------------------------------------------------
     else:
         if temporal == "EXTREME_BURST":
             return "HIGH_PRIORITY_REVIEW"
         elif temporal in ["BURST", "HIGH_BURST"]:
             return "MONITOR"
+
         return "NO_ACTION"
 
 
@@ -166,7 +159,7 @@ with open(TEMPORAL, newline="", errors="ignore") as fh:
 
         c = combined[ip]
         decision_old = mitigation_decision(c["total_old"], temporal)
-        decision_new = mitigation_decision(c["total_new"], temporal, burst=burst, use_final_acl_rule=True)
+        decision_new = mitigation_decision(c["total_new"], temporal)
 
         rows.append({
             "ip": ip,
@@ -257,8 +250,8 @@ def summarize():
         if r["mitigation_decision_new"] == "ACL_BLOCK_CANDIDATE"
         and r["mitigation_decision_old"] != "ACL_BLOCK_CANDIDATE"
     ]
-    lines.append(f"IPs newly qualifying as ACL_BLOCK_CANDIDATE under the final P99.5 rule: {len(newly_block)}")
-    lines.append(f"(Final rule now OFFICIAL: total_new >= {FINAL_ACL_SCORE_THRESHOLD} AND burst >= {FINAL_ACL_BURST_THRESHOLD})")
+    lines.append(f"IPs that would newly qualify as ACL_BLOCK_CANDIDATE under total_new: {len(newly_block)}")
+    lines.append("(NOT auto-enforced -- final data-driven ACL threshold (6.8918) and burst threshold (10))")
     lines.append("-" * 80)
     for r in sorted(newly_block, key=lambda r: r["total_new"], reverse=True):
         lines.append(
