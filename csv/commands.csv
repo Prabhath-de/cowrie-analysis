@@ -1,6 +1,7 @@
 command,count
 uname,1120
-head,76
 busybox,76
+head,76
 cd,4
-echo,2
+echo,3
+uptime,1
