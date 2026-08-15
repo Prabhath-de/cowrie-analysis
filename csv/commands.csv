@@ -1,8 +1,8 @@
 command,count
-uname,3319
+uname,3345
 busybox,79
 head,79
-echo,24
+echo,25
 cd,20
 ps,2
 ip,1
