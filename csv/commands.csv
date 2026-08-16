@@ -1,9 +1,10 @@
 command,count
-uname,1176
-busybox,95
-head,95
-cd,22
+uname,1221
+busybox,110
+head,110
+cd,26
 echo,3
 cat,2
 which,2
+scp,2
 enter,1
