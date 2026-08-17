@@ -1,10 +1,10 @@
 command,count
-uname,1992
+uname,2032
 head,28
 busybox,28
 ps,6
 cd,6
-echo,4
+echo,5
 ip,3
 ls,3
 cat,3
