@@ -1,14 +1,3 @@
 command,count
-uname,3659
-busybox,63
-head,63
-cd,30
-ps,8
-echo,6
-cat,4
-ip,4
-ifconfig,4
-locate,4
-ls,4
-scp,2
-psgrojkc,2
+uname,4
+cd,4
