@@ -1,3 +1,5 @@
 command,count
-uname,2270
-cd,16
+uname,2305
+cd,18
+busybox,3
+head,3
