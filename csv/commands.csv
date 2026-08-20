@@ -1,6 +1,6 @@
 command,count
-uname,1364
-cd,22
+uname,1365
+cd,26
 ps,6
 ip,3
 cat,3
@@ -8,4 +8,4 @@ ifconfig,3
 locate,3
 ls,3
 echo,3
-chmod,1
+chmod,2
