@@ -1,12 +1,13 @@
 command,count
-uname,1163
-cd,12
+uname,1553
+cd,16
 busybox,9
 head,9
+id,3
 cat,2
 hostname,1
-uptime,1
 nproc,1
+uptime,1
 top,1
 free,1
 df,1
