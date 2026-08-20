@@ -1,11 +1,11 @@
 command,count
 uname,1365
-cd,26
+cd,32
 ps,6
+echo,4
 ip,3
-cat,3
 ifconfig,3
-locate,3
 ls,3
-echo,3
+cat,3
+locate,3
 chmod,2
