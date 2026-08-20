@@ -1,6 +1,6 @@
 command,count
-uname,2521
-cd,38
+uname,2916
+cd,44
 ps,8
 echo,5
 ls,4
@@ -9,5 +9,5 @@ cat,4
 ifconfig,4
 locate,4
 chmod,2
-busybox,1
-head,1
+busybox,2
+head,2
