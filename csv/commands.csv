@@ -1,3 +1,13 @@
 command,count
-uname,731
-cd,8
+uname,1163
+cd,12
+busybox,9
+head,9
+cat,2
+hostname,1
+uptime,1
+nproc,1
+top,1
+free,1
+df,1
+curl,1
