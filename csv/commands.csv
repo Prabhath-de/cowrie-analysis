@@ -1,10 +1,10 @@
 command,count
-uname,4148
+uname,4183
 cd,18
 busybox,10
 head,10
+cat,3
 id,3
-cat,2
 hostname,1
 uptime,1
 top,1
