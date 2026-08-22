@@ -2,8 +2,8 @@ command,count
 uname,1904
 busybox,133
 head,133
-cd,20
-echo,6
+cd,22
+echo,7
 ps,4
 cat,3
 ifconfig,2
