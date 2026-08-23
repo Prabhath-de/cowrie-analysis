@@ -1,6 +1,6 @@
 username,count
-root,427
-0,50
+root,450
+0,54
 admin,48
 ubuntu,37
 user,33
@@ -8,7 +8,7 @@ deploy,28
 test,24
 user1,16
 claude,15
-support,13
+support,14
 postgres,10
 ftpuser,10
 oracle,9
