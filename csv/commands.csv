@@ -2,7 +2,7 @@ command,count
 uname,3375
 busybox,73
 head,73
-cd,38
+cd,42
 ps,4
 ifconfig,2
 ip,2
