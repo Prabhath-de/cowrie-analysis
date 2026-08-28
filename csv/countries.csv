@@ -1,66 +1,99 @@
 Country,Count
-Romania,361
-United States,100
-Australia,53
-Vietnam,41
-Sweden,39
-The Netherlands,36
+Romania,366
+United States,248
+Indonesia,144
+Brazil,112
+France,98
+Vietnam,76
+India,75
+Australia,68
+Germany,66
+Türkiye,54
+Canada,54
+The Netherlands,51
+Sweden,47
+Bangladesh,39
+Poland,35
+Taiwan,24
+Italy,23
+Singapore,23
+Ecuador,22
+United Kingdom,22
+Paraguay,19
 China,19
-France,18
-Indonesia,18
-Brazil,17
-Taiwan,17
-Türkiye,15
-Switzerland,14
-Germany,14
-United Kingdom,11
-India,10
-Bulgaria,8
-Bangladesh,7
-South Korea,7
-Colombia,6
-Russia,6
-Canada,6
-Uzbekistan,5
-Singapore,5
+Ukraine,19
+Argentina,18
+Hong Kong,17
+Switzerland,16
+Spain,15
+Chile,14
+Mexico,14
+Peru,14
+Philippines,14
+Uruguay,14
+Colombia,13
+Russia,13
+South Korea,13
+Bulgaria,12
+Latvia,12
+Kazakhstan,12
+Serbia,10
+Thailand,10
+Sri Lanka,10
+Hungary,9
+United Arab Emirates,9
+Czechia,9
+South Africa,9
+Bolivia,9
+Tunisia,8
+Belarus,8
+Uzbekistan,8
+Armenia,7
+Portugal,7
+Venezuela,6
+Finland,6
+Kenya,6
+Lithuania,6
+Panama,6
 Botswana,5
-Poland,5
-Italy,4
-Paraguay,4
-Ecuador,4
-Peru,3
-Spain,3
-Philippines,3
-Uruguay,3
-Hong Kong,3
-Tunisia,2
-Ukraine,2
-Argentina,2
-Mexico,2
+Israel,5
+Ghana,5
+Luxembourg,5
+Algeria,4
+Austria,4
+Estonia,4
+Guatemala,4
+Malaysia,4
+Denmark,4
+Japan,4
+Nicaragua,4
+Malawi,4
+Cuba,4
+Slovenia,4
+Pakistan,3
+Georgia,3
+Slovakia,3
+Montenegro,3
+Zambia,2
+Benin,2
 Greece,2
-Chile,2
-Latvia,2
-Thailand,2
-Pakistan,1
-Zambia,1
-Angola,1
-Bolivia,1
-Kenya,1
-Montenegro,1
-Estonia,1
-Armenia,1
-Lithuania,1
-Denmark,1
-Georgia,1
-Guatemala,1
-Hungary,1
-Portugal,1
-Serbia,1
-Finland,1
-Slovakia,1
-Gambia,1
-Belarus,1
-New Caledonia,1
-Luxembourg,1
-Benin,1
-Malaysia,1
+Angola,2
+New Caledonia,2
+Gambia,2
+Azerbaijan,2
+Mozambique,2
+Tanzania,2
+Unknown,2
+Togo,2
+Dominican Republic,2
+Puerto Rico,2
+Nepal,2
+Costa Rica,2
+Guadeloupe,2
+Moldova,2
+Egypt,2
+Bhutan,1
+North Macedonia,1
+Réunion,1
+Belgium,1
+New Zealand,1
