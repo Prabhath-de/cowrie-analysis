@@ -4,3 +4,4 @@ busybox,79
 head,79
 cd,34
 chmod,1
+echo,1
