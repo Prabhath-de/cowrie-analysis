@@ -1,8 +1,8 @@
 command,count
-uname,1284
-busybox,107
-head,107
-cd,62
+uname,1311
+busybox,116
+head,116
+cd,66
 nproc,34
 grep,34
 ps,4
