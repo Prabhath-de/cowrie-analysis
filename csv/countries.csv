@@ -1,63 +1,63 @@
 Country,Count
-The Netherlands,1800
-United States,1103
-Türkiye,784
+The Netherlands,1806
+United States,1149
+Türkiye,788
 Indonesia,628
-Brazil,548
+Brazil,552
 Bulgaria,509
-Vietnam,492
-France,354
-Ukraine,252
+Vietnam,499
+France,357
+Ukraine,253
 Romania,243
-India,232
+India,241
 Russia,220
-Poland,196
-Germany,193
+Poland,197
+Germany,197
 Canada,190
-Italy,170
+Italy,171
 Kazakhstan,169
 Argentina,169
 Singapore,149
 Bangladesh,138
-Paraguay,107
-Spain,98
+Paraguay,108
+Spain,100
+Armenia,96
 Latvia,94
 Hong Kong,93
-Armenia,92
-Peru,85
-Slovenia,84
+Peru,87
+Slovenia,86
 Pakistan,81
 Thailand,72
 Mexico,68
+Sweden,66
+Malaysia,66
 Taiwan,64
-Malaysia,63
-Sweden,60
 Bolivia,59
 Serbia,58
 United Kingdom,54
 Slovakia,52
+Australia,47
 South Africa,47
-Australia,46
 Panama,44
 Philippines,44
+Uzbekistan,43
 Hungary,43
 Unknown,43
-Uzbekistan,42
-Uruguay,42
+Uruguay,43
 Kenya,41
 Ecuador,40
 Colombia,39
+Portugal,37
 U.S. Virgin Islands,37
 Timor-Leste,33
-Portugal,32
-Belarus,30
+Belarus,31
 Cyprus,30
 Japan,29
-South Korea,25
-Belgium,25
+Belgium,26
+Finland,25
 Chile,25
+South Korea,25
 Sri Lanka,24
-Finland,24
 Iran,22
 Ireland,22
 Denmark,21
@@ -70,9 +70,9 @@ Venezuela,20
 Kyrgyzstan,20
 Austria,19
 Uganda,18
-Switzerland,16
+Switzerland,18
 North Macedonia,14
-Greece,13
+Greece,14
 Bhutan,13
 Norway,11
 Azerbaijan,11
@@ -93,7 +93,7 @@ Gabon,9
 China,9
 Nauru,9
 Congo Republic,9
-"Bonaire, Sint Eustatius and Saba",7
+"Bonaire, Sint Eustatius and Saba",8
 Cuba,5
 Tanzania,5
 Egypt,4
