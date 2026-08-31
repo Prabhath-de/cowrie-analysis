@@ -1,63 +1,63 @@
 Country,Count
-The Netherlands,1798
-United States,1037
-Türkiye,782
+The Netherlands,1800
+United States,1103
+Türkiye,784
 Indonesia,628
-Brazil,545
+Brazil,548
 Bulgaria,509
-Vietnam,489
-France,352
-Ukraine,251
-Romania,242
-India,230
+Vietnam,492
+France,354
+Ukraine,252
+Romania,243
+India,232
 Russia,220
 Poland,196
-Germany,191
+Germany,193
 Canada,190
 Italy,170
 Kazakhstan,169
 Argentina,169
 Singapore,149
 Bangladesh,138
-Paraguay,106
-Spain,97
+Paraguay,107
+Spain,98
 Latvia,94
 Hong Kong,93
-Armenia,89
+Armenia,92
 Peru,85
-Slovenia,83
+Slovenia,84
 Pakistan,81
 Thailand,72
 Mexico,68
 Taiwan,64
-Malaysia,61
+Malaysia,63
+Sweden,60
 Bolivia,59
 Serbia,58
-Sweden,57
 United Kingdom,54
 Slovakia,52
 South Africa,47
-Philippines,44
+Australia,46
 Panama,44
+Philippines,44
 Hungary,43
 Unknown,43
-Uzbekistan,41
-Uruguay,41
+Uzbekistan,42
+Uruguay,42
 Kenya,41
-Australia,41
 Ecuador,40
 Colombia,39
 U.S. Virgin Islands,37
 Timor-Leste,33
-Portugal,31
+Portugal,32
+Belarus,30
 Cyprus,30
-Belarus,29
-Japan,28
+Japan,29
+South Korea,25
+Belgium,25
 Chile,25
 Sri Lanka,24
-Belgium,24
 Finland,24
-South Korea,24
 Iran,22
 Ireland,22
 Denmark,21
@@ -70,7 +70,7 @@ Venezuela,20
 Kyrgyzstan,20
 Austria,19
 Uganda,18
-Switzerland,15
+Switzerland,16
 North Macedonia,14
 Greece,13
 Bhutan,13
@@ -93,7 +93,7 @@ Gabon,9
 China,9
 Nauru,9
 Congo Republic,9
-"Bonaire, Sint Eustatius and Saba",6
+"Bonaire, Sint Eustatius and Saba",7
 Cuba,5
 Tanzania,5
 Egypt,4

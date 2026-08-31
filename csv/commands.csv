@@ -1,10 +1,10 @@
 command,count
-uname,1256
+uname,1272
 busybox,107
 head,107
 cd,58
-nproc,7
-grep,7
+nproc,23
+grep,23
 ps,4
 hostname,3
 ifconfig,2
