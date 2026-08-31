@@ -1,9 +1,10 @@
 command,count
-uname,111
-cd,16
-busybox,13
-head,13
+uname,992
+busybox,36
+head,36
+cd,34
 ps,2
+ssh,2
 ifconfig,1
 ip,1
 cat,1
