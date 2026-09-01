@@ -1,0 +1,2 @@
+{"eventid":"cowrie.login.success","username":"root","password":"cloud2026","message":"login attempt [root/cloud2026] succeeded","sensor":"node01","uuid":"e52e7028-3954-11f1-9406-fffe83adf7d8","timestamp":"2026-09-02T00:00:00.495151Z","src_ip":"200.201.215.231","session":"3741a8d204e2","protocol":"ssh"}
+{"eventid":"cowrie.session.closed","duration":"2.4","message":"Connection lost after 2.4 seconds","sensor":"node01","uuid":"e52e7028-3954-11f1-9406-fffe83adf7d8","timestamp":"2026-09-02T00:00:00.841614Z","src_ip":"200.201.215.231","session":"3741a8d204e2","protocol":"ssh"}
