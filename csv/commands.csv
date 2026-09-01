@@ -1,7 +1,7 @@
 command,count
-uname,535
-busybox,51
-head,51
+uname,559
+busybox,59
+head,59
 cd,8
 uptime,2
 hostname,2
