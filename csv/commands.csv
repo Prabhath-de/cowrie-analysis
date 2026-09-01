@@ -1,9 +1,9 @@
 command,count
-uname,761
-busybox,113
-head,113
-grep,34
-nproc,33
+uname,796
+busybox,120
+head,120
+grep,47
+nproc,46
 cd,26
 hostname,11
 whoami,8
