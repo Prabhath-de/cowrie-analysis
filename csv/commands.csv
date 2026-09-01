@@ -1,2 +1,6 @@
 command,count
-uname,14
+uname,62
+grep,25
+nproc,25
+cd,6
+chmod,1
