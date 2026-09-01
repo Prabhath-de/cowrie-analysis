@@ -1,4 +1,12 @@
 command,count
-uname,172
-busybox,9
-head,9
+uname,371
+busybox,20
+head,20
+cd,8
+hostname,2
+uptime,2
+ls,2
+pwd,1
+whoami,1
+netstat,1
+ps,1
