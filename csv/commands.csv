@@ -2,7 +2,7 @@ command,count
 uname,631
 busybox,130
 head,130
-cd,44
+cd,46
 nproc,27
 grep,27
 chmod,2
