@@ -1,115 +1,105 @@
 Country,Count
-United States,2185
-Indonesia,2035
-Brazil,1230
-Vietnam,1169
-Bulgaria,1085
-France,1079
-India,920
-Türkiye,770
-Italy,593
-Ukraine,560
-Germany,554
-Poland,390
-Ecuador,373
-Bangladesh,368
-Hong Kong,325
-Argentina,318
-Canada,296
-Singapore,267
-The Netherlands,264
-Russia,241
-Australia,238
-Thailand,217
-Kazakhstan,209
-Spain,204
-Philippines,200
-United Kingdom,186
-South Africa,178
-Romania,167
-Paraguay,159
-Colombia,158
-Bolivia,157
-Hungary,147
-Peru,141
-Mexico,140
-Chile,138
-Portugal,135
-Czechia,128
-Venezuela,117
-Panama,111
-Taiwan,109
-Iran,102
-Kenya,102
-Sri Lanka,93
-Slovenia,93
-Latvia,91
-Sweden,87
-Japan,75
-Moldova,64
-Puerto Rico,63
-Cyprus,59
-Dominican Republic,59
-Slovakia,58
-Pakistan,57
-Nicaragua,55
-Tunisia,53
-Palestine,50
-Uganda,50
-Kyrgyzstan,50
-Malaysia,50
-Serbia,49
-Nepal,42
-Lithuania,40
-Unknown,39
-Algeria,38
-Nigeria,38
-Mozambique,38
-South Korea,37
-United Arab Emirates,37
-Denmark,37
-Israel,36
-Georgia,35
-Greece,34
-Croatia,32
-Malawi,31
-Estonia,30
-Uzbekistan,30
-Armenia,27
-Luxembourg,27
-El Salvador,26
-Guatemala,22
-Norway,22
-Finland,22
-Honduras,21
-Belarus,21
-Switzerland,20
-Togo,19
-Iceland,19
-Costa Rica,19
-Libya,18
-Botswana,18
-New Caledonia,17
-Gabon,17
-Cameroon,16
-Eritrea,16
-Nauru,16
-Ghana,16
-Zimbabwe,15
-Laos,15
-Cuba,15
-Uruguay,15
-Tanzania,14
-Cambodia,13
-Egypt,10
-Azerbaijan,9
-Zambia,9
-China,8
-Madagascar,5
-Belgium,5
-Senegal,5
-"Bonaire, Sint Eustatius and Saba",5
-Timor-Leste,2
-Benin,1
-Mali,1
-New Zealand,1
+Singapore,634
+Indonesia,226
+United States,204
+Vietnam,138
+Brazil,115
+India,98
+France,96
+Italy,76
+Türkiye,68
+Ukraine,54
+Germany,51
+Ecuador,37
+Bangladesh,35
+Canada,33
+Poland,30
+Hong Kong,30
+The Netherlands,29
+United Kingdom,28
+Australia,24
+Thailand,24
+Kazakhstan,23
+Argentina,22
+Spain,22
+South Africa,19
+Peru,18
+Philippines,16
+Russia,15
+Colombia,15
+Panama,15
+Chile,14
+Hungary,14
+Iran,14
+Bolivia,14
+Portugal,14
+Taiwan,14
+Czechia,12
+Paraguay,11
+Slovenia,10
+Sri Lanka,10
+Puerto Rico,9
+Mexico,9
+Sweden,9
+Romania,8
+Venezuela,8
+Kenya,8
+Dominican Republic,8
+Latvia,8
+Japan,8
+Slovakia,8
+Cyprus,7
+Bulgaria,7
+Kyrgyzstan,7
+Uganda,6
+Moldova,6
+Pakistan,6
+Georgia,5
+Nigeria,5
+Mozambique,5
+Lithuania,5
+Palestine,5
+Algeria,5
+Nicaragua,5
+Croatia,4
+Nepal,4
+Unknown,4
+Luxembourg,4
+United Arab Emirates,4
+Tunisia,4
+Iceland,3
+Finland,3
+Libya,3
+Armenia,3
+El Salvador,3
+Switzerland,3
+Malaysia,3
+Zimbabwe,2
+Egypt,2
+Cameroon,2
+Botswana,2
+Laos,2
+Uzbekistan,2
+New Caledonia,2
+Israel,2
+Uruguay,2
+Tanzania,2
+Belarus,2
+Norway,2
+Costa Rica,2
+Cambodia,2
+Eritrea,2
+Malawi,2
+Estonia,2
+Denmark,2
+Nauru,2
+Guatemala,2
+Serbia,2
+China,2
+South Korea,2
+Cuba,2
+Austria,1
+Gabon,1
+Greece,1
+Honduras,1
+Madagascar,1
