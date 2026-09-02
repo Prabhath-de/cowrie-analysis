@@ -1,10 +1,10 @@
 command,count
-uname,325
+uname,326
 busybox,30
 head,30
 cd,28
-nproc,26
-grep,26
+nproc,27
+grep,27
 chmod,2
 pwd,2
 whoami,2
