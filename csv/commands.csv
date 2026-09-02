@@ -1,12 +1,13 @@
 command,count
-uname,323
+uname,325
 busybox,30
 head,30
 cd,28
-grep,25
-nproc,25
+nproc,26
+grep,26
 chmod,2
 pwd,2
 whoami,2
 mount,1
 netstat,1
+uptime,1
