@@ -42,6 +42,7 @@ rather than silently dropped.
 
 import json
 import os
+import re
 import glob
 import csv
 from collections import defaultdict
@@ -49,8 +50,31 @@ from collections import defaultdict
 BACKUP_DIR = "/home/cowrie/cowrie-analysis/backups"
 CURRENT_LOG = "/home/cowrie/cowrie/var/log/cowrie/cowrie.json"
 OUTPUT_DIR = "research_csv"
+ERROR_LOG = f"{OUTPUT_DIR}/session_parse_errors.log"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+_CONTROL_CHARS = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]")
+
+
+def clean(v):
+    """Strip NUL bytes and other C0/DEL control characters from string
+    values before they reach the csv writer. Real attacker-supplied input
+    (commands, usernames, passwords, URLs, banners) is not guaranteed to
+    be clean text -- a raw NUL byte in a field is enough to make Python's
+    csv module raise '_csv.Error: need to escape, but no escapechar set'
+    with no way to recover mid-write. Newlines/carriage-returns are also
+    stripped here (replaced with a space) so one CSV row can never become
+    two -- important since these files are grouped/joined by row later.
+    Non-string values (int, float, bool, None) pass through unchanged.
+    """
+    if isinstance(v, str):
+        return _CONTROL_CHARS.sub(" ", v)
+    return v
+
+
+def clean_row(d):
+    return {k: clean(v) for k, v in d.items()}
 
 SESSION_FIELDS = [
     "session", "src_ip", "src_port", "dst_ip", "dst_port",
@@ -143,8 +167,13 @@ def flush_session(sess_id, session_writer):
     for k in SESSION_FIELDS:
         if k not in row:
             row[k] = st.get(k)
-    session_writer.writerow(row)
-    sessions_written += 1
+    row = clean_row(row)
+    try:
+        session_writer.writerow(row)
+        sessions_written += 1
+    except Exception as e:
+        with open(ERROR_LOG, "a") as ef:
+            ef.write(f"SESSION WRITE FAILED session={sess_id} error={e} row={row}\n")
 
 
 def process_log_file(log_file, session_writer, transfer_writer):
@@ -251,32 +280,44 @@ def process_log_file(log_file, session_writer, transfer_writer):
             # ---------------- FILE TRANSFERS ----------------
             elif eventid == "cowrie.session.file_download":
                 st["file_download_count"] += 1
-                transfer_writer.writerow({
-                    "session": sess, "src_ip": ip, "event": eventid, "timestamp": ts,
-                    "url": d.get("url"), "filename": d.get("destfile"),
-                    "outfile": d.get("outfile"), "destfile": d.get("destfile"),
-                    "shasum": d.get("shasum"),
-                })
-                file_transfer_rows += 1
+                try:
+                    transfer_writer.writerow(clean_row({
+                        "session": sess, "src_ip": ip, "event": eventid, "timestamp": ts,
+                        "url": d.get("url"), "filename": d.get("destfile"),
+                        "outfile": d.get("outfile"), "destfile": d.get("destfile"),
+                        "shasum": d.get("shasum"),
+                    }))
+                    file_transfer_rows += 1
+                except Exception as e:
+                    with open(ERROR_LOG, "a") as ef:
+                        ef.write(f"TRANSFER WRITE FAILED session={sess} event={eventid} error={e}\n")
 
             elif eventid == "cowrie.session.file_download.failed":
                 st["file_download_failed_count"] += 1
-                transfer_writer.writerow({
-                    "session": sess, "src_ip": ip, "event": eventid, "timestamp": ts,
-                    "url": d.get("url"), "filename": None,
-                    "outfile": None, "destfile": None, "shasum": None,
-                })
-                file_transfer_rows += 1
+                try:
+                    transfer_writer.writerow(clean_row({
+                        "session": sess, "src_ip": ip, "event": eventid, "timestamp": ts,
+                        "url": d.get("url"), "filename": None,
+                        "outfile": None, "destfile": None, "shasum": None,
+                    }))
+                    file_transfer_rows += 1
+                except Exception as e:
+                    with open(ERROR_LOG, "a") as ef:
+                        ef.write(f"TRANSFER WRITE FAILED session={sess} event={eventid} error={e}\n")
 
             elif eventid == "cowrie.session.file_upload":
                 st["file_upload_count"] += 1
-                transfer_writer.writerow({
-                    "session": sess, "src_ip": ip, "event": eventid, "timestamp": ts,
-                    "url": None, "filename": d.get("filename"),
-                    "outfile": d.get("outfile"), "destfile": None,
-                    "shasum": d.get("shasum"),
-                })
-                file_transfer_rows += 1
+                try:
+                    transfer_writer.writerow(clean_row({
+                        "session": sess, "src_ip": ip, "event": eventid, "timestamp": ts,
+                        "url": None, "filename": d.get("filename"),
+                        "outfile": d.get("outfile"), "destfile": None,
+                        "shasum": d.get("shasum"),
+                    }))
+                    file_transfer_rows += 1
+                except Exception as e:
+                    with open(ERROR_LOG, "a") as ef:
+                        ef.write(f"TRANSFER WRITE FAILED session={sess} event={eventid} error={e}\n")
 
             # ---------------- DIRECT-TCPIP (pivot/lateral movement) ----------------
             elif eventid == "cowrie.direct-tcpip.request":
@@ -288,6 +329,17 @@ def process_log_file(log_file, session_writer, transfer_writer):
 
             # ---------------- LOG CLOSED (TTY recording, shell sessions only) ----
             elif eventid == "cowrie.log.closed":
+                # Fires ONCE PER TTY-LOG FRAGMENT, not once per session --
+                # direct inspection shows a single session can produce
+                # several log.closed events (one per command chunk), each
+                # with its OWN short "duration" (e.g. 0.2s) that is NOT the
+                # session duration. It also fires only for sessions that
+                # reached a shell -- ~3 out of 4 sessions in a typical day
+                # never get it at all (failed-login-only). So it cannot be
+                # the flush trigger and its "duration" must never overwrite
+                # the real session duration_sec (that comes from
+                # cowrie.session.closed only, below). We aggregate across
+                # fragments instead of overwriting.
                 st["ttylog_fragment_count"] += 1
                 dur = d.get("duration")
                 if dur:
@@ -312,6 +364,9 @@ def process_log_file(log_file, session_writer, transfer_writer):
                 st["close_ts"] = ts
                 st["duration_sec"] = d.get("duration")  # authoritative, full-session
                 st["incomplete"] = False
+                # This is the reliable end-of-session marker (unlike
+                # log.closed, which only fires for shell sessions) --
+                # flush here.
                 flush_session(sess, session_writer)
                 rows_this_file += 1
                 continue
@@ -346,6 +401,7 @@ with open(sessions_path, "w", newline="", encoding="utf-8") as sf, \
     else:
         print(f"NOTE: current live log not found at {CURRENT_LOG} (fine if running off-server)")
 
+    # flush anything still open at end (truncated/incomplete sessions)
     for sess_id in list(open_sessions.keys()):
         flush_session(sess_id, session_writer)
 
@@ -354,7 +410,11 @@ with open(fingerprints_path, "w", newline="", encoding="utf-8") as ff:
     fw = csv.DictWriter(ff, fieldnames=FINGERPRINT_FIELDS)
     fw.writeheader()
     for h, row in sorted(fingerprints.items(), key=lambda kv: -kv[1]["session_count"]):
-        fw.writerow(row)
+        try:
+            fw.writerow(clean_row(row))
+        except Exception as e:
+            with open(ERROR_LOG, "a") as ef:
+                ef.write(f"FINGERPRINT WRITE FAILED hassh={h} error={e}\n")
 
 print(f"\nTotal events scanned : {total_events}")
 print(f"Sessions written      : {sessions_written}")
@@ -362,6 +422,11 @@ print(f"File transfer rows    : {file_transfer_rows}")
 print(f"Unique src_ips seen   : {len(ip_seen)}")
 print(f"Distinct HASSH fingerprints: {len(fingerprints)}")
 print(f"Created: {fingerprints_path}")
+
+# ---------------------------------------------------------
+# GEOIP -- one row per unique IP, cached lookup (same pattern as
+# research_parse_logs.py, which is already known to work on this server)
+# ---------------------------------------------------------
 
 try:
     import geoip2.database
