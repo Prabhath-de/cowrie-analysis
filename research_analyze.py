@@ -103,7 +103,7 @@ plot_barh(
 )
 
 # ---------- TIMELINE ----------
-plot_timeline()
+# plot_timeline()  # disabled temporarily -- memory-safe replacement below
 
 print("✅ Research charts generated successfully!")
 
