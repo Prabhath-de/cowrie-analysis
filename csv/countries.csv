@@ -1,106 +1,107 @@
 Country,Count
-United States,952
-Singapore,872
-Indonesia,862
-Vietnam,503
-Brazil,434
-France,405
-India,378
-Italy,273
-Türkiye,263
-Ukraine,221
-Germany,201
-Ecuador,144
-Bangladesh,141
-Canada,133
-Poland,123
-Hong Kong,122
-The Netherlands,117
-Australia,103
-Thailand,100
-Argentina,96
-Spain,95
-Kazakhstan,86
-United Kingdom,86
-Russia,81
-South Africa,65
-Peru,63
-Colombia,61
-Bolivia,60
-Philippines,58
-Iran,55
-Portugal,54
-Panama,54
-Taiwan,51
-Hungary,50
-Chile,48
-Czechia,48
-Mexico,46
-Paraguay,44
-Slovenia,39
-Sweden,36
-Venezuela,36
-Sri Lanka,35
-Bulgaria,35
-Kenya,32
-Japan,31
-Puerto Rico,30
-Slovakia,30
-Dominican Republic,29
-Latvia,29
-Romania,29
-Kyrgyzstan,27
-Uganda,24
-Pakistan,24
-Cyprus,24
-Nicaragua,21
-Luxembourg,20
-Moldova,20
-Palestine,19
-Mozambique,19
-Lithuania,19
-United Arab Emirates,19
-Tunisia,18
-Algeria,18
-Georgia,18
-Nigeria,18
-Unknown,17
+United States,1013
+Indonesia,930
+Singapore,883
+Vietnam,547
+Brazil,470
+France,448
+India,407
+Italy,294
+Türkiye,289
+Ukraine,245
+Germany,215
+Ecuador,157
+Bangladesh,157
+Canada,147
+Poland,132
+Hong Kong,127
+The Netherlands,126
+Australia,110
+Thailand,106
+Argentina,106
+Spain,103
+United Kingdom,94
+Kazakhstan,94
+Russia,87
+South Africa,73
+Peru,72
+Colombia,67
+Bolivia,65
+Portugal,62
+Philippines,62
+Panama,60
+Taiwan,57
+Iran,56
+Hungary,54
+Czechia,53
+Chile,53
+Mexico,51
+Paraguay,50
+Slovenia,43
+Venezuela,41
+Sweden,39
+Bulgaria,38
+Sri Lanka,36
+Kenya,34
+Romania,34
+Slovakia,33
+Japan,33
+Dominican Republic,31
+Puerto Rico,31
+Latvia,30
+Kyrgyzstan,30
+Cyprus,26
+Uganda,26
+Pakistan,25
+Mozambique,23
+South Korea,22
+Nicaragua,22
+Lithuania,21
+Luxembourg,21
+United Arab Emirates,21
+Moldova,21
+Unknown,20
+Tunisia,20
+Palestine,20
+Algeria,20
+Nigeria,20
+Georgia,19
+Nepal,17
 Malaysia,16
-Nepal,16
-South Korea,14
-Malawi,14
-El Salvador,13
-Switzerland,12
+Malawi,15
+Switzerland,14
+El Salvador,14
+Belarus,11
 Croatia,11
-Finland,10
-Belarus,10
-Libya,10
-Iceland,10
-Armenia,10
-Denmark,10
+Finland,11
+Denmark,11
+Libya,11
+Iceland,11
+Armenia,11
+Cameroon,10
+Uzbekistan,10
+Israel,10
+Costa Rica,10
+Norway,10
+Estonia,10
+Zimbabwe,9
 Serbia,9
+Guatemala,9
 Laos,9
 Uruguay,9
-Estonia,9
-Guatemala,9
-Norway,9
-Israel,9
-Uzbekistan,9
-Cameroon,9
-Costa Rica,9
-Zimbabwe,8
+Tanzania,9
 Nauru,8
-Tanzania,8
-Eritrea,7
-Cuba,7
+Cuba,8
 Botswana,7
+Eritrea,7
 Madagascar,6
 Cambodia,6
 Egypt,6
+Macao,5
 Greece,4
-New Caledonia,3
+Gabon,3
 China,3
-Gabon,2
+New Caledonia,3
 Austria,1
 Honduras,1
 Ghana,1
