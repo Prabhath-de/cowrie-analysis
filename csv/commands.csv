@@ -1,10 +1,10 @@
 command,count
-uname,1843
+uname,1857
 nproc,58
 grep,58
 head,56
 busybox,56
-cd,30
+cd,34
 ps,4
 ip,2
 ifconfig,2
