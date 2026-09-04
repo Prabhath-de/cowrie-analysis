@@ -1,43 +1,43 @@
 Country,Count
-Australia,97
-United States,90
-Vietnam,55
-Türkiye,51
-Sweden,41
-Iran,27
-The Netherlands,26
-Italy,25
-Singapore,23
-Brazil,21
-Indonesia,21
+Australia,105
+United States,99
+Vietnam,59
+Türkiye,54
+Sweden,44
+Iran,29
+Italy,28
+The Netherlands,28
+Singapore,24
+Brazil,22
+Indonesia,22
+India,20
 France,19
-India,18
 Ukraine,14
-Bangladesh,13
+Bangladesh,14
 Germany,13
-Switzerland,12
-Tunisia,11
-Poland,9
-Slovakia,8
-Romania,7
+Switzerland,13
+Tunisia,12
+Poland,10
+Slovakia,9
+Spain,8
+Panama,8
+Romania,8
+Costa Rica,7
+Philippines,7
 Hungary,7
-Panama,7
-Spain,7
-United Kingdom,6
-Costa Rica,6
-Colombia,6
+Colombia,7
+Botswana,6
 Sri Lanka,6
-Philippines,6
-Hong Kong,5
-Pakistan,5
+United Kingdom,6
+Kenya,6
 Malaysia,5
-Botswana,5
-Macao,5
 Taiwan,5
-Kenya,5
+Mozambique,5
+Macao,5
+Nepal,5
+Pakistan,5
+Hong Kong,5
 Russia,4
-Mozambique,4
-Nepal,4
 China,2
 Denmark,2
 Nicaragua,1
@@ -45,3 +45,5 @@ Thailand,1
 Mexico,1
 Canada,1
 Ecuador,1
+Belgium,1
+Kazakhstan,1
