@@ -1,3 +1,5 @@
 command,count
+uname,32
 cd,18
-uname,5
+busybox,9
+head,9
