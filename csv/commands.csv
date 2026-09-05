@@ -1,8 +1,8 @@
 command,count
-uname,565
+uname,584
 busybox,86
 head,86
-cd,38
+cd,46
 touch,2
 cat,1
 echo,1
