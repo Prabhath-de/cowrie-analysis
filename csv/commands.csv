@@ -2,7 +2,7 @@ command,count
 uname,556
 busybox,84
 head,84
-cd,36
+cd,38
 touch,2
 cat,1
 echo,1
