@@ -1,14 +1,14 @@
 Country,Count
-United Kingdom,6116
-The Netherlands,4729
-United States,2167
-Sweden,1945
+United Kingdom,6121
+The Netherlands,4739
+United States,2177
+Sweden,1948
 Indonesia,1553
-Romania,1211
+Romania,1215
 Vietnam,810
 Brazil,788
 France,740
-Türkiye,688
+Türkiye,690
 Germany,499
 India,447
 Bangladesh,433
@@ -21,8 +21,8 @@ Canada,222
 Mexico,182
 Italy,180
 Puerto Rico,178
+Australia,164
 Ecuador,162
-Australia,159
 Peru,152
 Bulgaria,147
 Slovakia,140
@@ -31,13 +31,13 @@ Latvia,120
 Malaysia,116
 Spain,111
 Kenya,109
-Taiwan,104
+Taiwan,109
 South Africa,99
 Poland,96
 Bolivia,92
 Kazakhstan,92
 Sri Lanka,86
-Iran,77
+Iran,80
 Japan,72
 Venezuela,68
 Luxembourg,62
@@ -59,7 +59,7 @@ Gabon,44
 South Korea,38
 Nauru,34
 Kyrgyzstan,30
-Pakistan,26
+Pakistan,28
 Cyprus,22
 Estonia,22
 Georgia,22
