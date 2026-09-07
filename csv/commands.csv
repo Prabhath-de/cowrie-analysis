@@ -1,6 +1,6 @@
 command,count
-uname,1387
-cd,3
+uname,2425
+cd,13
 cat,3
 hostname,1
 echo,1
@@ -14,3 +14,4 @@ top,1
 whoami,1
 lscpu,1
 df,1
+env,1
