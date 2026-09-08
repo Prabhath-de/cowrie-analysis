@@ -1,8 +1,8 @@
 command,count
-uname,608
-nproc,37
-grep,37
-cd,16
+uname,609
+nproc,38
+grep,38
+cd,20
 ps,2
 ifconfig,1
 ip,1
