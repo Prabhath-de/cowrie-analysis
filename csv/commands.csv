@@ -1,8 +1,8 @@
 command,count
-uname,1331
-cd,38
-nproc,38
+uname,2198
+cd,44
 grep,38
+nproc,38
 echo,21
 ps,2
 ip,1
