@@ -1,9 +1,9 @@
 command,count
-cd,6
+uname,37
+cd,8
 ps,2
-ip,1
-uname,1
 ifconfig,1
+ip,1
 cat,1
 ls,1
 locate,1
