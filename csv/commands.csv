@@ -1,6 +1,8 @@
 command,count
-uname,5602
+uname,5615
 cd,38
+grep,6
+nproc,6
 ps,5
 cat,4
 ls,3
@@ -9,11 +11,11 @@ ip,2
 locate,2
 echo,2
 chmod,1
-pwd,1
 exit,1
+pwd,1
 whoami,1
 wget,1
-crontab,1
 history,1
-id,1
+crontab,1
 netstat,1
+id,1
