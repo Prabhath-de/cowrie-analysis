@@ -1,11 +1,13 @@
 command,count
-uname,3643
-cd,30
+uname,4636
+cd,36
 ps,4
-ip,2
+ls,3
 ifconfig,2
+ip,2
 cat,2
-ls,2
 locate,2
 echo,2
 chmod,1
+pwd,1
+exit,1
