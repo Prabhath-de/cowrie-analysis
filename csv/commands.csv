@@ -1,13 +1,5 @@
 command,count
-uname,2315
-cd,40
-head,20
-busybox,20
-ps,2
-chmod,1
-ip,1
-ifconfig,1
-ls,1
-cat,1
-echo,1
-locate,1
+uname,46
+busybox,8
+head,8
+cd,2
