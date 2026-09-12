@@ -1,5 +1,12 @@
 command,count
-uname,3111
+uname,3764
 busybox,30
 head,30
-cd,20
+cd,28
+echo,21
+ps,2
+ip,1
+ifconfig,1
+cat,1
+ls,1
+locate,1
