@@ -1,10 +1,10 @@
 command,count
+echo,3818
 uname,1675
 busybox,47
 head,47
 cd,40
 cat,3
-echo,2
 chmod,1
 enter,1
 free,1
