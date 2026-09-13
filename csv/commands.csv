@@ -1,11 +1,11 @@
 command,count
+uname,88
 cat,6
+cd,6
 echo,5
-uname,4
-dd,3
 grep,3
+dd,3
 awk,2
-cd,2
 uptime,2
 tr,1
 printf,1
