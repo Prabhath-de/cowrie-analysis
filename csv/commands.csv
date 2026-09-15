@@ -1,6 +1,7 @@
 command,count
 id,210
 uname,16
-busybox,5
 head,5
+busybox,5
 cd,2
+chmod,1

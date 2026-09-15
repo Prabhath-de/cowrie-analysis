@@ -463,3 +463,12 @@ timestamp,event,src_ip,username,password,command
 2026-09-16T00:58:29.939538Z,cowrie.login.success,185.246.128.133,0,0,
 2026-09-16T00:58:40.227026Z,cowrie.login.success,120.48.0.142,root,---fuck_you----,
 2026-09-16T00:58:42.914509Z,cowrie.command.input,120.48.0.142,,,uname
+2026-09-16T01:01:39.429105Z,cowrie.login.success,94.154.35.215,0,0,
+2026-09-16T01:05:34.476691Z,cowrie.login.success,167.86.66.225,root,ubuntu,
+2026-09-16T01:05:58.121420Z,cowrie.login.success,77.90.185.17,ubnt,1234,
+2026-09-16T01:08:09.595740Z,cowrie.command.input,167.86.66.225,,,chmod
+2026-09-16T01:11:59.731477Z,cowrie.login.success,176.53.159.196,support,support,
+2026-09-16T01:31:34.321756Z,cowrie.login.success,185.246.128.133,0,0,
+2026-09-16T01:37:52.950160Z,cowrie.login.success,94.154.35.215,0,0,
+2026-09-16T01:49:41.230267Z,cowrie.login.success,179.43.139.58,0,0,
+2026-09-16T01:54:06.896817Z,cowrie.login.success,193.187.110.213,admin,admin@2026,
