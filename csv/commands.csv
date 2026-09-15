@@ -1,11 +1,11 @@
 command,count
-uname,105
-free,45
-nproc,45
+uname,181
+busybox,60
+head,60
 hostname,45
-cat,45
+free,45
 df,45
-busybox,35
-head,35
+nproc,45
+cat,45
 cd,12
 chmod,1
