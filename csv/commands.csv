@@ -1,7 +1,7 @@
 command,count
-uname,181
-busybox,60
-head,60
+uname,272
+busybox,90
+head,90
 hostname,45
 free,45
 df,45
