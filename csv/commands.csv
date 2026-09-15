@@ -2,9 +2,10 @@ command,count
 uname,5159
 busybox,157
 head,157
+id,74
 hostname,45
-free,45
 df,45
+free,45
 nproc,45
 cat,45
 cd,24
