@@ -1,8 +1,8 @@
 username,count
-root,1817
+root,1818
 ubuntu,190
 admin,176
-0,137
+0,143
 user,124
 deploy,109
 test,85
@@ -10,8 +10,8 @@ debian,53
 user1,47
 claude,46
 minecraft,40
+support,36
 postgres,35
-support,35
 dev,33
 ftpuser,33
 frappe,30
