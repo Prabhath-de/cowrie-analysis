@@ -1,9 +1,9 @@
 command,count
-uname,4146
+uname,4498
 id,210
-cd,48
-busybox,35
-head,35
+cd,58
+busybox,48
+head,48
 hostname,6
 ps,4
 scp,4
