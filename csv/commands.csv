@@ -1,12 +1,13 @@
 command,count
-uname,1487
+uname,2087
 id,210
-cd,20
+cd,22
 busybox,5
 head,5
-hostname,2
+hostname,3
+env,2
 scp,2
 chmod,1
-env,1
 ps,1
 whoami,1
+netstat,1
