@@ -1,7 +1,9 @@
 command,count
-uname,395
+uname,1426
 id,210
-cd,16
+cd,18
 busybox,5
 head,5
 chmod,1
+hostname,1
+env,1
