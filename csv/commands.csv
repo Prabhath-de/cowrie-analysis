@@ -6,11 +6,11 @@ busybox,24
 head,24
 hostname,6
 ps,4
-env,2
+mount,3
 whoami,2
 scp,2
 ls,2
-mount,2
+env,2
 netstat,1
 chmod,1
 ip,1
