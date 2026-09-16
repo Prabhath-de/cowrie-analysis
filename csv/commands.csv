@@ -1,5 +1,5 @@
 command,count
-uname,1456
+uname,1487
 id,210
 cd,20
 busybox,5
@@ -9,3 +9,4 @@ scp,2
 chmod,1
 env,1
 ps,1
+whoami,1
