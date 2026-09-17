@@ -1,7 +1,7 @@
 command,count
-uname,183
-busybox,59
-head,59
+uname,256
+busybox,83
+head,83
 cd,10
 ps,2
 ifconfig,1
