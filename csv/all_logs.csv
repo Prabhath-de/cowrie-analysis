@@ -344,3 +344,16 @@ timestamp,event,src_ip,username,password,command
 2026-09-18T05:51:27.166953Z,cowrie.login.success,77.90.185.17,ubnt,1234,
 2026-09-18T05:53:48.902122Z,cowrie.login.success,91.92.242.247,0,0,
 2026-09-18T05:55:46.954660Z,cowrie.login.success,185.246.128.133,0,0,
+2026-09-18T06:12:30.627632Z,cowrie.login.success,189.190.143.229,test,123qweASD,
+2026-09-18T06:12:31.260809Z,cowrie.command.input,189.190.143.229,,,cd
+2026-09-18T06:12:32.017996Z,cowrie.command.input,189.190.143.229,,,cd
+2026-09-18T06:12:33.768975Z,cowrie.login.success,189.190.143.229,345gs5662d34,345gs5662d34,
+2026-09-18T06:12:35.591132Z,cowrie.login.success,189.190.143.229,test,3245gs5662d34,
+2026-09-18T06:18:21.967921Z,cowrie.login.success,185.246.128.133,0,0,
+2026-09-18T06:22:58.089276Z,cowrie.login.success,179.43.139.58,0,0,
+2026-09-18T06:23:46.596205Z,cowrie.login.success,91.92.242.247,0,0,
+2026-09-18T06:29:12.195902Z,cowrie.login.success,176.53.159.196,support,support,
+2026-09-18T06:36:17.612732Z,cowrie.login.success,185.246.128.133,0,0,
+2026-09-18T06:41:37.135799Z,cowrie.login.success,179.43.139.58,0,0,
+2026-09-18T06:54:12.936042Z,cowrie.login.success,91.92.242.247,0,0,
+2026-09-18T06:57:44.418475Z,cowrie.login.success,185.246.128.133,0,0,
