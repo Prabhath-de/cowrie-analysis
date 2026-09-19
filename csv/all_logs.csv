@@ -9338,3 +9338,12 @@ timestamp,event,src_ip,username,password,command
 2026-09-19T18:49:45.928375Z,cowrie.login.success,179.43.139.58,0,0,
 2026-09-19T18:54:27.624523Z,cowrie.login.success,91.92.242.247,0,0,
 2026-09-19T18:57:49.235285Z,cowrie.login.success,185.246.128.133,0,0,
+2026-09-19T19:04:42.030695Z,cowrie.login.success,176.53.159.196,support,support,
+2026-09-19T19:13:23.546147Z,cowrie.login.success,185.246.128.133,0,0,
+2026-09-19T19:17:37.195554Z,cowrie.login.success,80.94.95.118,root,,
+2026-09-19T19:31:39.331223Z,cowrie.login.success,91.92.242.247,0,0,
+2026-09-19T19:34:21.587420Z,cowrie.login.success,185.246.128.133,0,0,
+2026-09-19T19:42:03.781693Z,cowrie.login.success,199.231.188.242,deploy,1234,
+2026-09-19T19:42:04.534352Z,cowrie.command.input,199.231.188.242,,,uname
+2026-09-19T19:49:56.980924Z,cowrie.login.success,179.43.139.58,0,0,
+2026-09-19T19:54:41.392051Z,cowrie.login.success,91.92.242.247,0,0,
