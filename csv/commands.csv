@@ -1,13 +1,13 @@
 command,count
-uname,2671
-cd,54
+uname,3346
+cd,56
 busybox,15
 head,15
 cat,5
 echo,3
-free,2
-ls,2
+ls,3
 which,2
+free,2
 crontab,2
 rm,1
 w,1
@@ -17,3 +17,4 @@ lscpu,1
 df,1
 enter,1
 chmod,1
+hostname,1
