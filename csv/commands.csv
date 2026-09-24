@@ -16,3 +16,4 @@ top,1
 whoami,1
 lscpu,1
 df,1
+env,1
