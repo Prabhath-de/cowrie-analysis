@@ -1,6 +1,8 @@
 command,count
-uname,141
+uname,173
 busybox,34
 head,34
-cd,8
+cd,16
 hostname,2
+df,1
+history,1
