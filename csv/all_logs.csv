@@ -5260,3 +5260,15 @@ timestamp,event,src_ip,username,password,command
 2026-09-24T10:50:02.979388Z,cowrie.login.success,179.43.139.58,0,0,
 2026-09-24T10:52:51.955866Z,cowrie.login.success,185.246.128.133,0,0,
 2026-09-24T10:57:08.133265Z,cowrie.login.success,91.92.242.247,0,0,
+2026-09-24T11:01:29.645699Z,cowrie.login.success,167.99.207.12,root,!QAZ2wsx,
+2026-09-24T11:01:30.021881Z,cowrie.command.input,167.99.207.12,,,env
+2026-09-24T11:05:09.462890Z,cowrie.login.success,185.246.128.133,0,0,
+2026-09-24T11:12:30.000091Z,cowrie.login.success,185.156.46.116,root,Etanorte678,
+2026-09-24T11:29:44.594053Z,cowrie.login.success,185.246.128.133,0,0,
+2026-09-24T11:32:18.330149Z,cowrie.login.success,91.92.242.247,0,0,
+2026-09-24T11:32:43.718588Z,cowrie.login.success,167.99.207.12,root,!QAZ2wsx#EDC,
+2026-09-24T11:32:44.235350Z,cowrie.command.input,167.99.207.12,,,hostname
+2026-09-24T11:37:34.247518Z,cowrie.login.success,176.53.159.196,support,support,
+2026-09-24T11:37:44.122374Z,cowrie.login.failed,139.19.117.130,root,,
+2026-09-24T11:37:44.293059Z,cowrie.login.failed,139.19.117.130,root,,
+2026-09-24T11:46:55.211396Z,cowrie.login.success,185.246.128.133,0,0,
