@@ -1,8 +1,8 @@
 command,count
-uname,1119
-cd,18
-busybox,13
-head,13
+uname,1191
+busybox,37
+head,37
+cd,24
 hostname,5
 cat,5
 ls,3
