@@ -7075,3 +7075,16 @@ timestamp,event,src_ip,username,password,command
 2026-09-26T13:46:10.503058Z,cowrie.login.success,179.43.139.58,0,0,
 2026-09-26T13:46:48.084286Z,cowrie.login.success,185.246.128.133,0,0,
 2026-09-26T13:58:18.137702Z,cowrie.login.success,91.92.242.247,0,0,
+2026-09-26T14:09:15.432428Z,cowrie.login.success,185.246.128.133,0,0,
+2026-09-26T14:18:02.753042Z,cowrie.login.success,178.128.57.150,steam,steam,
+2026-09-26T14:18:02.820671Z,cowrie.command.input,178.128.57.150,,,uname
+2026-09-26T14:25:11.301211Z,cowrie.login.success,176.53.159.196,support,support,
+2026-09-26T14:29:42.299845Z,cowrie.login.success,91.92.242.247,0,0,
+2026-09-26T14:30:04.909206Z,cowrie.login.success,37.19.206.55,root,Elwood4444!,
+2026-09-26T14:40:01.499235Z,cowrie.login.success,185.246.128.133,0,0,
+2026-09-26T14:46:39.894433Z,cowrie.login.success,176.53.159.196,support,support,
+2026-09-26T14:54:38.846870Z,cowrie.login.success,185.226.116.36,prova,prova,
+2026-09-26T14:54:39.467044Z,cowrie.command.input,185.226.116.36,,,cd
+2026-09-26T14:54:40.221685Z,cowrie.command.input,185.226.116.36,,,cd
+2026-09-26T14:54:41.822212Z,cowrie.login.success,185.226.116.36,345gs5662d34,345gs5662d34,
+2026-09-26T14:54:43.463714Z,cowrie.login.success,185.226.116.36,prova,3245gs5662d34,
