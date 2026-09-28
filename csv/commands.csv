@@ -1,8 +1,8 @@
 command,count
-uname,871
-head,88
-busybox,88
-cd,58
+uname,2618
+head,145
+busybox,145
+cd,60
 ps,4
 ip,2
 ifconfig,2
