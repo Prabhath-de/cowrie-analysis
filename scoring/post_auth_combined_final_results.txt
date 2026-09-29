@@ -8,12 +8,12 @@ New scale max       : 18.5 (severity 10.5 + intensity 5 + diversity 3)
 
 RISK DISTRIBUTION -- OLD (v3, unchanged) vs NEW (with backdoor/dropper patch)
 ----------------------------------------------------------------------
-LOW       : old= 3730   new= 3690
-MEDIUM    : old=  118   new=  144
+LOW       : old= 3730   new= 3689
+MEDIUM    : old=  118   new=  145
 HIGH      : old=   18   new=   32
 CRITICAL  : old=    0   new=    0
 
-IPs whose risk tier CHANGED due to the patch: 54
+IPs whose risk tier CHANGED due to the patch: 55
 ----------------------------------------------------------------------
 138.99.80.102      MEDIUM   -> HIGH      (backdoor_hits=59, dropper_hits=0, total 6.78 -> 8.78)
 106.251.244.178    MEDIUM   -> HIGH      (backdoor_hits=25, dropper_hits=0, total 6.91 -> 8.74)
@@ -33,7 +33,7 @@ IPs whose risk tier CHANGED due to the patch: 54
 103.30.75.85       LOW      -> MEDIUM    (backdoor_hits=42, dropper_hits=42, total 2.51 -> 5.93)
 167.99.148.102     LOW      -> MEDIUM    (backdoor_hits=3, dropper_hits=0, total 3.96 -> 5.31)
 20.203.42.204      LOW      -> MEDIUM    (backdoor_hits=111, dropper_hits=0, total 2.70 -> 4.70)
-102.88.137.80      LOW      -> MEDIUM    (backdoor_hits=115, dropper_hits=0, total 2.63 -> 4.63)
+102.88.137.80      LOW      -> MEDIUM    (backdoor_hits=119, dropper_hits=0, total 2.63 -> 4.63)
 102.88.137.213     LOW      -> MEDIUM    (backdoor_hits=97, dropper_hits=0, total 2.63 -> 4.63)
 27.50.25.190       LOW      -> MEDIUM    (backdoor_hits=87, dropper_hits=0, total 2.62 -> 4.62)
 213.209.159.158    LOW      -> MEDIUM    (backdoor_hits=35, dropper_hits=0, total 2.71 -> 4.62)
@@ -60,8 +60,8 @@ IPs matching the new patterns at all: 2926
 136.107.187.197    backdoor_hits=  0  dropper_hits=  7  risk_old=HIGH      risk_new=HIGH    
 120.48.11.36       backdoor_hits= 13  dropper_hits=  0  risk_old=HIGH      risk_new=HIGH    
 158.180.79.132     backdoor_hits= 17  dropper_hits=  0  risk_old=HIGH      risk_new=HIGH    
+136.232.11.10      backdoor_hits= 27  dropper_hits=  0  risk_old=HIGH      risk_new=HIGH    
 45.91.169.93       backdoor_hits= 25  dropper_hits=  0  risk_old=HIGH      risk_new=HIGH    
-136.232.11.10      backdoor_hits= 23  dropper_hits=  0  risk_old=HIGH      risk_new=HIGH    
 138.99.80.102      backdoor_hits= 59  dropper_hits=  0  risk_old=MEDIUM    risk_new=HIGH    
 106.251.244.178    backdoor_hits= 25  dropper_hits=  0  risk_old=MEDIUM    risk_new=HIGH    
 183.110.116.87     backdoor_hits= 43  dropper_hits=  0  risk_old=MEDIUM    risk_new=HIGH    
