@@ -1,6 +1,11 @@
 command,count
-uname,2506
-cd,63
+uname,2829
+cd,67
+busybox,32
+head,32
 echo,20
-head,19
-busybox,19
+whoami,13
+pwd,2
+ls,2
+for,1
+seq,1
