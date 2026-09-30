@@ -2,7 +2,7 @@ command,count
 uname,260
 busybox,85
 head,85
-cd,62
+cd,64
 ps,8
 id,7
 whoami,5
