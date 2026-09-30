@@ -1,5 +1,5 @@
 command,count
-uname,1619
+uname,2212
 busybox,98
 head,98
 cd,86
@@ -13,14 +13,14 @@ crontab,4
 netstat,4
 mount,4
 history,3
+echo,3
 ls,2
-chmod,2
 sh,2
-echo,2
-usermod,2
-sudo,2
+chmod,2
 nohup,2
+usermod,2
 systemctl,2
+sudo,2
 top,1
 which,1
 uptime,1
