@@ -1,0 +1,20 @@
+Calibration IPs: 3803
+Holdout IPs: 2339
+Recalculated threshold (P99.5): 8.5816
+Calibration candidates: 11
+Holdout candidates: 0
+
+Calibration candidates:
+  35.229.125.98      score=9.9978 burst=72
+  128.1.44.162       score=9.7056 burst=18
+  34.75.237.227      score=9.4130 burst=48
+  182.93.7.194       score=9.2162 burst=17
+  136.107.187.197    score=9.1350 burst=72
+  34.139.191.163     score=9.1350 burst=72
+  158.180.79.132     score=8.9860 burst=17
+  136.232.11.10      score=8.8824 burst=17
+  106.251.244.178    score=8.6607 burst=17
+  112.151.178.49     score=8.5821 burst=17
+  219.92.11.46       score=8.5821 burst=17
+
+Holdout candidates:
