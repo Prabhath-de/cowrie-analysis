@@ -429,3 +429,13 @@ timestamp,event,src_ip,username,password,command
 2026-10-02T01:38:55.954820Z,cowrie.command.input,92.118.39.71,,,busybox
 2026-10-02T01:38:55.960483Z,cowrie.command.input,92.118.39.71,,,head
 2026-10-02T01:58:55.580553Z,cowrie.login.success,185.246.128.133,0,0,
+2026-10-02T02:03:01.369080Z,cowrie.login.success,179.43.133.154,0,0,
+2026-10-02T02:12:13.548440Z,cowrie.login.success,45.78.224.85,admin,admin,
+2026-10-02T02:12:14.739331Z,cowrie.login.success,130.12.180.51,admin,admin,
+2026-10-02T02:12:15.958530Z,cowrie.command.input,130.12.180.51,,,uname
+2026-10-02T02:13:52.643104Z,cowrie.login.success,77.239.124.71,root,qZofgurZ,
+2026-10-02T02:20:41.211077Z,cowrie.login.success,37.19.206.55,root,Janina112,
+2026-10-02T02:23:25.910236Z,cowrie.login.success,185.246.128.133,0,0,
+2026-10-02T02:26:07.258308Z,cowrie.login.success,176.53.159.196,support,support,
+2026-10-02T02:32:51.403400Z,cowrie.login.success,179.43.133.154,0,0,
+2026-10-02T02:37:45.670619Z,cowrie.login.success,185.246.128.133,0,0,
