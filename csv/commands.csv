@@ -1,8 +1,8 @@
 command,count
-uname,596
-cd,45
-busybox,31
-head,31
+uname,624
+cd,59
+busybox,40
+head,40
 whoami,3
 ls,2
 ps,2
