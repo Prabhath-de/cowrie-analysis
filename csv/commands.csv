@@ -1,12 +1,3 @@
 command,count
-uname,2908
-busybox,102
-head,102
-cd,102
-echo,3
-ps,2
-ip,1
-cat,1
-ifconfig,1
-ls,1
-locate,1
+uname,500
+cd,11
