@@ -1,6 +1,6 @@
 command,count
-uname,2891
-cd,81
+uname,3139
+cd,85
 busybox,63
 head,63
 cat,3
@@ -14,3 +14,4 @@ top,1
 whoami,1
 lscpu,1
 df,1
+chmod,1
