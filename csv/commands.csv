@@ -1,10 +1,10 @@
 command,count
-uname,2654
-cd,137
+uname,3992
+cd,139
 busybox,45
 head,45
+echo,15
 cat,12
-echo,8
 ls,5
 which,4
 crontab,4
