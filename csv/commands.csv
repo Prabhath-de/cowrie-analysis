@@ -1,6 +1,6 @@
 command,count
 uname,2698
-echo,74
+cd,84
+echo,80
 busybox,65
 head,65
-cd,58
