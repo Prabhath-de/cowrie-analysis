@@ -1,8 +1,8 @@
 command,count
-uname,4358
+uname,4359
 head,156
 busybox,156
-echo,147
+echo,154
 cd,137
 cat,8
 whoami,5
