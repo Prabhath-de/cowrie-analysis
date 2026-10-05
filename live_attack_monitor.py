@@ -257,7 +257,10 @@ already_blocked = set()
 
 
 def process_new_events(f):
-    for line in f:
+    while True:
+        line = f.readline()
+        if not line:
+            break
         line = line.strip()
         if not line:
             continue
@@ -306,12 +309,21 @@ def main():
     print(f"Threshold: score >= {SCORE_THRESHOLD} AND burst >= {BURST_THRESHOLD}", flush=True)
     print(f"Watching: {LOGFILE}", flush=True)
 
-    with open(LOGFILE, "r") as f:
-        f.seek(0, os.SEEK_END)
-        while True:
-            process_new_events(f)
-            evaluate_and_block()
-            time.sleep(POLL_INTERVAL)
+    f = open(LOGFILE, "r")
+    f.seek(0, os.SEEK_END)
+    cur_inode = os.fstat(f.fileno()).st_ino
+    while True:
+        process_new_events(f)
+        evaluate_and_block()
+        try:
+            st = os.stat(LOGFILE)
+            if st.st_ino != cur_inode or st.st_size < f.tell():
+                f.close()
+                f = open(LOGFILE, "r")
+                cur_inode = os.fstat(f.fileno()).st_ino
+        except FileNotFoundError:
+            pass
+        time.sleep(POLL_INTERVAL)
 
 
 if __name__ == "__main__":
