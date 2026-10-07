@@ -1,28 +1,29 @@
 Country,Count
 United Kingdom,2842
-United States,433
-Vietnam,279
+United States,440
+Vietnam,282
 Romania,198
 India,174
 Indonesia,166
+The Netherlands,128
 South Korea,121
-Türkiye,87
-Singapore,77
+Türkiye,89
+Iran,85
+Singapore,79
 Canada,75
-Iran,73
 Brazil,69
 Ecuador,67
-Sweden,62
-The Netherlands,58
-Germany,56
+Sweden,65
 Bangladesh,56
-Switzerland,46
+Germany,56
+Switzerland,49
+Paraguay,45
+Thailand,44
 France,44
-Paraguay,39
-China,39
-Thailand,38
+China,43
 Hong Kong,34
 Sri Lanka,32
+Mexico,31
 Russia,31
 Spain,30
 Israel,28
@@ -31,11 +32,10 @@ United Arab Emirates,26
 Chile,23
 Colombia,23
 Cameroon,22
-Mexico,21
 Dominican Republic,20
 Japan,17
-Philippines,16
 Mozambique,16
+Philippines,16
 Bulgaria,15
 El Salvador,14
 Kazakhstan,12
@@ -49,8 +49,9 @@ Iraq,7
 Italy,7
 Uzbekistan,7
 Ukraine,6
-Egypt,5
 Myanmar,5
+Egypt,5
+Seychelles,5
 Czechia,4
 Taiwan,3
 Uruguay,2
