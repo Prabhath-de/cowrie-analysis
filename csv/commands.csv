@@ -1,6 +1,7 @@
 command,count
-uname,2184
+uname,2377
 echo,100
-cd,49
-busybox,7
-head,7
+cd,55
+busybox,9
+head,9
+pwd,1
