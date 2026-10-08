@@ -1,7 +1,8 @@
 command,count
-uname,3504
+uname,3508
 echo,100
-cd,63
+cd,71
 busybox,9
 head,9
+scp,2
 pwd,1
