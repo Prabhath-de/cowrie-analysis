@@ -38,4 +38,3 @@ graph TD
     B --> C[Log Files - cowrie.json]
     C --> D[Python Analysis Script]
     D --> E[CSV and Charts]
-    E --> F[GitHub Auto Update]
